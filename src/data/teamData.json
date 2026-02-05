@@ -1,0 +1,1469 @@
+{
+  "teamMembers": [
+    {
+      "id": "austin-daniel",
+      "name": "Austin Daniel",
+      "role": "CEO/Founder Specialist",
+      "avatar": "AD",
+      "icp": {
+        "title": "The Growth-Obsessed Founder",
+        "targetRoles": [
+          "CEO",
+          "Founder",
+          "COO"
+        ],
+        "companyProfile": "Seed to Series C SaaS/tech startups (5-50 employees)",
+        "industries": [
+          "SaaS",
+          "AI/ML",
+          "Dev Tools",
+          "B2B Tech"
+        ],
+        "hotTopics": [
+          "Fundraising struggles",
+          "Hiring engineers",
+          "Product launches",
+          "Founder burnout",
+          "Team capacity issues"
+        ],
+        "servicesFocus": [
+          "Embedded",
+          "Scoped"
+        ],
+        "primaryService": "Embedded Teams"
+      },
+      "connectCriteria": [
+        "Founding CEO or technical co-founder at early-stage SaaS company",
+        "Posts about hiring engineers, building MVP, or scaling product",
+        "Raised seed/Series A in last 12 months (fundraising pressure = need for speed)",
+        "Mentions 'technical debt,' 'need to ship faster,' or 'team capacity' in posts",
+        "Active in communities like SaaStr, Pavilion, Y Combinator alumni"
+      ],
+      "engageCriteria": [
+        "Pre-revenue/pre-product (too early)",
+        "Posts about general startup advice (not specific pain)",
+        "Serial entrepreneurs but not actively building",
+        "Focus only on fundraising/networking content (not execution)"
+      ],
+      "realQuotes": [
+        "The building-as-procrastination trap is so real. I finally started doing customer calls when I made it a game.",
+        "I'd be a billionaire if my CTO and I could have gotten along better.",
+        "Behind every successful founder is paralyzing self-doubt, money issues, failed products.",
+        "The startup problem is fundamentally a search problem under resource constraint.",
+        "I realized most founders obsess over signups but ignore what happens in the first 3 minutes after someone logs in."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [specific challenge]. That's the exact problem we help founders solve at Midwestern. Curious\u2014are you handling [specific task] internally or bringing in outside help?",
+          "whenToUse": "When they post about capacity/hiring challenges",
+          "tone": "Direct, helpful"
+        },
+        {
+          "id": 2,
+          "template": "[Name], been following your journey with [company]. We work with a lot of founders at your stage (Series A, scaling eng team) and the 'need to ship vs. need to hire' tension is real. How are you thinking about that?",
+          "whenToUse": "After they've posted about team/scaling issues",
+          "tone": "Empathetic, peer-to-peer"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], saw you're [building X/hiring Y]. We've helped a bunch of startups like [similar company] navigate that exact phase. Happy to share what worked for them if you ever want to chat\u2014no pitch, just founder to founder.",
+          "whenToUse": "Soft opener when relationship is warming up",
+          "tone": "Casual, no pressure"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Speed Wins Stories",
+          "description": "Show how fast shipping creates competitive advantage",
+          "examples": [
+            "Case study: How [startup] shipped their MVP in 6 weeks instead of 6 months",
+            "Behind-the-scenes: What a scoped project actually looks like [screenshots]",
+            "Data point: The average cost of a 6-month hiring delay"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Use specific timelines and metrics. Founders love numbers."
+        },
+        {
+          "title": "Founder Realities",
+          "description": "Address the uncomfortable truths of founding",
+          "examples": [
+            "Hot take: Stop hiring full-time engineers for MVP validation",
+            "Poll: What's slowing you down more: unclear requirements or team capacity?",
+            "Carousel: 5 signs you need embedded engineers, not full-time hires"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Be controversial but not offensive. Gets engagement through debate."
+        },
+        {
+          "title": "Transparent Process",
+          "description": "Build trust through vulnerability and process sharing",
+          "examples": [
+            "Here's our exact scoping process [step by step]",
+            "What it looks like to integrate into a client's Slack",
+            "We lost a client because [lesson learned]"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Vulnerability builds trust. Share mistakes, not just wins."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Post at 8am or 12pm CT",
+          "why": "When founders check LinkedIn with coffee or during lunch break",
+          "icon": "clock"
+        },
+        {
+          "step": 2,
+          "action": "Start posts with hooks",
+          "why": "Use 'Unpopular opinion:' or 'Hard truth:' or 'Quick story:' to grab attention",
+          "icon": "zap"
+        },
+        {
+          "step": 3,
+          "action": "End posts with questions",
+          "why": "Triggers comments, which the algorithm loves",
+          "icon": "message-circle"
+        },
+        {
+          "step": 4,
+          "action": "Comment on 5-10 founder posts BEFORE posting",
+          "why": "Warms up the algorithm to show your content",
+          "icon": "trending-up"
+        },
+        {
+          "step": 5,
+          "action": "Tag people when genuinely relevant",
+          "why": "Not spammy - only if they're actually mentioned (e.g., '@Jason Lemkin talked about this')",
+          "icon": "at-sign"
+        }
+      ],
+      "redFlags": [
+        "Pre-idea stage (no product to build)",
+        "No funding/revenue signals (can't afford you)",
+        "Looking for 'co-founder' or 'equity partner' language",
+        "Non-technical founder with no CTO (they need recruiting first)",
+        "Focus is on 'thought leadership' not building (not your buyer)"
+      ],
+      "trustBuilders": [
+        "Peer validation: 'Who else have you worked with in [their space]?'",
+        "Portfolio proof: Case studies from similar stage/industry",
+        "Team credentials: They want to know the actual devs are legit",
+        "Speed guarantee: 'When can we start?' is often deal-closer",
+        "Direct references from other founders"
+      ],
+      "quickReference": {
+        "decisionSpeed": "FAST (2-3 weeks if they trust you)",
+        "buyingCommittee": "Usually solo or with CTO/co-founder",
+        "whenWarm": [
+          "They've engaged with your content 3+ times",
+          "They ask questions about your work",
+          "They've shared their challenges without prompting"
+        ]
+      },
+      "profileImage": "/avatars/austin-daniel.png"
+    },
+    {
+      "id": "austin-eidson",
+      "name": "Austin Eidson",
+      "role": "Design Leadership Specialist",
+      "avatar": "AE",
+      "icp": {
+        "title": "The Design Leader Fighting for Influence",
+        "targetRoles": [
+          "Design Director",
+          "Head of Product Design",
+          "VP of Design"
+        ],
+        "companyProfile": "Series A to growth-stage companies (50-500 employees)",
+        "industries": [
+          "B2B SaaS",
+          "Product-Led Growth",
+          "Tech Companies"
+        ],
+        "hotTopics": [
+          "Design systems",
+          "Design ops",
+          "Proving ROI",
+          "Team scaling",
+          "Brand differentiation"
+        ],
+        "servicesFocus": [
+          "Embedded",
+          "Scoped"
+        ],
+        "primaryService": "Embedded Design Teams"
+      },
+      "connectCriteria": [
+        "Design Director/Head of Design at growth-stage company",
+        "Posts about design systems, design debt, or scaling design teams",
+        "Mentions 'limited resources,' 'design maturity,' or 'proving ROI' in posts",
+        "Works at SaaS/tech companies (not agencies - wrong buyer)",
+        "Recently joined new role (building their team, open to partners)"
+      ],
+      "engageCriteria": [
+        "Individual contributor designers (not decision-makers)",
+        "Posts only about design trends/inspiration (not operational pain)",
+        "Works at design agencies (they're your competitors, not customers)",
+        "Focus on personal brand building (not team/company problems)"
+      ],
+      "realQuotes": [
+        "Design isn't done at visuals\u2014it's done at behavior.",
+        "I'm tired of operating on 'gut-feeling' vs. research. We need data.",
+        "Our design system is 3 years old and held together with duct tape.",
+        "Every rebrand we do becomes outdated the moment we ship it.",
+        "Leadership treats design like a service org, not a strategic function."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [design system challenge]. We just wrapped a design system project for [similar company] and hit the exact same issues. How are you thinking about tackling it?",
+          "whenToUse": "When they post about design systems or technical design challenges",
+          "tone": "Peer-to-peer, solution-oriented"
+        },
+        {
+          "id": 2,
+          "template": "[Name], curious question\u2014when you get requests from product/marketing/sales for design work, what percentage can your team actually take on vs. what gets deprioritized?",
+          "whenToUse": "When they mention being overwhelmed or capacity issues",
+          "tone": "Empathetic, understanding the squeeze"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], love how you talk about design maturity. We work with a lot of design leaders at your stage and the 'prove ROI vs. just ship beautiful work' tension is real. What's working for you?",
+          "whenToUse": "After they've discussed design's business impact",
+          "tone": "Respectful, learning-focused"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Design System Mastery",
+          "description": "Position as experts in scalable design infrastructure",
+          "examples": [
+            "Case study: How we built [company's] component library in 8 weeks",
+            "Process doc: Our design system handoff checklist [screenshot]",
+            "Hot take: Stop rebuilding your design system every 2 years"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Show actual work - screenshots of Figma, code examples. Visual proof."
+        },
+        {
+          "title": "Design Team Scaling",
+          "description": "Help leaders solve the hiring vs. capacity problem",
+          "examples": [
+            "Framework: When to hire vs. when to embed designers [decision tree]",
+            "Behind-scenes: What an embedded designer's first week looks like",
+            "Data: The real cost of design debt [calculate hours lost]"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Use frameworks and decision trees. Design leaders love structured thinking."
+        },
+        {
+          "title": "Proving Design Impact",
+          "description": "Give them ammo for leadership conversations",
+          "examples": [
+            "Metrics guide: How to tie design work to revenue/retention",
+            "Before/after: How design changes impacted [specific metric] for [client]",
+            "Interview: How [design leader] convinced their CEO to invest in design"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Always include numbers. Metrics make the business case."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Use visuals ALWAYS",
+          "why": "Design leaders are visual people - screenshot, mockup, before/after",
+          "icon": "image"
+        },
+        {
+          "step": 2,
+          "action": "Post case studies as carousels",
+          "why": "LinkedIn loves multi-image posts - more time on platform = more reach",
+          "icon": "layout"
+        },
+        {
+          "step": 3,
+          "action": "Engage with design influencers",
+          "why": "Julie Zhuo, Cap Watkins - their audience is your audience",
+          "icon": "users"
+        },
+        {
+          "step": 4,
+          "action": "Use LinkedIn polls",
+          "why": "'What's your biggest design challenge: [A/B/C/D]?' gets easy engagement",
+          "icon": "bar-chart"
+        },
+        {
+          "step": 5,
+          "action": "Share work-in-progress not just finished work",
+          "why": "Vulnerability = relatability. Show the messy middle.",
+          "icon": "edit"
+        }
+      ],
+      "redFlags": [
+        "Solo designer (no budget authority)",
+        "Agency designer (they're not your customer)",
+        "Pure visual/brand designer (you do product design/systems)",
+        "Company has no design maturity (will be uphill battle)",
+        "Posts only about freelance work (not building a team)"
+      ],
+      "trustBuilders": [
+        "Portfolio work in similar industries (especially B2B SaaS)",
+        "Examples of explaining complex products simply",
+        "Case studies with metrics (not just 'pretty work')",
+        "Process explanation (not just deliverables)",
+        "Cost comparison vs. full-time hire"
+      ],
+      "quickReference": {
+        "decisionSpeed": "MEDIUM (4-6 weeks typical)",
+        "buyingCommittee": "VP Product or CPO (budget owner), sometimes CTO",
+        "whenWarm": [
+          "They've saved/shared your design content",
+          "They ask about your process or team",
+          "They mention resource constraints unprompted"
+        ]
+      },
+      "profileImage": "/avatars/austin-eidson.png"
+    },
+    {
+      "id": "cyril-jones",
+      "name": "Cyril Jones",
+      "role": "Technical Founder Specialist",
+      "avatar": "CJ",
+      "icp": {
+        "title": "The Technical Leader Who Needs to Ship Yesterday",
+        "targetRoles": [
+          "Founder",
+          "VP of Engineering",
+          "Technical Founders"
+        ],
+        "companyProfile": "Pre-seed to Series B (2-20 engineers)",
+        "industries": [
+          "SaaS",
+          "AI",
+          "B2B Tech",
+          "Dev Tools"
+        ],
+        "hotTopics": [
+          "MVP scoping",
+          "Tech stack decisions",
+          "Team scaling",
+          "Execution pressure",
+          "Finding developers"
+        ],
+        "servicesFocus": [
+          "Scoped"
+        ],
+        "primaryService": "Scoped Projects"
+      },
+      "connectCriteria": [
+        "Technical founder/CTO at pre-Series B startup",
+        "Posts about 'building MVP,' 'need to ship,' or 'tech stack decisions'",
+        "Recently announced funding (have money, have pressure)",
+        "Mentions specific technologies you work with (React, Node, .NET, AI)",
+        "Asks questions about 'how to scope,' 'build vs. buy,' or 'finding developers'"
+      ],
+      "engageCriteria": [
+        "At large enterprises (different buying process)",
+        "Posts only about management/leadership (not hands-on technical)",
+        "Focus on recruiting only (might need recruiting service, not dev work)",
+        "Share only thought leadership (not actual building problems)"
+      ],
+      "realQuotes": [
+        "I need to build an MVP to get initial product to customers.",
+        "Has money but needs a team they can trust to execute.",
+        "Needs proper planning and documentation to justify spend.",
+        "How do I turn this idea into something real without blowing my budget on the wrong partner?",
+        "Lack of skill on internal team."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [MVP/feature scoping]. That's literally what we do all day at Midwestern - help founders break big ideas into shippable phases. Have you landed on an approach yet or still figuring it out?",
+          "whenToUse": "When they post about scoping challenges or unclear requirements",
+          "tone": "Helpful expert, not salesy"
+        },
+        {
+          "id": 2,
+          "template": "[Name], curious about your [specific project] timeline. Most founders we work with underestimate builds by 2-3x. Are you working with a dev team already or exploring options?",
+          "whenToUse": "When they mention timelines or launch deadlines",
+          "tone": "Reality check, peer-to-peer"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], saw you're considering [tech stack]. We've built [similar product] on that stack 5+ times. Happy to share what worked and what to avoid if helpful\u2014no pitch, just founder to founder.",
+          "whenToUse": "When they're evaluating tech decisions",
+          "tone": "Technical peer offering genuine help"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Scoping Reality",
+          "description": "Help founders understand what MVPs actually need",
+          "examples": [
+            "Framework: How to scope an MVP in 1 hour [our exact process]",
+            "Case study: We helped [founder] cut scope from 6 months to 6 weeks",
+            "Hot take: Stop adding features to your MVP"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Be opinionated. Controversial takes get debates in comments."
+        },
+        {
+          "title": "Technical Transparency",
+          "description": "Show your work to build credibility",
+          "examples": [
+            "Behind-scenes: What a fixed-price project proposal looks like [redacted example]",
+            "Tech stack guide: When to use [React] vs. [Next.js] for [use case]",
+            "Mistake post: We over-scoped [project] and here's what we learned"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Show actual documents, proposals, code. Technical founders want proof."
+        },
+        {
+          "title": "Real Timelines",
+          "description": "Set realistic expectations for build time",
+          "examples": [
+            "Data: How long it ACTUALLY takes to build [common features]",
+            "Comparison: Building yourself vs. Scoped project vs. Embedded [cost/time analysis]",
+            "Poll: How long did your MVP take? [poll with ranges]"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Founders love specifics. Use actual numbers, not ranges."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Use specific tech in posts",
+          "why": "React, Node, AWS triggers algorithm + attracts right people",
+          "icon": "code"
+        },
+        {
+          "step": 2,
+          "action": "Post 'unpopular opinions'",
+          "why": "'Hot take: Most MVPs are 3x too complex' gets debates in comments",
+          "icon": "alert-circle"
+        },
+        {
+          "step": 3,
+          "action": "Share actual numbers",
+          "why": "Costs, timelines, team sizes - founders love specifics",
+          "icon": "dollar-sign"
+        },
+        {
+          "step": 4,
+          "action": "Tag relevant communities",
+          "why": "'As we talk about at @Y Combinator' or 'Like @Indie Hackers discusses'",
+          "icon": "users"
+        },
+        {
+          "step": 5,
+          "action": "End with clear question",
+          "why": "'Am I wrong about this?' or 'What's been your experience?' triggers engagement",
+          "icon": "help-circle"
+        }
+      ],
+      "redFlags": [
+        "No clear product/customer (just an idea)",
+        "Looking for 'co-founder' or 'equity partner'",
+        "No funding and no revenue (can't pay)",
+        "Wants someone else to validate their idea (not ready)",
+        "Posts about 'the next big thing' but no execution updates"
+      ],
+      "trustBuilders": [
+        "Similar MVP builds you've done (case studies)",
+        "Clear scoping process (how do you prevent bloat?)",
+        "Team credentials (who's actually building this?)",
+        "Fixed pricing (they're terrified of runaway costs)",
+        "References from other technical founders"
+      ],
+      "quickReference": {
+        "decisionSpeed": "FAST if urgent (1-2 weeks), MEDIUM if exploratory (4-6 weeks)",
+        "buyingCommittee": "Usually solo or with co-founder",
+        "whenWarm": [
+          "They ask technical questions about your process",
+          "They mention specific timelines or milestones",
+          "They've had bad experiences with other agencies"
+        ]
+      },
+      "profileImage": "/avatars/cyril-jones.png"
+    },
+    {
+      "id": "dom-paulk",
+      "name": "Dom Paulk",
+      "role": "Product & Engineering Leadership",
+      "avatar": "DP",
+      "icp": {
+        "title": "The Execution Leader Stuck in Process Hell",
+        "targetRoles": [
+          "VP of Product",
+          "Project/Program Managers",
+          "VP of Engineering"
+        ],
+        "companyProfile": "Series A to mid-market (50-500 employees)",
+        "industries": [
+          "B2B SaaS",
+          "Product-Led Companies",
+          "Tech"
+        ],
+        "hotTopics": [
+          "Roadmap pressure",
+          "Team alignment",
+          "Agile/process issues",
+          "Shipping velocity",
+          "Cross-functional chaos"
+        ],
+        "servicesFocus": [
+          "Embedded"
+        ],
+        "primaryService": "Embedded Teams"
+      },
+      "connectCriteria": [
+        "VP Product/Engineering at Series A+ company",
+        "Posts about 'roadmap challenges,' 'team velocity,' or 'cross-functional alignment'",
+        "Mentions 'not enough capacity,' 'too many priorities,' or 'shipping delays'",
+        "Works at B2B SaaS or tech companies (your sweet spot)",
+        "Recently changed jobs (building their team/processes)"
+      ],
+      "engageCriteria": [
+        "Director-level (might not have budget authority)",
+        "Posts only about frameworks/theory (not actual execution problems)",
+        "Works at agencies or consulting firms (wrong buyer)",
+        "Focus on thought leadership about 'the future of product' (not current pain)"
+      ],
+      "realQuotes": [
+        "PM workflows that actually scale.",
+        "Agile without the theater.",
+        "Keeping cross-functional teams aligned.",
+        "The hardest part: feeling like you're always failing.",
+        "People operating out of lane stresses everyone."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [roadmap/capacity challenge]. That's the exact problem we help solve - giving VPs execution capacity without the hiring timeline. Curious, how are you currently handling the gap between what's promised and what's realistic?",
+          "whenToUse": "When they post about roadmap pressure or capacity issues",
+          "tone": "Understanding, solution-oriented"
+        },
+        {
+          "id": 2,
+          "template": "[Name], your post about [cross-functional alignment] hit home. Most VPs we work with spend more time coordinating than actually shipping. What's your current strategy for keeping teams aligned?",
+          "whenToUse": "When they mention team coordination or process problems",
+          "tone": "Empathetic, peer learning"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], love how you think about [specific framework/process]. We work with a lot of product leaders at your stage and the 'ship fast vs. ship right' tension never goes away. What's been working for you lately?",
+          "whenToUse": "After they've shared process insights or frameworks",
+          "tone": "Respectful, collaborative"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Execution at Scale",
+          "description": "Help leaders prioritize and execute under pressure",
+          "examples": [
+            "Framework: How to prioritize roadmap when everything is 'urgent' [our decision tree]",
+            "Case study: How [VP] shipped 5 features in one quarter with embedded team",
+            "Data: The real cost of context switching [calculate time lost per engineer]"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Use frameworks and decision trees. VPs love structured thinking."
+        },
+        {
+          "title": "Team Velocity",
+          "description": "Show how to increase output without increasing headcount",
+          "examples": [
+            "Process doc: How we integrate into client teams in week 1 [checklist]",
+            "Comparison: Hiring vs. Embedded vs. Freelancers [speed/cost/risk analysis]",
+            "Behind-scenes: What it looks like when embedded teams join your standups"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Show the actual integration process. VPs need to visualize how it works."
+        },
+        {
+          "title": "Transparent Failures",
+          "description": "Build trust through vulnerability",
+          "examples": [
+            "Mistake story: We under-scoped [project] and here's what we learned",
+            "Hot take: More engineers \u2260 more output (and what actually works)",
+            "Interview: How [VP] doubled shipping velocity without hiring"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Vulnerability builds trust. Share what went wrong and why."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Share frameworks as carousels",
+          "why": "VPs love actionable frameworks (saves/shares = reach)",
+          "icon": "layers"
+        },
+        {
+          "step": 2,
+          "action": "Use data in posts",
+          "why": "'Teams with X ship Y% faster' - VPs respond to metrics",
+          "icon": "trending-up"
+        },
+        {
+          "step": 3,
+          "action": "Engage with product influencers",
+          "why": "Shreyas Doshi, Gibson Biddle, Lenny Rachitsky",
+          "icon": "users"
+        },
+        {
+          "step": 4,
+          "action": "Post polls about priorities",
+          "why": "'What's your biggest bottleneck? [capacity/clarity/alignment/tools]'",
+          "icon": "bar-chart"
+        },
+        {
+          "step": 5,
+          "action": "Write longer posts",
+          "why": "VPs read LinkedIn thoroughly (not just skimming) - 300+ words is fine",
+          "icon": "file-text"
+        }
+      ],
+      "redFlags": [
+        "No clear roadmap or priorities (too chaotic to help)",
+        "Company is pre-product or pivoting constantly (not stable enough)",
+        "Posts blame engineers/designers (toxic culture)",
+        "Every post is about tools/process (not actual execution)",
+        "Recently laid off team (cutting costs, not buying)"
+      ],
+      "trustBuilders": [
+        "Case studies from similar-stage companies",
+        "How we integrate into existing workflows (Jira, Confluence, Slack)",
+        "Team structure (who's the PM? Who's the tech lead?)",
+        "Metrics/KPIs to prove impact",
+        "Reference calls with other VPs"
+      ],
+      "quickReference": {
+        "decisionSpeed": "SLOW (6-10 weeks typical\u2014they have process)",
+        "buyingCommittee": "VP Engineering, CTO or CPO (budget), sometimes CEO",
+        "whenWarm": [
+          "They've shared specific roadmap challenges",
+          "They respond to questions about their process",
+          "They mention capacity gaps unprompted"
+        ]
+      },
+      "profileImage": "/avatars/dom-paulk.png"
+    },
+    {
+      "id": "jerrod-tracy",
+      "name": "Jerrod Tracy",
+      "role": "Infrastructure & Legacy Specialist",
+      "avatar": "JT",
+      "icp": {
+        "title": "The Technical Leader Drowning in Legacy Debt",
+        "targetRoles": [
+          "VP of Engineering",
+          "Director of IT",
+          "CTO"
+        ],
+        "companyProfile": "Growth to enterprise (100-1000+ employees)",
+        "industries": [
+          "Manufacturing",
+          "Finance",
+          "Healthcare",
+          "Traditional Industries Going Digital"
+        ],
+        "hotTopics": [
+          "Legacy modernization",
+          "Technical debt",
+          "Infrastructure",
+          "DevOps chaos",
+          "Performance bottlenecks"
+        ],
+        "servicesFocus": [
+          "Embedded",
+          "Scoped"
+        ],
+        "primaryService": "Embedded Teams for Modernization"
+      },
+      "connectCriteria": [
+        "VP Eng/CTO/Director IT at growth-stage or enterprise company",
+        "Posts about 'legacy systems,' 'tech debt,' or 'modernization'",
+        "Mentions specific old tech (.NET Framework, mainframes, PHP 5, Oracle)",
+        "Talks about 'slow delivery,' 'performance bottlenecks,' or 'DevOps mess'",
+        "Works at traditional industries going digital (manufacturing, finance, healthcare)"
+      ],
+      "engageCriteria": [
+        "At startups (too early for legacy debt)",
+        "Posts only about new tech trends (not dealing with legacy reality)",
+        "Works at pure tech companies (they have resources in-house)",
+        "Focus on architecture theory (not operational pain)"
+      ],
+      "realQuotes": [
+        "Legacy systems needing modernization.",
+        "Overwhelming technical debt.",
+        "Slow-to-launch timelines.",
+        "Application performance bottlenecks.",
+        "Why is DevOps still such a fragmented, exhausting mess in 2025?"
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [specific legacy system]. We've migrated [similar old tech] to [modern equivalent] 5+ times. Curious - are you planning a full rewrite or incremental modernization?",
+          "whenToUse": "When they mention specific legacy technology",
+          "tone": "Technical peer, experienced"
+        },
+        {
+          "id": 2,
+          "template": "[Name], your post about [technical debt] resonated. The hardest part is always convincing leadership it's worth it, right? How are you making the business case internally?",
+          "whenToUse": "When they discuss technical debt or modernization challenges",
+          "tone": "Understanding the politics"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], question about your [modernization project]. Most CTOs we work with can't pull people off core systems to rebuild. Have you considered a parallel build approach where modernization happens alongside maintenance?",
+          "whenToUse": "When they're stuck between maintaining and modernizing",
+          "tone": "Strategic, problem-solving"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Modernization Reality",
+          "description": "Show how to migrate without breaking production",
+          "examples": [
+            "Case study: How we migrated [company] from .NET Framework to .NET 8 with zero downtime",
+            "Framework: When to rewrite vs. refactor [decision matrix]",
+            "Data: The true cost of legacy systems [calculate opportunity cost]"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Be specific about tech stacks. Use before/after metrics."
+        },
+        {
+          "title": "Technical Debt Strategy",
+          "description": "Give them a playbook for incremental improvement",
+          "examples": [
+            "Process doc: How to tackle tech debt incrementally [step-by-step]",
+            "Hot take: Stop asking for permission to pay down tech debt",
+            "Comparison: Big bang rewrite vs. strangler pattern [risk analysis]"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "CTOs need strategies, not just commiseration."
+        },
+        {
+          "title": "Infrastructure as Competitive Advantage",
+          "description": "Show the business case for modernization",
+          "examples": [
+            "Behind-scenes: What a greenfield project looks like while legacy runs",
+            "Interview: How [CTO] convinced the board to invest in modernization",
+            "Technical deep-dive: Migrating [specific system] - lessons learned"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Show ROI in business terms, not just technical benefits."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Use technical specifics",
+          "why": "'.NET Framework 4.x to .NET 8' attracts right people",
+          "icon": "code"
+        },
+        {
+          "step": 2,
+          "action": "Share war stories",
+          "why": "'We rescued a failed migration and here's what was wrong'",
+          "icon": "shield"
+        },
+        {
+          "step": 3,
+          "action": "Post technical diagrams/architecture",
+          "why": "CTOs love seeing actual technical content",
+          "icon": "git-branch"
+        },
+        {
+          "step": 4,
+          "action": "Engage with DevOps/SRE communities",
+          "why": "Your audience overlaps heavily with infrastructure folks",
+          "icon": "server"
+        },
+        {
+          "step": 5,
+          "action": "Write long-form posts",
+          "why": "Technical leaders read carefully (1000+ words is fine for major topics)",
+          "icon": "file-text"
+        }
+      ],
+      "redFlags": [
+        "Startup or early-stage (no legacy debt yet)",
+        "Pure innovation focus, no maintenance burden (not your problem)",
+        "Posts only about cutting-edge tech (not dealing with legacy reality)",
+        "Recent layoffs or cost-cutting mode (frozen budgets)",
+        "Posts blame engineers for legacy debt (toxic, won't change)"
+      ],
+      "trustBuilders": [
+        "Legacy modernization case studies (specific: 'migrated Company X from...')",
+        "Team credentials (senior engineers who've done this 5+ times)",
+        "Risk mitigation plan (how do we not break production?)",
+        "Phased approach (not 'big bang' rewrites)",
+        "Reference calls with other VPs of Engineering"
+      ],
+      "quickReference": {
+        "decisionSpeed": "SLOW (8-12 weeks typical\u2014lots of stakeholders)",
+        "buyingCommittee": "CTO, Director/VP Infrastructure, sometimes CIO/CISO, CFO for major spend",
+        "whenWarm": [
+          "They've shared specific legacy system challenges",
+          "They ask about your migration approach",
+          "They mention executive pressure to modernize"
+        ]
+      },
+      "profileImage": "/avatars/jerrod-tracy.png"
+    },
+    {
+      "id": "jesse-kinzer",
+      "name": "Jesse Kinzer",
+      "role": "Marketing Leadership Specialist",
+      "avatar": "JK",
+      "icp": {
+        "title": "The Lean Marketing Leader Doing 10 Jobs",
+        "targetRoles": [
+          "Director of Marketing",
+          "Founder (wearing marketing hat)"
+        ],
+        "companyProfile": "Seed to Series B (20-200 employees)",
+        "industries": [
+          "B2B SaaS",
+          "Technical Products",
+          "Product-Led Growth"
+        ],
+        "hotTopics": [
+          "Content strategy",
+          "Design resources",
+          "Standing out",
+          "Marketing on budget",
+          "Explaining complex products"
+        ],
+        "servicesFocus": [
+          "Embedded",
+          "Scoped"
+        ],
+        "primaryService": "Embedded Creative Teams"
+      },
+      "connectCriteria": [
+        "Director of Marketing at early/growth-stage company",
+        "Posts about 'limited resources,' 'design bottlenecks,' or 'content production'",
+        "Mentions 'standing out,' 'crowded market,' or 'explaining our product'",
+        "Works at B2B SaaS or technical companies (need to explain complex products)",
+        "Recently joined company (building their marketing function)"
+      ],
+      "engageCriteria": [
+        "At marketing agencies (they're competitors, not customers)",
+        "Posts only about marketing theory/trends (not operational challenges)",
+        "Works at consumer brands (different problems than B2B)",
+        "Focus on personal brand building as consultant (not in-house marketer)"
+      ],
+      "realQuotes": [
+        "Building marketing systems for lean teams (and when to embed vs. hire).",
+        "Motion design that explains complex products (SaaS, AI, technical offerings).",
+        "Need to stand out in crowded market.",
+        "Limited resources.",
+        "Doing too much themselves."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [standing out/differentiation]. We've helped a bunch of B2B marketers create explainer videos and brand assets that actually make prospects stop scrolling. What's your current approach to standing out visually?",
+          "whenToUse": "When they post about brand differentiation or standing out",
+          "tone": "Helpful, solution-focused"
+        },
+        {
+          "id": 2,
+          "template": "[Name], your post about [doing 10 jobs] hit home. Most marketing directors we work with are drowning in requests\u2014product wants videos, sales wants collateral, CEO wants rebrand. How do you prioritize when everything's urgent?",
+          "whenToUse": "When they mention being overwhelmed or resource-constrained",
+          "tone": "Empathetic, understanding"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], curious question\u2014how long does it take your sales team to explain what [your product] does? Most B2B marketers we work with struggle to explain technical products simply. What's working for you?",
+          "whenToUse": "When they discuss product marketing or sales enablement",
+          "tone": "Peer learning, collaborative"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Scrappy Marketing Wins",
+          "description": "Show how to do enterprise marketing on startup budget",
+          "examples": [
+            "Case study: How [marketer] stood out in crowded market with [specific tactic]",
+            "Budget breakdown: How we created [launch assets] for under $X",
+            "Hot take: Stop doing enterprise marketing on startup budget"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Show actual budgets and results. Marketers love seeing the math."
+        },
+        {
+          "title": "Creative Process Transparency",
+          "description": "Build trust by showing how the sausage is made",
+          "examples": [
+            "Behind-scenes: What our design process looks like [step-by-step with screenshots]",
+            "Before/after: How design changes impacted [metric] for [client]",
+            "Framework: When to hire vs. embed creative talent [decision tree]"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Always include visuals. Marketers want to see the work."
+        },
+        {
+          "title": "Explaining Complex Products",
+          "description": "Position as experts in B2B product marketing",
+          "examples": [
+            "Tutorial: How to create explainer videos that actually explain",
+            "Examples: 5 B2B brands that nail product clarity",
+            "Mistake story: We made [technical product] too simple and lost credibility"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Use examples. Show good vs. bad explanations side-by-side."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Use visuals EVERY TIME",
+          "why": "Marketers are visual - show don't tell",
+          "icon": "image"
+        },
+        {
+          "step": 2,
+          "action": "Share actual work",
+          "why": "Before/afters, case studies, screenshots (proof not promises)",
+          "icon": "eye"
+        },
+        {
+          "step": 3,
+          "action": "Engage with marketing influencers",
+          "why": "April Dunford, Peep Laja, Demand Curve",
+          "icon": "users"
+        },
+        {
+          "step": 4,
+          "action": "Post about budget realities",
+          "why": "'Here's what $10k of design work actually looks like'",
+          "icon": "dollar-sign"
+        },
+        {
+          "step": 5,
+          "action": "Create polls about resource allocation",
+          "why": "'Where does most of your time go? [content/design/strategy/reporting]'",
+          "icon": "bar-chart"
+        }
+      ],
+      "redFlags": [
+        "Marketing agency employee (competitor, not customer)",
+        "Consumer brand marketer (different problems)",
+        "Freelance consultant building personal brand (not in-house)",
+        "Enterprise marketer with big budgets/teams (not resource-constrained)",
+        "Posts only about LinkedIn growth/thought leadership (not operational)"
+      ],
+      "trustBuilders": [
+        "Portfolio work in similar industries (especially B2B SaaS)",
+        "Examples of explaining complex products simply",
+        "Case studies with metrics (not just pretty work)",
+        "Process explanation (not just deliverables)",
+        "Cost comparison vs. full-time hire"
+      ],
+      "quickReference": {
+        "decisionSpeed": "MEDIUM (4-6 weeks typical)",
+        "buyingCommittee": "CEO/founder (budget approval), sometimes VP Sales",
+        "whenWarm": [
+          "They've engaged with your creative content",
+          "They ask about your process or pricing",
+          "They share challenges without prompting"
+        ]
+      },
+      "profileImage": "/avatars/jesse-kinzer.png"
+    },
+    {
+      "id": "ryan-doss",
+      "name": "Ryan Doss",
+      "role": "CTO Specialist",
+      "avatar": "RD",
+      "icp": {
+        "title": "The CTO Balancing Tech Decisions and Team Culture",
+        "targetRoles": [
+          "CTO",
+          "Technical Founders",
+          "Scaling Startups"
+        ],
+        "companyProfile": "Series A to growth (50-500 employees)",
+        "industries": [
+          "SaaS",
+          "Tech Startups",
+          "High-Growth Companies"
+        ],
+        "hotTopics": [
+          "Tech stack decisions",
+          "Team scaling",
+          "Culture",
+          "Technical debt vs innovation",
+          "Test before hire"
+        ],
+        "servicesFocus": [
+          "Embedded",
+          "Recruiting"
+        ],
+        "primaryService": "Embedded Teams"
+      },
+      "connectCriteria": [
+        "CTO at Series A to C company",
+        "Posts about 'tech stack decisions,' 'scaling teams,' or 'hiring challenges'",
+        "Mentions 'technical debt,' 'budget trade-offs,' or 'build vs. buy'",
+        "Shares specific tech they're working with (matches your capabilities)",
+        "Talks about wanting to 'test before hiring' or 'flexible capacity'"
+      ],
+      "engageCriteria": [
+        "At very large enterprises (different decision process)",
+        "Posts only about theory/thought leadership (not hands-on problems)",
+        "Works at agencies/consulting (not your customer)",
+        "Focus purely on recruiting (might need recruiting service only)"
+      ],
+      "realQuotes": [
+        "CTO budget decisions and trade-offs.",
+        "Scaling engineering teams without losing culture.",
+        "Tech stack decisions (when to adopt, when to wait).",
+        "Technical debt \u2014 when to pay it down, when to live with it.",
+        "Want to test engineers before full-time commitment."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [specific tech decision]. We've built production systems on [that stack] 5+ times. Curious what's making you lean toward [option A] vs [option B]?",
+          "whenToUse": "When they're evaluating tech stack choices",
+          "tone": "Technical peer, curious"
+        },
+        {
+          "id": 2,
+          "template": "[Name], your post about [hiring challenges] resonated. Most CTOs we work with wish they could test engineers for 3 months before committing. That's literally our embedded model\u2014curious if that's something you've considered?",
+          "whenToUse": "When they mention hiring challenges or team scaling",
+          "tone": "Helpful, solution-oriented"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], question about your [scaling plans]. When you add engineers, are you looking for permanent headcount or would flexible capacity (scale up for launches, scale down between) make more sense?",
+          "whenToUse": "When they discuss team growth or capacity needs",
+          "tone": "Strategic, understanding tradeoffs"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Tech Stack Reality",
+          "description": "Help CTOs make better technology bets",
+          "examples": [
+            "Decision framework: How to choose tech stack in 2026 [our criteria]",
+            "Case study: Why [company] chose [stack] and what happened",
+            "Hot take: Stop choosing tech because it's trendy"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Be opinionated but data-driven. CTOs want reasoning, not hype."
+        },
+        {
+          "title": "Team Scaling Without Breaking Culture",
+          "description": "Address the hardest part of CTO role",
+          "examples": [
+            "Framework: How to scale from 10\u219250 engineers without losing velocity",
+            "Story: What breaks when you scale teams (and how to prevent it)",
+            "Data: The real cost of bad hires [calculate impact]"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Share both failures and wins. CTOs trust vulnerability."
+        },
+        {
+          "title": "The Embedded Model",
+          "description": "Explain the 'test drive' approach",
+          "examples": [
+            "Explainer: How 'try before you hire' actually works [step-by-step]",
+            "Comparison: Full-time vs. Embedded vs. Contractors [honest breakdown]",
+            "Behind-scenes: A day in the life of an embedded engineer"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Show the actual mechanics. CTOs need to understand how it works."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Use specific tech in posts",
+          "why": "'React vs. Vue in 2026' attracts technical audience",
+          "icon": "code"
+        },
+        {
+          "step": 2,
+          "action": "Share CTO decision-making frameworks",
+          "why": "CTOs collect mental models",
+          "icon": "compass"
+        },
+        {
+          "step": 3,
+          "action": "Engage with CTO influencers",
+          "why": "Charity Majors, Will Larson, Gergely Orosz",
+          "icon": "users"
+        },
+        {
+          "step": 4,
+          "action": "Post transparent cost breakdowns",
+          "why": "'What it actually costs to hire vs. embed'",
+          "icon": "dollar-sign"
+        },
+        {
+          "step": 5,
+          "action": "Write long-form on complex topics",
+          "why": "CTOs read deeply, 800+ words is fine",
+          "icon": "file-text"
+        }
+      ],
+      "redFlags": [
+        "Looking for co-founder or equity partner (not buyer)",
+        "Pre-product or constantly pivoting (too unstable)",
+        "Posts about 'future of engineering' but no execution updates",
+        "Budget-cutting mode or recent layoffs (frozen spending)",
+        "Blame culture posts (will throw contractors under bus)"
+      ],
+      "trustBuilders": [
+        "Technical credentials (who are the actual engineers?)",
+        "Case studies in similar tech stacks",
+        "Team integration story (how do they join Slack, GitHub, standups?)",
+        "Cost comparison vs. full-time hires",
+        "Reference calls with other CTOs"
+      ],
+      "quickReference": {
+        "decisionSpeed": "MEDIUM (4-8 weeks typical)",
+        "buyingCommittee": "Usually solo decision if embedded, CEO if recruiting or strategic",
+        "whenWarm": [
+          "They ask about your team's technical background",
+          "They inquire about the embedded process",
+          "They mention specific capacity needs"
+        ]
+      },
+      "profileImage": "/avatars/ryan-doss.png"
+    },
+    {
+      "id": "scott-blevins",
+      "name": "Scott Blevins",
+      "role": "Innovation & AI Specialist",
+      "avatar": "SB",
+      "icp": {
+        "title": "The Technical Leader Scaling Fast and Breaking Things",
+        "targetRoles": [
+          "CTO",
+          "Scaling Startups",
+          "Technical Founders",
+          "VP of Engineering"
+        ],
+        "companyProfile": "Series B to C (100-1000 employees)",
+        "industries": [
+          "High-Growth SaaS",
+          "AI Companies",
+          "Scale-Ups"
+        ],
+        "hotTopics": [
+          "AI strategy",
+          "Innovation vs operations",
+          "New product expansion",
+          "Scaling chaos",
+          "Board pressure"
+        ],
+        "servicesFocus": [
+          "Embedded"
+        ],
+        "primaryService": "Embedded Innovation Teams"
+      },
+      "connectCriteria": [
+        "CTO/VP Eng at Series B+ high-growth company",
+        "Posts about 'AI strategy,' 'innovation bottleneck,' or 'new products'",
+        "Mentions 'board pressure,' 'need to innovate,' or 'can't pull people from core'",
+        "Shares specific initiatives they're exploring (AI features, new product lines)",
+        "Recently raised funding (have budget, have pressure to show innovation)"
+      ],
+      "engageCriteria": [
+        "At stable/slow-growth companies (not feeling urgency)",
+        "Posts only about team management/culture (not technical innovation)",
+        "Works in highly regulated industries (slow decision cycles)",
+        "Focus purely on operational efficiency (not innovation-focused)"
+      ],
+      "realQuotes": [
+        "AI tooling reviews and recommendations.",
+        "AI news that actually matters for business.",
+        "Evaluating AI ROI \u2014 cutting through the hype.",
+        "Need to innovate offerings.",
+        "Need a team to help expand builders with new products."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [AI strategy]. Most CTOs we work with are getting board pressure to 'do something with AI' but don't want to bet the company on hype. Are you in validation mode or execution mode?",
+          "whenToUse": "When they discuss AI strategy or board pressure",
+          "tone": "Understanding, peer-to-peer"
+        },
+        {
+          "id": 2,
+          "template": "[Name], your post about [new product/innovation] hit home. The classic problem: want to innovate but can't pull people from core product without breaking things. How are you thinking about resourcing?",
+          "whenToUse": "When they mention innovation bottlenecks",
+          "tone": "Empathetic, problem-solving"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], curious question - if you could spin up a dedicated 4-person team tomorrow to work ONLY on [innovation project] with zero impact to core engineering, what would you have them build?",
+          "whenToUse": "Opening conversation about dedicated innovation teams",
+          "tone": "Exploratory, strategic"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "AI Strategy Without Hype",
+          "description": "Cut through the noise with real implementation insights",
+          "examples": [
+            "Framework: How to evaluate AI ROI [our decision criteria]",
+            "Case study: We built [AI feature] and here's what actually worked",
+            "Hot take: Most AI strategies are just press releases"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Be skeptical of hype. CTOs appreciate realistic takes on AI."
+        },
+        {
+          "title": "Innovation at Scale",
+          "description": "Show how to innovate without disrupting core",
+          "examples": [
+            "Process: How to run innovation projects without disrupting core engineering",
+            "Story: What happened when [company] tried to innovate without dedicated team",
+            "Framework: When to build in-house vs. embed a skunkworks team"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Show the actual org structure and resourcing model."
+        },
+        {
+          "title": "Transparent Experiments",
+          "description": "Build credibility through honest reporting",
+          "examples": [
+            "Failure story: We bet on [AI approach] and it failed - here's why",
+            "Behind-scenes: What our AI implementation process looks like [step-by-step]",
+            "Data: AI features that actually moved metrics vs. ones that flopped"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Share both wins and losses. Data trumps opinions."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Post about AI with specifics",
+          "why": "'We implemented [specific AI use case]' not 'AI is the future'",
+          "icon": "cpu"
+        },
+        {
+          "step": 2,
+          "action": "Share real metrics",
+          "why": "'AI feature increased [metric] by X%' - CTOs trust data",
+          "icon": "trending-up"
+        },
+        {
+          "step": 3,
+          "action": "Engage with AI leaders",
+          "why": "Follow Shreyas Doshi on product AI, AI Twitter luminaries",
+          "icon": "users"
+        },
+        {
+          "step": 4,
+          "action": "Create debate posts",
+          "why": "'Unpopular opinion: Most AI features add no value'",
+          "icon": "message-square"
+        },
+        {
+          "step": 5,
+          "action": "Write deep technical posts",
+          "why": "Scaling CTOs read long-form, 1200+ words is fine",
+          "icon": "file-text"
+        }
+      ],
+      "redFlags": [
+        "Pure AI hype (want 'AI' for press, not real use cases)",
+        "No innovation mandate from leadership (won't get budget)",
+        "Core product is on fire (all resources on stability)",
+        "CEO and CTO misaligned on priorities (political nightmare)",
+        "Posts only about cost-cutting or efficiency (not innovation mode)"
+      ],
+      "trustBuilders": [
+        "Case studies from similar-scale companies (Series B/C)",
+        "AI implementation examples with real metrics",
+        "Team credentials (senior engineers, proven AI experience)",
+        "How you integrate without disrupting core engineering",
+        "ROI models (cost vs. value)"
+      ],
+      "quickReference": {
+        "decisionSpeed": "MEDIUM to SLOW (6-12 weeks typical\u2014lots of stakeholders)",
+        "buyingCommittee": "CEO (strategic), CFO (budget), VP Eng (integration), sometimes board",
+        "whenWarm": [
+          "They ask about specific AI implementations",
+          "They share innovation roadmap details",
+          "They mention board or investor pressure"
+        ]
+      },
+      "profileImage": "/avatars/scott-blevins.png"
+    },
+    {
+      "id": "sonya-mead",
+      "name": "Sonya Mead",
+      "role": "Talent & Recruiting Specialist",
+      "avatar": "SM",
+      "icp": {
+        "title": "The Talent Leader Drowning in Sourcing",
+        "targetRoles": [
+          "Founder (wearing HR hat)",
+          "Director of HR"
+        ],
+        "companyProfile": "Seed to growth (20-500 employees)",
+        "industries": [
+          "Tech Startups",
+          "SaaS",
+          "High-Growth Companies"
+        ],
+        "hotTopics": [
+          "Hiring struggles",
+          "Recruiting strategy",
+          "Talent competition",
+          "Sourcing challenges",
+          "Founder time on recruiting"
+        ],
+        "servicesFocus": [
+          "Recruiting"
+        ],
+        "primaryService": "Recruiting"
+      },
+      "connectCriteria": [
+        "Director of HR/People at growth-stage company",
+        "Posts about 'hiring challenges,' 'can't find qualified candidates,' or 'time to fill'",
+        "Mentions 'engineers/designers/technical roles' specifically (your specialty)",
+        "Shares open roles or 'we're hiring' posts (actively recruiting)",
+        "Talks about 'founders spending time recruiting' or 'makers doing HR work'"
+      ],
+      "engageCriteria": [
+        "Posts only about HR compliance/benefits (not recruiting)",
+        "Works at huge enterprises (different recruiting model)",
+        "Solo HR at tiny startup (might not have budget yet)",
+        "Focus on employer branding/culture (not urgent hiring)"
+      ],
+      "realQuotes": [
+        "Hiring without slowing down your builders.",
+        "Makers spending time sourcing talent instead of moving product forward.",
+        "Needing to hire a lot over time.",
+        "No time to sift through applicants.",
+        "Building a recruiting engine from scratch."
+      ],
+      "conversationStarters": [
+        {
+          "id": 1,
+          "template": "Hey [Name], saw your post about [hiring challenge]. Quick question - how much time are your founders/engineers spending on recruiting vs. actually building product? That ratio is usually eye-opening.",
+          "whenToUse": "When they post about hiring or capacity issues",
+          "tone": "Curious, diagnostic"
+        },
+        {
+          "id": 2,
+          "template": "[Name], your post about [application volume] resonated. Most HR leaders we work with are drowning in unqualified applicants. Are you pre-screening technical skills before they hit your founders' calendars?",
+          "whenToUse": "When they mention quality or volume challenges",
+          "tone": "Understanding, helpful"
+        },
+        {
+          "id": 3,
+          "template": "Hey [Name], curious - when you think about your hiring goals, what worries you more: finding candidates or making sure they actually stick around? We've got 90% voluntary retention on our placements because [reason].",
+          "whenToUse": "Opening conversation about quality of hire",
+          "tone": "Strategic, quality-focused"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Recruiting for Lean Teams",
+          "description": "Help founders and small HR teams hire without slowing down",
+          "examples": [
+            "Framework: How to hire without slowing down your builders [step-by-step]",
+            "Data: The real cost of founders doing recruiting [calculate opportunity cost]",
+            "Case study: How [company] filled 5 roles in 8 weeks without internal recruiting team"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Emphasize time savings. Show actual hours saved."
+        },
+        {
+          "title": "Technical Recruiting Reality",
+          "description": "Position as experts in tech hiring",
+          "examples": [
+            "Guide: How to screen technical candidates when you're not technical",
+            "Hot take: Stop requiring 5 years of React experience for mid-level roles",
+            "Behind-scenes: What our technical vetting process actually looks like"
+          ],
+          "frequency": "1-2x per week",
+          "postingTips": "Be opinionated about hiring practices. Show expertise."
+        },
+        {
+          "title": "Quality Over Volume",
+          "description": "Address the pain of unqualified applicants",
+          "examples": [
+            "Story: Why 200 applications doesn't mean 200 candidates",
+            "Framework: How to identify quality candidates in first 30 seconds [checklist]",
+            "Data: Our 90% retention rate and why it matters"
+          ],
+          "frequency": "1x per week",
+          "postingTips": "Lead with retention stat. It's your differentiator."
+        }
+      ],
+      "engagementBoosters": [
+        {
+          "step": 1,
+          "action": "Post open roles with personality",
+          "why": "'Not your typical job post: [creative description]'",
+          "icon": "briefcase"
+        },
+        {
+          "step": 2,
+          "action": "Share candidate market insights",
+          "why": "'What technical candidates actually care about in 2026'",
+          "icon": "users"
+        },
+        {
+          "step": 3,
+          "action": "Engage with HR/recruiting communities",
+          "why": "SHRM, HR Tech, Talent Acquisition groups",
+          "icon": "users"
+        },
+        {
+          "step": 4,
+          "action": "Create polls about hiring challenges",
+          "why": "'What's your biggest recruiting bottleneck? [sourcing/screening/offers/onboarding]'",
+          "icon": "bar-chart"
+        },
+        {
+          "step": 5,
+          "action": "Post behind-the-scenes",
+          "why": "'What our intake call with hiring managers looks like'",
+          "icon": "eye"
+        }
+      ],
+      "redFlags": [
+        "Hiring freeze or recent layoffs (not actively recruiting)",
+        "Only hiring for non-technical roles (not your specialty)",
+        "Toxic culture signals (high Glassdoor complaints, public drama)",
+        "Unrealistic expectations ('need senior engineers for $60k')",
+        "Posts only about HR compliance/benefits (not recruiting-focused)"
+      ],
+      "trustBuilders": [
+        "Sample candidates in their tech stack/industry",
+        "Placement success rate (90% retention stat)",
+        "Process explanation (how do you source/screen?)",
+        "Cost structure (contingency? Retainer?)",
+        "Reference calls with other founders/HR leaders"
+      ],
+      "quickReference": {
+        "decisionSpeed": "MEDIUM (4-6 weeks typical)",
+        "buyingCommittee": "Usually solo decision if HR leader, CEO if founder-led",
+        "whenWarm": [
+          "They've shared specific open roles",
+          "They mention time spent on recruiting",
+          "They've had bad experiences with recruiters"
+        ]
+      },
+      "profileImage": "/avatars/sonya-mead.png"
+    }
+  ]
+}
