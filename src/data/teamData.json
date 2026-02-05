@@ -161,8 +161,7 @@
           "They ask questions about your work",
           "They've shared their challenges without prompting"
         ]
-      },
-      "profileImage": "/avatars/austin-daniel.png"
+      }
     },
     {
       "id": "austin-eidson",
@@ -324,8 +323,7 @@
           "They ask about your process or team",
           "They mention resource constraints unprompted"
         ]
-      },
-      "profileImage": "/avatars/austin-eidson.png"
+      }
     },
     {
       "id": "cyril-jones",
@@ -487,8 +485,7 @@
           "They mention specific timelines or milestones",
           "They've had bad experiences with other agencies"
         ]
-      },
-      "profileImage": "/avatars/cyril-jones.png"
+      }
     },
     {
       "id": "dom-paulk",
@@ -649,8 +646,7 @@
           "They respond to questions about their process",
           "They mention capacity gaps unprompted"
         ]
-      },
-      "profileImage": "/avatars/dom-paulk.png"
+      }
     },
     {
       "id": "jerrod-tracy",
@@ -813,8 +809,7 @@
           "They ask about your migration approach",
           "They mention executive pressure to modernize"
         ]
-      },
-      "profileImage": "/avatars/jerrod-tracy.png"
+      }
     },
     {
       "id": "jesse-kinzer",
@@ -975,8 +970,7 @@
           "They ask about your process or pricing",
           "They share challenges without prompting"
         ]
-      },
-      "profileImage": "/avatars/jesse-kinzer.png"
+      }
     },
     {
       "id": "ryan-doss",
@@ -1138,8 +1132,7 @@
           "They inquire about the embedded process",
           "They mention specific capacity needs"
         ]
-      },
-      "profileImage": "/avatars/ryan-doss.png"
+      }
     },
     {
       "id": "scott-blevins",
@@ -1301,8 +1294,7 @@
           "They share innovation roadmap details",
           "They mention board or investor pressure"
         ]
-      },
-      "profileImage": "/avatars/scott-blevins.png"
+      }
     },
     {
       "id": "sonya-mead",
@@ -1462,8 +1454,7 @@
           "They mention time spent on recruiting",
           "They've had bad experiences with recruiters"
         ]
-      },
-      "profileImage": "/avatars/sonya-mead.png"
+      }
     }
   ]
 }

@@ -1,1 +1,1 @@
-These avatar assets are SVG placeholders stored as text (with a .png extension) to avoid binary file handling limits in this environment. Replace them with real 200x200px JPG/PNG headshots when available.
+Avatar images have been removed to avoid binary upload issues in this environment. Add 200x200px JPG/PNG headshots here and reintroduce `profileImage` paths in `src/data/teamData.json` when ready.
