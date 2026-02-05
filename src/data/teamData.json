@@ -1,0 +1,914 @@
+{
+  "teamMembers": [
+    {
+      "id": "austin-daniel",
+      "name": "Austin Daniel",
+      "role": "CEO/Founder Specialist",
+      "icp": {
+        "title": "The Growth-Obsessed Founder",
+        "targetRoles": ["CEO", "Founder", "COO"],
+        "companyStage": "Seed to Series C SaaS/tech startups (5-50 employees)",
+        "theyrePostingAbout": [
+          "Fundraising struggles",
+          "Hiring engineers",
+          "Product launches",
+          "Founder burnout",
+          "Team capacity issues"
+        ],
+        "servicesFocus": ["Embedded", "Scoped"]
+      },
+      "connectCriteria": [
+        "Founding CEO or technical co-founder at early-stage SaaS",
+        "Posts about hiring engineers, building MVP, or scaling product",
+        "Raised seed/Series A in last 12 months",
+        "Mentions 'technical debt,' 'need to ship faster,' or 'team capacity'",
+        "Active in SaaStr, YC, or similar communities"
+      ],
+      "engageCriteria": [
+        "Pre-revenue/pre-product (too early)",
+        "Posts general startup advice (not specific pain)",
+        "Serial entrepreneur not actively building",
+        "Focus only on fundraising/networking content"
+      ],
+      "realQuotes": [
+        "The building-as-procrastination trap is so real. I finally started doing customer calls when I made it a game.",
+        "I'd be a billionaire if my CTO and I could have gotten along better.",
+        "Behind every successful founder is paralyzing self-doubt, money issues, failed products.",
+        "The startup problem is fundamentally a search problem under resource constraint.",
+        "I realized most founders obsess over signups but ignore what happens in the first 3 minutes after login."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], saw your post about [specific challenge]. That's the exact problem we help founders solve at Midwestern. Curious—are you handling [specific task] internally or bringing in outside help?",
+          "whenToUse": "When they post about capacity/hiring challenges"
+        },
+        {
+          "template": "[Name], been following your journey with [company]. We work with a lot of founders at your stage (Series A, scaling eng team) and the 'need to ship vs. need to hire' tension is real. How are you thinking about that?",
+          "whenToUse": "After they've posted about team/scaling issues"
+        },
+        {
+          "template": "Hey [Name], saw you're [building X/hiring Y]. We've helped a bunch of startups like [similar company] navigate that exact phase. Happy to share what worked for them if you ever want to chat—no pitch, just founder to founder.",
+          "whenToUse": "Soft opener when relationship is warming up"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Speed Wins Stories",
+          "examples": [
+            "Case study: How [startup] shipped their MVP in 6 weeks instead of 6 months",
+            "Behind-the-scenes: What a scoped project actually looks like [screenshots]",
+            "Data point: The average cost of a 6-month hiring delay"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Founder Realities",
+          "examples": [
+            "Hot take: Stop hiring full-time engineers for MVP validation",
+            "Poll: What's slowing you down more: unclear requirements or team capacity?",
+            "Carousel: 5 signs you need embedded engineers, not full-time hires"
+          ],
+          "frequency": "1-2x per week"
+        },
+        {
+          "title": "Transparent Process",
+          "examples": [
+            "Here's our exact scoping process [step by step]",
+            "What it looks like to integrate into a client's Slack",
+            "We lost a client because [lesson learned]"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Post at 8am or 12pm CT when founders check LinkedIn with coffee/lunch",
+        "Start posts with hooks: 'Unpopular opinion:' or 'Hard truth:' or 'Quick story:'",
+        "End posts with questions to trigger comments",
+        "Comment on 5-10 founder posts BEFORE posting your own",
+        "Tag relevant people/communities when appropriate (not spammy)"
+      ],
+      "redFlags": [
+        "Pre-idea stage (no product to build)",
+        "No funding/revenue signals (can't afford you)",
+        "Looking for 'co-founder' or 'equity partner'",
+        "Non-technical founder with no CTO (needs recruiting first)",
+        "Focus on thought leadership, not building"
+      ],
+      "trustBuilders": [
+        "Peer validation from similar startups",
+        "Case studies from their stage/industry",
+        "Team credentials (who are the actual developers?)",
+        "Speed guarantee and timeline proof",
+        "Portfolio of similar builds"
+      ]
+    },
+    {
+      "id": "morgan-lee",
+      "name": "Morgan Lee",
+      "role": "Product Strategy Lead",
+      "icp": {
+        "title": "The Product-Led Operator",
+        "targetRoles": ["Product Lead", "COO", "Head of Product"],
+        "companyStage": "Series A to Series D product organizations (20-200 employees)",
+        "theyrePostingAbout": [
+          "Roadmap prioritization",
+          "Customer feedback loops",
+          "Product launches",
+          "Retention metrics",
+          "Cross-functional alignment"
+        ],
+        "servicesFocus": ["Scoped", "Embedded"]
+      },
+      "connectCriteria": [
+        "Owns roadmap or product delivery outcomes",
+        "Mentions shipping velocity or team capacity",
+        "Posts about user research or retention",
+        "Recently announced a new product line",
+        "Active in Product-Led Growth communities"
+      ],
+      "engageCriteria": [
+        "General product inspiration posts",
+        "Early ideation without a team",
+        "Consultants without delivery responsibility",
+        "Focuses only on fundraising"
+      ],
+      "realQuotes": [
+        "Our biggest struggle is aligning the product and engineering backlogs.",
+        "I need proof that a team can ship in weeks, not quarters.",
+        "Retention fell because we didn't onboard users fast enough.",
+        "We have more ideas than execution capacity.",
+        "Every roadmap cut is political."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], loved your point about roadmap trade-offs. We help product teams ship focused experiments quickly—curious how you're tackling velocity vs. quality right now?",
+          "whenToUse": "When they discuss prioritization"
+        },
+        {
+          "template": "[Name], saw you mention onboarding drop-off. We've helped teams fix that by shipping tight onboarding flows in weeks. Want to compare notes?",
+          "whenToUse": "After they mention retention or onboarding"
+        },
+        {
+          "template": "Hey [Name], big fan of your product insights. We work with product leads who need an extra embedded squad to hit launch dates—happy to share how it works.",
+          "whenToUse": "Soft outreach when building rapport"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Experiment Velocity",
+          "examples": [
+            "How to ship a 2-week product experiment",
+            "Checklist: Product launch readiness",
+            "The cost of delayed roadmap bets"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Customer Proof",
+          "examples": [
+            "Short case study: onboarding uplift",
+            "Voice-of-customer snippets",
+            "Poll: biggest retention blocker"
+          ],
+          "frequency": "1-2x per week"
+        },
+        {
+          "title": "Operational Clarity",
+          "examples": [
+            "How we align product + engineering",
+            "Scoping in 5 steps",
+            "Why embedded teams reduce friction"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Engage with product lead posts before sharing your own",
+        "Use metrics in hooks (e.g., 18% retention lift)",
+        "Ask for opinions on roadmap trade-offs",
+        "Share quick before/after examples",
+        "Tag PM communities sparingly"
+      ],
+      "redFlags": [
+        "No dedicated product owner",
+        "Pre-product idea stage",
+        "Only hiring full-time, no flexibility",
+        "No budget for delivery"
+      ],
+      "trustBuilders": [
+        "Launch timelines from similar teams",
+        "Proof of product experimentation",
+        "Clear delivery process",
+        "Access to senior product guidance",
+        "Case studies with metrics"
+      ]
+    },
+    {
+      "id": "jordan-patel",
+      "name": "Jordan Patel",
+      "role": "RevOps Connector",
+      "icp": {
+        "title": "The Revenue Systems Builder",
+        "targetRoles": ["RevOps", "Sales Ops", "CRO"],
+        "companyStage": "Growth-stage B2B SaaS (50-300 employees)",
+        "theyrePostingAbout": [
+          "CRM hygiene",
+          "Pipeline velocity",
+          "Sales automation",
+          "Forecast accuracy",
+          "Customer expansion"
+        ],
+        "servicesFocus": ["Scoped"]
+      },
+      "connectCriteria": [
+        "Owns systems for sales or revenue operations",
+        "Talks about pipeline or CRM tooling",
+        "Mentions tech stack consolidation",
+        "Looking to automate manual workflows",
+        "Active in RevOps communities"
+      ],
+      "engageCriteria": [
+        "Solo consultants without a team",
+        "Early-stage founders without sales motion",
+        "Only posts generic sales advice",
+        "No ownership of systems"
+      ],
+      "realQuotes": [
+        "We spend too much time cleaning CRM data.",
+        "Forecasting feels like educated guessing.",
+        "We need automation but don't have bandwidth.",
+        "Sales enablement tools aren't integrated.",
+        "Our handoffs are leaking revenue."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], your post about CRM hygiene hit home. We build scoped automation that clears manual cleanup—how are you approaching it this quarter?",
+          "whenToUse": "When they discuss data cleanup"
+        },
+        {
+          "template": "[Name], saw your take on forecasting. We've helped RevOps teams build lightweight data workflows fast—want to swap notes?",
+          "whenToUse": "After forecasting discussions"
+        },
+        {
+          "template": "Hey [Name], we work with RevOps leaders to streamline sales tooling without a full rebuild. Happy to share a quick playbook if helpful.",
+          "whenToUse": "Soft outreach"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Automation Wins",
+          "examples": [
+            "Before/after: pipeline automation",
+            "Time saved by cleaning CRM workflows",
+            "Checklist: RevOps automation priorities"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Revenue Clarity",
+          "examples": [
+            "Forecast accuracy playbook",
+            "Example dashboards that drive revenue",
+            "Handoff fixes between sales + CS"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Process Alignment",
+          "examples": [
+            "How we scope RevOps projects",
+            "Common CRM pitfalls",
+            "What 'good data' looks like"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Share short automation wins",
+        "Ask about tooling stacks",
+        "Post quick diagnostic checklists",
+        "Highlight ROI from process fixes",
+        "Comment on RevOps newsletter threads"
+      ],
+      "redFlags": [
+        "No CRM in place",
+        "No data ownership",
+        "Only wants full-time hires",
+        "Budget locked for the year"
+      ],
+      "trustBuilders": [
+        "Workflow automation demos",
+        "Prior RevOps case studies",
+        "Tooling certifications",
+        "Clear scope + timeline",
+        "Reporting improvements"
+      ]
+    },
+    {
+      "id": "samantha-cho",
+      "name": "Samantha Cho",
+      "role": "Brand & Marketing Lead",
+      "icp": {
+        "title": "The Demand Gen Builder",
+        "targetRoles": ["VP Marketing", "Demand Gen", "CMO"],
+        "companyStage": "B2B SaaS marketing teams (30-150 employees)",
+        "theyrePostingAbout": [
+          "Paid media performance",
+          "Attribution",
+          "Content pipelines",
+          "Conversion rate optimization",
+          "Event activation"
+        ],
+        "servicesFocus": ["Embedded", "Scoped"]
+      },
+      "connectCriteria": [
+        "Owns demand gen targets",
+        "Talks about pipeline influence",
+        "Mentions tracking attribution",
+        "Building content at scale",
+        "Active in marketing leader communities"
+      ],
+      "engageCriteria": [
+        "Freelance marketers",
+        "Early-stage founders without marketing team",
+        "Only posts inspiration",
+        "No performance accountability"
+      ],
+      "realQuotes": [
+        "Our CPL is rising and we need creative quickly.",
+        "Attribution is messy across channels.",
+        "We can't scale content without burning out the team.",
+        "We need a site refresh before next quarter.",
+        "Events are great, but follow-up is weak."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], your CPL comment resonated. We help marketing teams ship fast CRO experiments—how are you tackling performance dips right now?",
+          "whenToUse": "When they discuss paid performance"
+        },
+        {
+          "template": "[Name], saw your point on attribution chaos. We've helped teams build clearer reporting without a full rebuild—want a quick rundown?",
+          "whenToUse": "After attribution posts"
+        },
+        {
+          "template": "Hey [Name], we partner with demand gen leads to scale content ops via embedded teams. Happy to share examples if useful.",
+          "whenToUse": "Soft outreach"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Performance Experiments",
+          "examples": [
+            "CRO test ideas for SaaS landing pages",
+            "Before/after ads with lift metrics",
+            "How to shorten feedback loops"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Content Systems",
+          "examples": [
+            "How to repurpose one webinar into 6 assets",
+            "Editorial calendar templates",
+            "Pipeline-driven content strategy"
+          ],
+          "frequency": "1-2x per week"
+        },
+        {
+          "title": "Growth Ops",
+          "examples": [
+            "Attribution guardrails",
+            "Event follow-up workflows",
+            "Marketing ops fixes that save time"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Respond to marketing benchmark posts",
+        "Use data points in hooks",
+        "Share creative teardown snippets",
+        "Ask what conversion blockers people see",
+        "Post quick win case studies"
+      ],
+      "redFlags": [
+        "No marketing budget",
+        "Only wants brand awareness",
+        "No conversion data",
+        "Team is in hiring freeze"
+      ],
+      "trustBuilders": [
+        "Performance case studies",
+        "Clear attribution approach",
+        "Examples of scaled content",
+        "Access to senior strategists",
+        "Timeline to impact"
+      ]
+    },
+    {
+      "id": "carlos-mendez",
+      "name": "Carlos Mendez",
+      "role": "Engineering Capacity Strategist",
+      "icp": {
+        "title": "The Scaling Engineering Leader",
+        "targetRoles": ["VP Engineering", "CTO", "Engineering Manager"],
+        "companyStage": "Growth-stage SaaS (50-250 employees)",
+        "theyrePostingAbout": [
+          "Hiring bottlenecks",
+          "Tech debt",
+          "Delivery timelines",
+          "Developer productivity",
+          "Infrastructure upgrades"
+        ],
+        "servicesFocus": ["Embedded", "Recruiting"]
+      },
+      "connectCriteria": [
+        "Owns hiring or delivery timelines",
+        "Mentions capacity or backlog issues",
+        "Active in engineering leader groups",
+        "Discusses tech debt remediation",
+        "Announced new product initiatives"
+      ],
+      "engageCriteria": [
+        "Solo engineers without team",
+        "Early-stage without funding",
+        "Only posts technical tutorials",
+        "No current hiring or scaling needs"
+      ],
+      "realQuotes": [
+        "We have too much work and not enough senior engineers.",
+        "Our backlog is full of tech debt tickets.",
+        "Hiring is taking 4+ months per role.",
+        "We need to ship fast without breaking production.",
+        "Our roadmap is blocked by infrastructure work."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], your post about hiring lead time is real. We embed senior engineers quickly so teams can ship while hiring—how are you balancing that?",
+          "whenToUse": "When they mention hiring delays"
+        },
+        {
+          "template": "[Name], saw your comments on tech debt. We've helped teams knock out debt with scoped projects in parallel—want to compare approaches?",
+          "whenToUse": "After tech debt discussions"
+        },
+        {
+          "template": "Hey [Name], we support engineering leaders with embedded squads during peak roadmap pushes. Happy to share what that looks like.",
+          "whenToUse": "Soft outreach"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Capacity Relief",
+          "examples": [
+            "How to ship without burning out engineers",
+            "Embedded team ROI examples",
+            "Timeline comparisons: hire vs. embed"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Technical Strategy",
+          "examples": [
+            "Managing tech debt with scoped sprints",
+            "Playbook: roadmap unblockers",
+            "Engineering productivity signals"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Recruiting Reality",
+          "examples": [
+            "Why hiring takes longer than planned",
+            "Benchmarks for engineering pipeline",
+            "How to keep delivery moving"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Comment on engineering leadership posts",
+        "Share delivery timeline tips",
+        "Use numbers in hooks",
+        "Offer playbooks for scaling",
+        "Highlight team integration stories"
+      ],
+      "redFlags": [
+        "No engineering leadership",
+        "Only wants equity-based help",
+        "No clear roadmap",
+        "In hiring freeze"
+      ],
+      "trustBuilders": [
+        "Senior engineer bios",
+        "Delivery case studies",
+        "Integration process details",
+        "Security and compliance proof",
+        "References from engineering leaders"
+      ]
+    },
+    {
+      "id": "priya-singh",
+      "name": "Priya Singh",
+      "role": "Customer Success Partner",
+      "icp": {
+        "title": "The Retention Guardian",
+        "targetRoles": ["VP Customer Success", "CS Ops", "Head of Support"],
+        "companyStage": "Subscription businesses (40-200 employees)",
+        "theyrePostingAbout": [
+          "Churn reduction",
+          "Onboarding",
+          "Customer health scores",
+          "Expansion revenue",
+          "Support automation"
+        ],
+        "servicesFocus": ["Scoped"]
+      },
+      "connectCriteria": [
+        "Owns retention or customer health",
+        "Mentions churn or expansion",
+        "Building onboarding programs",
+        "Looking for automation",
+        "Active in CS communities"
+      ],
+      "engageCriteria": [
+        "Early-stage without customers",
+        "Only posts motivational quotes",
+        "No ownership of customer outcomes",
+        "Consultants without delivery"
+      ],
+      "realQuotes": [
+        "Churn is creeping up and we need to act fast.",
+        "Onboarding takes too long for new customers.",
+        "We lack a single source of truth for health scores.",
+        "Support is overwhelmed during launches.",
+        "We need better expansion plays."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], your churn comment hit home. We help CS teams ship onboarding improvements fast—how are you tackling retention right now?",
+          "whenToUse": "When they mention churn"
+        },
+        {
+          "template": "[Name], saw your post about health scores. We've helped teams build lightweight dashboards quickly—want to see an example?",
+          "whenToUse": "After health score discussions"
+        },
+        {
+          "template": "Hey [Name], we partner with CS leaders to automate support workflows without disrupting teams. Happy to share ideas.",
+          "whenToUse": "Soft outreach"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Retention Plays",
+          "examples": [
+            "Churn reduction case study",
+            "Onboarding sequence ideas",
+            "Customer success quick wins"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Operational Visibility",
+          "examples": [
+            "Health score framework",
+            "Support automation checklist",
+            "Expansion signal tracking"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Customer Moments",
+          "examples": [
+            "Stories from customer journey",
+            "CS enablement templates",
+            "How to scale onboarding"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Ask about churn benchmarks",
+        "Share onboarding templates",
+        "Highlight quick success stories",
+        "Comment on CS ops posts",
+        "Use metrics in openings"
+      ],
+      "redFlags": [
+        "No CS team",
+        "No customer data",
+        "Only wants advisory help",
+        "Budget locked"
+      ],
+      "trustBuilders": [
+        "Retention case studies",
+        "Automation workflow demos",
+        "CS playbooks",
+        "Timeline to impact",
+        "References from CS leaders"
+      ]
+    },
+    {
+      "id": "eli-brooks",
+      "name": "Eli Brooks",
+      "role": "Operations & Finance",
+      "icp": {
+        "title": "The Process-Driven Operator",
+        "targetRoles": ["COO", "VP Ops", "Finance Lead"],
+        "companyStage": "Scaling services businesses (25-150 employees)",
+        "theyrePostingAbout": [
+          "Operational efficiency",
+          "Margin improvement",
+          "Systems upgrades",
+          "Hiring plans",
+          "Forecasting"
+        ],
+        "servicesFocus": ["Scoped", "Embedded"]
+      },
+      "connectCriteria": [
+        "Owns operational efficiency",
+        "Mentions margin or utilization",
+        "Looking to streamline processes",
+        "Expanding headcount",
+        "Active in operator communities"
+      ],
+      "engageCriteria": [
+        "Solo founders without ops",
+        "Only posts inspiration",
+        "No process ownership",
+        "Pre-revenue"
+      ],
+      "realQuotes": [
+        "We need clearer visibility into capacity.",
+        "Margins are compressed and we need fixes.",
+        "Manual processes slow us down.",
+        "Forecasting is reactive instead of proactive.",
+        "Hiring is ahead of process maturity."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], your post about margin pressure resonates. We help ops teams streamline workflows fast—how are you addressing it this quarter?",
+          "whenToUse": "When they discuss margins"
+        },
+        {
+          "template": "[Name], saw your note on forecasting challenges. We've helped teams build automated reporting quickly—want to see a sample?",
+          "whenToUse": "After forecasting posts"
+        },
+        {
+          "template": "Hey [Name], we partner with operators to build scalable processes without slowing growth. Happy to share a playbook.",
+          "whenToUse": "Soft outreach"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Operational Wins",
+          "examples": [
+            "Process automation examples",
+            "How to improve utilization",
+            "Margin improvement playbook"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Forecasting Clarity",
+          "examples": [
+            "Dashboards for capacity planning",
+            "Simple forecasting frameworks",
+            "How to align ops + finance"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Scalable Systems",
+          "examples": [
+            "Systems that scale with headcount",
+            "Process maturity checklists",
+            "Automation ROI examples"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Use ROI metrics in posts",
+        "Share short ops playbooks",
+        "Comment on scaling stories",
+        "Ask about capacity planning",
+        "Highlight process bottlenecks"
+      ],
+      "redFlags": [
+        "No operational owner",
+        "No visibility into margins",
+        "Only wants advisory",
+        "Budget freeze"
+      ],
+      "trustBuilders": [
+        "Operations case studies",
+        "Clear process framework",
+        "Timeline to impact",
+        "References from operators",
+        "Benchmarks"
+      ]
+    },
+    {
+      "id": "taylor-kim",
+      "name": "Taylor Kim",
+      "role": "Growth Partnerships",
+      "icp": {
+        "title": "The Partnership Multiplier",
+        "targetRoles": ["Partnerships", "BD", "Growth Lead"],
+        "companyStage": "B2B SaaS partnerships orgs (20-150 employees)",
+        "theyrePostingAbout": [
+          "Channel growth",
+          "Partner enablement",
+          "Co-marketing",
+          "Integrations",
+          "Pipeline sourcing"
+        ],
+        "servicesFocus": ["Scoped"]
+      },
+      "connectCriteria": [
+        "Owns partnerships or BD targets",
+        "Talks about integration roadmaps",
+        "Active in partner ecosystems",
+        "Launching new alliances",
+        "Mentions enablement needs"
+      ],
+      "engageCriteria": [
+        "Only posts generic networking",
+        "Early-stage founders without channels",
+        "No partner strategy",
+        "Consultants without ownership"
+      ],
+      "realQuotes": [
+        "Partner enablement always lags behind.",
+        "We need faster integration timelines.",
+        "Co-marketing isn't driving pipeline yet.",
+        "We have too many partners and no prioritization.",
+        "We need a cleaner partner onboarding flow."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], your post about partner enablement is spot on. We've helped teams build partner onboarding flows quickly—how are you tackling it?",
+          "whenToUse": "When they discuss enablement"
+        },
+        {
+          "template": "[Name], saw your note on integration timelines. We support teams with scoped dev sprints to speed them up—want to swap ideas?",
+          "whenToUse": "After integration posts"
+        },
+        {
+          "template": "Hey [Name], we help partnerships teams operationalize co-marketing with embedded support. Happy to share a framework.",
+          "whenToUse": "Soft outreach"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "Partner Enablement",
+          "examples": [
+            "Onboarding playbooks",
+            "Co-marketing asset examples",
+            "Partner activation metrics"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Integration Velocity",
+          "examples": [
+            "How to ship integrations faster",
+            "Scoping partner dev work",
+            "Integration case studies"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Ecosystem Growth",
+          "examples": [
+            "Partner prioritization matrix",
+            "Channel pipeline reporting",
+            "How to scale alliances"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Comment on partner ecosystem posts",
+        "Share integration timelines",
+        "Ask about channel ROI",
+        "Highlight onboarding wins",
+        "Post co-marketing examples"
+      ],
+      "redFlags": [
+        "No partner strategy",
+        "No technical resources",
+        "Only wants introductions",
+        "Budget freeze"
+      ],
+      "trustBuilders": [
+        "Integration case studies",
+        "Partner enablement playbooks",
+        "Delivery timelines",
+        "References from alliances teams",
+        "Clear scope"
+      ]
+    },
+    {
+      "id": "riley-ward",
+      "name": "Riley Ward",
+      "role": "Founder Outreach",
+      "icp": {
+        "title": "The Early-Stage Builder",
+        "targetRoles": ["Founder", "CEO", "CTO"],
+        "companyStage": "Pre-seed to Series A startups (2-25 employees)",
+        "theyrePostingAbout": [
+          "MVP building",
+          "Customer discovery",
+          "Fundraising prep",
+          "Go-to-market testing",
+          "Hiring first engineers"
+        ],
+        "servicesFocus": ["Scoped", "Recruiting"]
+      },
+      "connectCriteria": [
+        "Actively building MVP",
+        "Talks about speed-to-market",
+        "Recently raised pre-seed or seed",
+        "Mentions product validation",
+        "Active in founder communities"
+      ],
+      "engageCriteria": [
+        "Idea stage only",
+        "No funding signal",
+        "Only networking posts",
+        "Looking for co-founder"
+      ],
+      "realQuotes": [
+        "We need an MVP in weeks, not months.",
+        "Customer interviews keep changing the roadmap.",
+        "Fundraising depends on getting product traction.",
+        "We're stuck hiring the first engineers.",
+        "We need to validate fast before running out of runway."
+      ],
+      "conversationStarters": [
+        {
+          "template": "Hey [Name], saw your MVP timeline post. We help founders ship fast without full-time hires—how are you approaching build vs. hire?",
+          "whenToUse": "When they discuss MVP speed"
+        },
+        {
+          "template": "[Name], loved your note on customer discovery. We've helped teams iterate quickly with scoped sprints—want to compare notes?",
+          "whenToUse": "After validation posts"
+        },
+        {
+          "template": "Hey [Name], we partner with early-stage founders to get MVPs live quickly. Happy to share what that looks like.",
+          "whenToUse": "Soft outreach"
+        }
+      ],
+      "contentPillars": [
+        {
+          "title": "MVP Momentum",
+          "examples": [
+            "How to ship an MVP in 6 weeks",
+            "Founder lessons from rapid builds",
+            "Checklist: MVP validation"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Founder Reality",
+          "examples": [
+            "What slows down early-stage builds",
+            "Fundraising vs. building tension",
+            "How to avoid overbuilding"
+          ],
+          "frequency": "1x per week"
+        },
+        {
+          "title": "Recruiting Help",
+          "examples": [
+            "Hiring first engineers playbook",
+            "When to use embedded teams",
+            "The cost of delayed hiring"
+          ],
+          "frequency": "1x per week"
+        }
+      ],
+      "engagementBoosters": [
+        "Engage with founder progress posts",
+        "Share quick MVP tips",
+        "Use hooks about speed",
+        "Ask about runway and timelines",
+        "Highlight rapid build stories"
+      ],
+      "redFlags": [
+        "No funding signal",
+        "Idea stage only",
+        "Looking for co-founder",
+        "Only wants advice"
+      ],
+      "trustBuilders": [
+        "MVP delivery case studies",
+        "Founder references",
+        "Clear build timelines",
+        "Team credentials",
+        "Proof of traction support"
+      ]
+    }
+  ]
+}
