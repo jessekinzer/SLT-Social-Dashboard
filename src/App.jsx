@@ -346,61 +346,34 @@ function EmailGate({ onSuccess }) {
 }
 
 // ---------------------------------------------------------------------------
-// Profile Avatar Component (with upload on hover)
+// Profile Avatar Component (displays profile image or initials)
 // ---------------------------------------------------------------------------
 
 function ProfileAvatar({ member, size = "large" }) {
-  const [profileImage, setProfileImage] = useState(() => getProfileImage(member.id));
-  const inputRef = useRef(null);
-  const { isDark } = useTheme();
-
-  const handleUpload = (e) => {
-    e.stopPropagation();
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result;
-      setProfileImage(dataUrl);
-      saveProfileImage(member.id, dataUrl);
-    };
-    reader.readAsDataURL(file);
-  };
-
   const sizeClasses = size === "large" ? "h-20 w-20" : "h-16 w-16";
   const textSize = size === "large" ? "text-2xl" : "text-xl";
 
   return (
-    <div className={`group relative ${sizeClasses} flex-shrink-0 overflow-hidden`}>
-      {profileImage ? (
+    <div className={`${sizeClasses} flex-shrink-0 overflow-hidden`}>
+      {member.profileImage ? (
         <img
-          src={profileImage}
+          src={member.profileImage}
           alt={member.name}
           className="h-full w-full object-cover"
+          onError={(e) => {
+            e.target.style.display = "none";
+            e.target.nextSibling.style.display = "flex";
+          }}
         />
-      ) : (
-        <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-[#2337F1] to-[#1a2ac7]">
-          <span className={`${textSize} font-semibold text-white`}>
-            {member.avatar || member.name.split(" ").map((n) => n[0]).join("")}
-          </span>
-        </div>
-      )}
-      
-      {/* Upload overlay on hover */}
-      <label
-        className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/60 opacity-0 transition-opacity group-hover:opacity-100"
-        onClick={(e) => e.stopPropagation()}
+      ) : null}
+      <div
+        className="h-full w-full items-center justify-center bg-gradient-to-br from-[#2337F1] to-[#1a2ac7]"
+        style={{ display: member.profileImage ? "none" : "flex" }}
       >
-        <Camera size={20} className="text-white" />
-        <input
-          ref={inputRef}
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={handleUpload}
-          data-testid={`upload-avatar-${member.id}`}
-        />
-      </label>
+        <span className={`${textSize} font-semibold text-white`}>
+          {member.avatar || member.name.split(" ").map((n) => n[0]).join("")}
+        </span>
+      </div>
     </div>
   );
 }
