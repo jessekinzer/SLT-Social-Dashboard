@@ -2,7 +2,6 @@ import { Routes, Route, Link, useNavigate, useParams } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowRight,
-  BadgeCheck,
   BookOpen,
   CheckCircle2,
   ChevronDown,
@@ -13,7 +12,6 @@ import {
   Moon,
   Sparkles,
   Sun,
-  TriangleAlert,
   Users,
 } from "lucide-react";
 import teamData from "./data/teamData.json";
@@ -75,6 +73,18 @@ const weeklyEngagementChecklist = [
   { id: "dm-conversations", task: "Send 2-3 helpful DMs to recent connections (no pitching!)" },
   { id: "weekend-review", task: "Review your engagement: What posts got the most interaction?" },
 ];
+
+const realQuotesTitles = {
+  "austin-daniel": "What Founding CEOs Are Actually Saying",
+  "austin-eidson": "What Design Leaders Are Actually Saying",
+  "cyril-jones": "What Technical Founders Are Actually Saying",
+  "dom-paulk": "What Product Leaders Are Actually Saying",
+  "jerrod-tracy": "What Engineering Leaders Are Actually Saying",
+  "jesse-kinzer": "What Marketing Directors Are Actually Saying",
+  "ryan-doss": "What CTOs Are Actually Saying",
+  "scott-blevins": "What Innovation Leaders Are Actually Saying",
+  "sonya-mead": "What Talent Leaders Are Actually Saying",
+};
 
 // ---------------------------------------------------------------------------
 // Utilities
@@ -217,6 +227,54 @@ function useTheme() {
   return { theme, isDark: theme === "dark", toggleTheme };
 }
 
+function HeroIllustration({ isDark }) {
+  const nodeColor = "#2337F1";
+  const lineColor = isDark ? "rgba(35,55,241,0.3)" : "rgba(35,55,241,0.2)";
+  const accentColor = "#C7FA50";
+
+  return (
+    <div className="mx-auto mb-10 w-full max-w-md">
+      <svg viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="80" y1="90" x2="200" y2="50" stroke={lineColor} strokeWidth="2" />
+        <line x1="200" y1="50" x2="320" y2="90" stroke={lineColor} strokeWidth="2" />
+        <line x1="80" y1="90" x2="200" y2="130" stroke={lineColor} strokeWidth="2" />
+        <line x1="200" y1="130" x2="320" y2="90" stroke={lineColor} strokeWidth="2" />
+        <line x1="200" y1="50" x2="200" y2="130" stroke={lineColor} strokeWidth="1.5" />
+        <line x1="40" y1="60" x2="80" y2="90" stroke={lineColor} strokeWidth="1.5" />
+        <line x1="40" y1="130" x2="80" y2="90" stroke={lineColor} strokeWidth="1.5" />
+        <line x1="360" y1="55" x2="320" y2="90" stroke={lineColor} strokeWidth="1.5" />
+        <line x1="360" y1="130" x2="320" y2="90" stroke={lineColor} strokeWidth="1.5" />
+        <line x1="140" y1="30" x2="200" y2="50" stroke={lineColor} strokeWidth="1" />
+        <line x1="260" y1="30" x2="200" y2="50" stroke={lineColor} strokeWidth="1" />
+        <line x1="140" y1="155" x2="200" y2="130" stroke={lineColor} strokeWidth="1" />
+        <line x1="260" y1="155" x2="200" y2="130" stroke={lineColor} strokeWidth="1" />
+
+        <circle cx="80" cy="90" r="16" fill={nodeColor} />
+        <circle cx="200" cy="50" r="18" fill={nodeColor} />
+        <circle cx="320" cy="90" r="16" fill={nodeColor} />
+        <circle cx="200" cy="130" r="18" fill={accentColor} />
+        <circle cx="40" cy="60" r="8" fill={nodeColor} opacity="0.4" />
+        <circle cx="40" cy="130" r="8" fill={accentColor} opacity="0.35" />
+        <circle cx="360" cy="55" r="8" fill={nodeColor} opacity="0.4" />
+        <circle cx="360" cy="130" r="8" fill={accentColor} opacity="0.35" />
+        <circle cx="140" cy="30" r="6" fill={nodeColor} opacity="0.25" />
+        <circle cx="260" cy="30" r="6" fill={nodeColor} opacity="0.25" />
+        <circle cx="140" cy="155" r="6" fill={accentColor} opacity="0.25" />
+        <circle cx="260" cy="155" r="6" fill={accentColor} opacity="0.25" />
+
+        <circle cx="80" cy="84" r="5" fill="white" />
+        <rect x="74" y="91" width="12" height="7" rx="3.5" fill="white" />
+        <circle cx="200" cy="44" r="5.5" fill="white" />
+        <rect x="193" y="51" width="14" height="8" rx="4" fill="white" />
+        <circle cx="320" cy="84" r="5" fill="white" />
+        <rect x="314" y="91" width="12" height="7" rx="3.5" fill="white" />
+        <circle cx="200" cy="124" r="5.5" fill={nodeColor} />
+        <rect x="193" y="131" width="14" height="8" rx="4" fill={nodeColor} />
+      </svg>
+    </div>
+  );
+}
+
 async function copyToClipboard(text, showToast) {
   try {
     await navigator.clipboard.writeText(text);
@@ -252,57 +310,37 @@ function Landing() {
           isDark ? "border-white/10 bg-brand-dark/95" : "border-brand-dark/10 bg-brand-light/95"
         } backdrop-blur`}
       >
-        <div className="mx-auto flex max-w-dashboard items-center justify-between px-6 py-5">
-          <div>
-            <p
-              className={`text-sm font-medium ${
-                isDark ? "text-white/60" : "text-brand-dark/60"
-              }`}
-            >
-              Midwestern Interactive
-            </p>
-            <h1 className="text-2xl font-semibold">LinkedIn Playbook</h1>
-          </div>
-          <div className="flex items-center gap-4">
-            {selectedId && (
-              <Link
-                className={`px-4 py-2 text-sm font-medium transition-colors ${
-                  isDark
-                    ? "border border-white/20 text-white hover:bg-white/5"
-                    : "border border-brand-dark/20 text-brand-dark hover:bg-brand-dark/5"
-                }`}
-                to={`/member/${selectedId}`}
-              >
-                Resume{" "}
-                {
-                  teamData.teamMembers.find((m) => m.id === selectedId)
-                    ?.name
-                }
-              </Link>
-            )}
-            <button
-              onClick={toggleTheme}
-              className={`p-1 transition-colors ${
-                isDark
-                  ? "text-white/40 hover:text-white/80"
-                  : "text-brand-dark/40 hover:text-brand-dark/80"
-              }`}
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-          </div>
+        <div className="mx-auto flex max-w-dashboard items-center justify-between px-6 py-4">
+          <span
+            className={`text-sm font-semibold tracking-wide ${
+              isDark ? "text-white/70" : "text-brand-dark/70"
+            }`}
+          >
+            Midwestern Interactive
+          </span>
+          <button
+            onClick={toggleTheme}
+            className={`flex h-8 w-8 items-center justify-center transition-colors ${
+              isDark
+                ? "text-white/40 hover:text-white/80"
+                : "text-brand-dark/40 hover:text-brand-dark/80"
+            }`}
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </div>
       </header>
 
       {/* Content */}
       <main className="mx-auto max-w-dashboard px-6 py-12 md:py-16">
-        <div className="mb-10">
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            Select your profile
+        <div className="mb-12 text-center">
+          <HeroIllustration isDark={isDark} />
+          <h2 className="text-4xl font-semibold md:text-5xl">
+            LinkedIn Playbook
           </h2>
           <p
-            className={`mt-3 text-base ${
+            className={`mx-auto mt-4 max-w-xl text-base ${
               isDark ? "text-white/60" : "text-brand-dark/60"
             }`}
           >
@@ -344,22 +382,29 @@ function Landing() {
                   </span>
                 </div>
               </div>
-              <h3 className="text-lg font-semibold">{member.name}</h3>
-              <p
-                className={`mt-1 text-sm ${
-                  isDark ? "text-white/50" : "text-brand-dark/50"
-                }`}
-              >
-                {member.role}
-              </p>
-              <p
-                className={`mt-2 text-sm ${
-                  isDark ? "text-white/40" : "text-brand-dark/40"
-                }`}
-              >
-                {member.icp.title}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <h3 className="mb-3 text-lg font-semibold group-hover:text-brand-blue transition-colors">
+                {member.name}
+              </h3>
+              <div className="mb-3">
+                <p
+                  className={`mb-2 text-xs font-medium uppercase tracking-wide ${
+                    isDark ? "text-white/40" : "text-brand-dark/40"
+                  }`}
+                >
+                  Targets:
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {member.icp.targetRoles.slice(0, 3).map((role) => (
+                    <span
+                      key={role}
+                      className="border border-brand-blue/20 bg-brand-blue/10 px-2 py-0.5 text-xs font-medium text-brand-blue"
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 {member.icp.servicesFocus.map((service) => (
                   <span
                     key={service}
@@ -398,10 +443,14 @@ function Dashboard() {
   const { id } = useParams();
   const { theme, isDark, toggleTheme } = useTheme();
   const { toast: toastState, showToast } = useToast();
-  const [showAdvanced, setShowAdvanced] = useState(false);
   const [engagementState, setEngagementState] = useState({});
   const [isNewWeek, setIsNewWeek] = useState(false);
   const [newWeekDismissed, setNewWeekDismissed] = useState(false);
+  const [checklistExpanded, setChecklistExpanded] = useState(() => {
+    if (typeof window === "undefined") return true;
+    const saved = window.localStorage.getItem("checklist_collapsed");
+    return saved ? saved === "false" : true;
+  });
 
   const member = useMemo(
     () => teamData.teamMembers.find((entry) => entry.id === id),
@@ -504,32 +553,37 @@ function Dashboard() {
         }`}
       >
         <div className="mx-auto flex max-w-dashboard items-center justify-between px-6 py-4">
-          <Link
-            to="/"
-            className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-              isDark
-                ? "text-white/60 hover:text-white"
-                : "text-brand-dark/60 hover:text-brand-dark"
-            }`}
-          >
-            <ArrowLeft size={18} />
-            <span className="hidden sm:inline">Back to Team</span>
-          </Link>
-
-          <h1 className={`text-base font-semibold sm:text-lg ${textPrimary}`}>
-            {member.name}
-          </h1>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/"
+              className={`flex items-center gap-2 text-sm font-medium transition-colors ${
+                isDark
+                  ? "text-white/60 hover:text-white"
+                  : "text-brand-dark/60 hover:text-brand-dark"
+              }`}
+            >
+              <ArrowLeft size={18} />
+              <span className="hidden sm:inline">Back</span>
+            </Link>
+            <span
+              className={`hidden text-sm font-semibold tracking-wide sm:inline ${
+                isDark ? "text-white/50" : "text-brand-dark/50"
+              }`}
+            >
+              Midwestern Interactive
+            </span>
+          </div>
 
           <button
             onClick={toggleTheme}
-            className={`p-1 transition-colors ${
+            className={`flex h-8 w-8 items-center justify-center transition-colors ${
               isDark
                 ? "text-white/40 hover:text-white/80"
                 : "text-brand-dark/40 hover:text-brand-dark/80"
             }`}
             aria-label="Toggle theme"
           >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
       </nav>
@@ -560,83 +614,167 @@ function Dashboard() {
       {/* ---- Main Content ---- */}
       <main className="mx-auto max-w-dashboard px-4 py-8 sm:px-6 md:py-12">
         {/* ================================================================
-            1. WEEKLY ENGAGEMENT CHECKLIST
+            1. WEEKLY ENGAGEMENT CHECKLIST (collapsible)
         ================================================================ */}
         <section className="mb-12 md:mb-20">
-          <div className="bg-[rgba(35,55,241,0.15)] border border-[#2337F1]/30 p-6 sm:p-8">
-            <div className="mb-6 flex items-center gap-3">
-              <span className="text-2xl">&#10024;</span>
-              <h2 className="text-2xl font-semibold text-white">
-                Your Weekly Engagement Goals
-              </h2>
-            </div>
-
-            {isNewWeek && !newWeekDismissed && (
-              <div className="mb-4 border border-brand-lime/30 bg-brand-lime/20 p-4">
-                <p className="font-medium text-white">
-                  &#127919; New week, fresh start! Time to make some meaningful connections.
-                </p>
-                <button
-                  onClick={() => setNewWeekDismissed(true)}
-                  className="mt-2 text-sm text-white/70 hover:text-white"
+          <div
+            className={`border ${
+              isDark
+                ? "border-[#2337F1]/30 bg-[rgba(35,55,241,0.15)]"
+                : "border-[#2337F1]/40 bg-[#2337F1]/10"
+            }`}
+          >
+            {/* Header - always visible, clickable */}
+            <button
+              onClick={() => {
+                setChecklistExpanded((prev) => {
+                  window.localStorage.setItem("checklist_collapsed", String(prev));
+                  return !prev;
+                });
+              }}
+              className={`flex w-full items-center justify-between p-6 transition-colors sm:p-8 ${
+                isDark ? "hover:bg-white/5" : "hover:bg-[#2337F1]/5"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">&#10024;</span>
+                <h2
+                  className={`text-xl font-semibold sm:text-2xl ${
+                    isDark ? "text-white" : "text-[#010313]"
+                  }`}
                 >
-                  Got it &#8594;
-                </button>
+                  Your Weekly Engagement Goals
+                </h2>
               </div>
-            )}
 
-            <div className="mb-6 flex items-center gap-3">
-              <div className="h-2 flex-grow overflow-hidden bg-white/10">
-                <div
-                  className="h-full bg-brand-lime transition-all duration-500"
-                  style={{ width: `${(engagementCompletedCount / weeklyEngagementChecklist.length) * 100}%` }}
+              <div className="flex items-center gap-4">
+                <span
+                  className={`text-sm font-medium ${
+                    isDark ? "text-white/70" : "text-[#010313]/70"
+                  }`}
+                >
+                  {engagementCompletedCount}/{weeklyEngagementChecklist.length} complete
+                </span>
+                <ChevronDown
+                  size={24}
+                  className={`transition-transform duration-300 ${
+                    checklistExpanded ? "rotate-180" : ""
+                  } ${isDark ? "text-white/70" : "text-[#010313]/70"}`}
                 />
               </div>
-              <span className="text-sm font-medium text-white/70">
-                {engagementCompletedCount}/{weeklyEngagementChecklist.length} complete
-              </span>
-            </div>
+            </button>
 
-            <div className="space-y-3">
-              {weeklyEngagementChecklist.map((item) => (
-                <label
-                  key={item.id}
-                  className="-m-2 flex cursor-pointer items-start gap-3 p-2 transition-colors group hover:bg-white/5"
-                >
-                  <input
-                    type="checkbox"
-                    checked={!!engagementState[item.id]}
-                    onChange={(e) => handleEngagementToggle(item.id, e.target.checked)}
-                    className="mt-1 h-5 w-5 flex-shrink-0 accent-[#C7FA50]"
-                  />
-                  <span
-                    className={`text-sm leading-relaxed transition-colors sm:text-base ${
-                      engagementState[item.id]
-                        ? "text-white/50 line-through"
-                        : "text-white/90 group-hover:text-white"
+            {/* Collapsible content */}
+            {checklistExpanded && (
+              <div className="animate-fadeIn px-6 pb-6 sm:px-8 sm:pb-8">
+                {isNewWeek && !newWeekDismissed && (
+                  <div
+                    className={`mb-4 border p-4 ${
+                      isDark
+                        ? "border-brand-lime/30 bg-brand-lime/20"
+                        : "border-brand-lime/50 bg-brand-lime/10"
                     }`}
                   >
-                    {item.task}
-                  </span>
-                </label>
-              ))}
-            </div>
+                    <p
+                      className={`font-medium ${
+                        isDark ? "text-white" : "text-[#010313]"
+                      }`}
+                    >
+                      &#127919; New week, fresh start! Time to make some meaningful connections.
+                    </p>
+                    <button
+                      onClick={() => setNewWeekDismissed(true)}
+                      className={`mt-2 text-sm ${
+                        isDark
+                          ? "text-white/70 hover:text-white"
+                          : "text-[#010313]/60 hover:text-[#010313]"
+                      }`}
+                    >
+                      Got it &#8594;
+                    </button>
+                  </div>
+                )}
 
-            {allEngagementComplete && (
-              <div className="mt-6 animate-fadeIn border-2 border-brand-lime bg-brand-lime/20 p-6 text-center">
-                <p className="mb-2 text-3xl">&#127881;</p>
-                <p className="mb-2 text-lg font-semibold text-white">
-                  Awesome work this week!
-                </p>
-                <p className="text-sm text-white/80">
-                  You're building real relationships. See you next Monday for a fresh list!
+                {/* Progress bar */}
+                <div className="mb-6 flex items-center gap-3">
+                  <div
+                    className={`h-2 flex-grow overflow-hidden ${
+                      isDark ? "bg-white/10" : "bg-[#010313]/10"
+                    }`}
+                  >
+                    <div
+                      className="h-full bg-brand-lime transition-all duration-500"
+                      style={{
+                        width: `${(engagementCompletedCount / weeklyEngagementChecklist.length) * 100}%`,
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Checklist items */}
+                <div className="space-y-3">
+                  {weeklyEngagementChecklist.map((item) => (
+                    <label
+                      key={item.id}
+                      className={`-m-2 flex cursor-pointer items-start gap-3 p-2 transition-colors group ${
+                        isDark ? "hover:bg-white/5" : "hover:bg-[#2337F1]/5"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={!!engagementState[item.id]}
+                        onChange={(e) =>
+                          handleEngagementToggle(item.id, e.target.checked)
+                        }
+                        className="mt-1 h-5 w-5 flex-shrink-0 accent-[#C7FA50]"
+                      />
+                      <span
+                        className={`text-sm leading-relaxed transition-colors sm:text-base ${
+                          engagementState[item.id]
+                            ? isDark
+                              ? "text-white/40 line-through"
+                              : "text-[#010313]/40 line-through"
+                            : isDark
+                              ? "text-white/90 group-hover:text-white"
+                              : "text-[#010313]/90 group-hover:text-[#010313]"
+                        }`}
+                      >
+                        {item.task}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+
+                {/* Completion celebration */}
+                {allEngagementComplete && (
+                  <div className="mt-6 animate-fadeIn border-2 border-brand-lime bg-brand-lime/20 p-6 text-center">
+                    <p className="mb-2 text-3xl">&#127881;</p>
+                    <p
+                      className={`mb-2 text-lg font-semibold ${
+                        isDark ? "text-white" : "text-[#010313]"
+                      }`}
+                    >
+                      Awesome work this week!
+                    </p>
+                    <p
+                      className={`text-sm ${
+                        isDark ? "text-white/80" : "text-[#010313]/70"
+                      }`}
+                    >
+                      You're building real relationships. See you next Monday for a fresh list!
+                    </p>
+                  </div>
+                )}
+
+                <p
+                  className={`mt-4 text-sm italic ${
+                    isDark ? "text-white/50" : "text-[#010313]/50"
+                  }`}
+                >
+                  Tip: Consistency beats intensity. Do a little every day.
                 </p>
               </div>
             )}
-
-            <p className="mt-4 text-sm italic text-white/50">
-              Tip: Consistency beats intensity. Do a little every day.
-            </p>
           </div>
         </section>
 
@@ -767,7 +905,41 @@ function Dashboard() {
         </section>
 
         {/* ================================================================
-            4. OPENING MESSAGES
+            4. WHAT THEY'RE ACTUALLY SAYING
+        ================================================================ */}
+        {member.realQuotes && member.realQuotes.length > 0 && (
+          <section className="mb-12 md:mb-20">
+            <div className="mb-6 flex items-center gap-3">
+              <Flame size={22} className="text-brand-blue" />
+              <div>
+                <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+                  {realQuotesTitles[member.id] || "What They're Actually Saying"}
+                </h2>
+                <p className={`mt-1 text-sm ${textMuted}`}>
+                  Real quotes from Reddit, LinkedIn, and industry forums
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {member.realQuotes.map((quote, idx) => (
+                <div
+                  key={idx}
+                  className={`border-l-4 border-brand-blue p-5 ${cardBg}`}
+                >
+                  <p
+                    className={`text-sm italic leading-relaxed ${textSecondary}`}
+                  >
+                    &ldquo;{quote}&rdquo;
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ================================================================
+            5. OPENING MESSAGES
         ================================================================ */}
         <section className="mb-12 md:mb-20">
           <div className="mb-6 flex items-center gap-3">
@@ -876,155 +1048,6 @@ function Dashboard() {
             ))}
           </div>
         </section>
-
-        {/* ================================================================
-            COLLAPSIBLE ADVANCED SECTION
-        ================================================================ */}
-        <div className="mb-12 md:mb-20">
-          <button
-            onClick={() => setShowAdvanced((prev) => !prev)}
-            className={`flex w-full items-center justify-center gap-2 border-t py-5 text-sm font-medium transition-colors ${borderColor} ${textMuted} hover:${textSecondary}`}
-          >
-            {showAdvanced ? "Hide" : "Show"} Advanced Tips & Reference
-            <ChevronDown
-              size={18}
-              className={`transition-transform ${
-                showAdvanced ? "rotate-180" : ""
-              }`}
-            />
-          </button>
-
-          {showAdvanced && (
-            <div className="mt-8 space-y-12 animate-fadeIn md:mt-12">
-              {/* ---- How to Get More Reach ---- */}
-              <section>
-                <div className="mb-4 flex items-center gap-3">
-                  <Sparkles size={20} className="text-brand-blue" />
-                  <h2
-                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
-                  >
-                    How to Get More Reach
-                  </h2>
-                </div>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {member.engagementBoosters.map((booster, index) => (
-                    <div
-                      key={booster}
-                      className={`flex items-start gap-3 p-4 ${cardBg}`}
-                    >
-                      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center bg-brand-blue/10 text-xs font-semibold text-brand-blue">
-                        {index + 1}
-                      </div>
-                      <p className={`text-sm ${textSecondary}`}>{booster}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* ---- People to Avoid ---- */}
-              <section>
-                <div className="mb-4 flex items-center gap-3">
-                  <TriangleAlert size={20} className="text-brand-blue" />
-                  <h2
-                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
-                  >
-                    People to Avoid
-                  </h2>
-                </div>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {member.redFlags.map((flag) => (
-                    <div
-                      key={flag}
-                      className={`flex items-start gap-3 p-4 text-sm ${cardBg} ${textSecondary}`}
-                    >
-                      <TriangleAlert
-                        size={16}
-                        className="mt-0.5 flex-shrink-0 text-red-400"
-                      />
-                      {flag}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* ---- What They're Actually Saying ---- */}
-              <section>
-                <div className="mb-4 flex items-center gap-3">
-                  <Flame size={20} className="text-brand-blue" />
-                  <h2
-                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
-                  >
-                    What They're Actually Saying
-                  </h2>
-                </div>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {member.realQuotes.map((quote) => (
-                    <div
-                      key={quote}
-                      className={`p-4 ${cardBg}`}
-                    >
-                      <p className={`text-sm italic leading-relaxed ${textSecondary}`}>
-                        &ldquo;{quote}&rdquo;
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* ---- How to Build Credibility ---- */}
-              <section>
-                <div className="mb-4 flex items-center gap-3">
-                  <BadgeCheck size={20} className="text-brand-blue" />
-                  <h2
-                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
-                  >
-                    How to Build Credibility
-                  </h2>
-                </div>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {member.trustBuilders.map((item) => (
-                    <div
-                      key={item}
-                      className={`flex items-center gap-2 p-3 text-sm ${cardBg} ${textSecondary}`}
-                    >
-                      <BadgeCheck
-                        size={14}
-                        className="flex-shrink-0 text-brand-blue"
-                      />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* ---- They're Posting About ---- */}
-              <section>
-                <div className="mb-4 flex items-center gap-3">
-                  <Flame size={20} className="text-brand-blue" />
-                  <h2
-                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
-                  >
-                    Hot Topics in Their Feed
-                  </h2>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {member.icp.theyrePostingAbout.map((topic) => (
-                    <span
-                      key={topic}
-                      className={`px-3 py-1.5 text-sm font-medium ${
-                        isDark
-                          ? "bg-brand-blue/10 text-white/80"
-                          : "bg-brand-blue/10 text-brand-dark/80"
-                      }`}
-                    >
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-              </section>
-            </div>
-          )}
-        </div>
 
         {/* ---- Footer ---- */}
         <footer
