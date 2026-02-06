@@ -83,6 +83,37 @@ const weeklyEngagementChecklist = [
 // Utilities
 // ---------------------------------------------------------------------------
 
+const ALLOWED_DOMAIN = "@buildmidwestern.com";
+
+const getAuthEmail = () => {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem("auth-email");
+};
+
+const saveAuthEmail = (email) => {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem("auth-email", email);
+};
+
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.toLowerCase().endsWith(ALLOWED_DOMAIN.toLowerCase());
+};
+
+const getProfileImage = (memberId) => {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem(`profile-image-${memberId}`);
+};
+
+const saveProfileImage = (memberId, dataUrl) => {
+  if (typeof window === "undefined") return;
+  if (dataUrl) {
+    window.localStorage.setItem(`profile-image-${memberId}`, dataUrl);
+  } else {
+    window.localStorage.removeItem(`profile-image-${memberId}`);
+  }
+};
+
 const getTheme = () => {
   if (typeof window === "undefined") return "dark";
   return window.localStorage.getItem("slt-theme") || "dark";
