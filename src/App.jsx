@@ -4,7 +4,6 @@ import {
   ArrowRight,
   BookOpen,
   Calendar,
-  Camera,
   CheckCircle2,
   ChevronDown,
   Copy,
