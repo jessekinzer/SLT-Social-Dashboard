@@ -260,6 +260,151 @@ function useTheme() {
   return { theme, isDark: theme === "dark", toggleTheme };
 }
 
+// ---------------------------------------------------------------------------
+// Email Gate Component
+// ---------------------------------------------------------------------------
+
+function EmailGate({ onSuccess }) {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const { isDark } = useTheme();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValidEmail(email)) {
+      saveAuthEmail(email);
+      onSuccess();
+    } else {
+      setError(`Please use your ${ALLOWED_DOMAIN} email address`);
+    }
+  };
+
+  return (
+    <div
+      className={`min-h-screen flex items-center justify-center px-6 transition-colors ${
+        isDark ? "bg-brand-dark" : "bg-brand-light"
+      }`}
+    >
+      <div className={`w-full max-w-md p-8 ${isDark ? "bg-white/[0.03] border border-white/10" : "bg-white border border-brand-dark/10"}`}>
+        <div className="mb-8 text-center">
+          <img
+            src="/mw-logo.svg"
+            alt="Midwestern Logo"
+            className="h-8 w-auto mx-auto mb-6"
+            style={{ filter: isDark ? "invert(1) brightness(2)" : "none" }}
+          />
+          <h1 className={`text-2xl font-semibold mb-2 ${isDark ? "text-white" : "text-brand-dark"}`}>
+            LinkedIn Playbook
+          </h1>
+          <p className={`text-sm ${isDark ? "text-white/60" : "text-brand-dark/60"}`}>
+            Enter your company email to access
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className={`block text-sm font-medium mb-2 ${isDark ? "text-white/70" : "text-brand-dark/70"}`}>
+              Email Address
+            </label>
+            <div className="relative">
+              <Mail size={18} className={`absolute left-3 top-1/2 -translate-y-1/2 ${isDark ? "text-white/40" : "text-brand-dark/40"}`} />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setError("");
+                }}
+                placeholder="you@buildmidwestern.com"
+                className={`w-full pl-10 pr-4 py-3 text-sm transition-colors ${
+                  isDark
+                    ? "bg-white/[0.05] border border-white/20 text-white placeholder:text-white/40 focus:border-brand-blue focus:outline-none"
+                    : "bg-white border border-brand-dark/20 text-brand-dark placeholder:text-brand-dark/40 focus:border-brand-blue focus:outline-none"
+                }`}
+                data-testid="email-input"
+              />
+            </div>
+          </div>
+
+          {error && (
+            <p className="mb-4 text-sm text-red-400" data-testid="email-error">
+              {error}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className="w-full bg-brand-blue text-white py-3 text-sm font-medium hover:bg-brand-blue/90 transition-colors"
+            data-testid="email-submit"
+          >
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Profile Avatar Component (with upload on hover)
+// ---------------------------------------------------------------------------
+
+function ProfileAvatar({ member, size = "large" }) {
+  const [profileImage, setProfileImage] = useState(() => getProfileImage(member.id));
+  const inputRef = useRef(null);
+  const { isDark } = useTheme();
+
+  const handleUpload = (e) => {
+    e.stopPropagation();
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const dataUrl = event.target?.result;
+      setProfileImage(dataUrl);
+      saveProfileImage(member.id, dataUrl);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const sizeClasses = size === "large" ? "h-20 w-20" : "h-16 w-16";
+  const textSize = size === "large" ? "text-2xl" : "text-xl";
+
+  return (
+    <div className={`group relative ${sizeClasses} flex-shrink-0 overflow-hidden`}>
+      {profileImage ? (
+        <img
+          src={profileImage}
+          alt={member.name}
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-[#2337F1] to-[#1a2ac7]">
+          <span className={`${textSize} font-semibold text-white`}>
+            {member.avatar || member.name.split(" ").map((n) => n[0]).join("")}
+          </span>
+        </div>
+      )}
+      
+      {/* Upload overlay on hover */}
+      <label
+        className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/60 opacity-0 transition-opacity group-hover:opacity-100"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Camera size={20} className="text-white" />
+        <input
+          ref={inputRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={handleUpload}
+          data-testid={`upload-avatar-${member.id}`}
+        />
+      </label>
+    </div>
+  );
+}
+
 function HeroIllustration({ isDark }) {
   const nodeColor = "#2337F1";
   const lineColor = isDark ? "rgba(35,55,241,0.3)" : "rgba(35,55,241,0.2)";
