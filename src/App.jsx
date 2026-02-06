@@ -542,56 +542,42 @@ function Landing() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-testid="team-grid">
           {teamData.teamMembers.map((member) => (
-            <button
+            <div
               key={member.id}
-              onClick={() => handleSelect(member.id)}
               className={`group relative flex flex-col p-6 text-left transition-all ${
                 isDark
                   ? "border border-white/10 bg-white/[0.02] hover:border-brand-blue/50 hover:bg-white/[0.04]"
                   : "border border-brand-dark/10 bg-white hover:border-brand-blue/50 hover:shadow-lg"
               }`}
-              type="button"
               data-testid={`team-member-${member.id}`}
             >
-              <div className="mb-4 h-20 w-20 flex-shrink-0 overflow-hidden">
-                {member.profileImage ? (
-                  <img
-                    src={member.profileImage}
-                    alt={member.name}
-                    className="h-full w-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.nextSibling.style.display = "flex";
-                    }}
-                  />
-                ) : null}
-                <div
-                  className="h-full w-full items-center justify-center bg-gradient-to-br from-[#2337F1] to-[#1a2ac7]"
-                  style={{ display: member.profileImage ? "none" : "flex" }}
-                >
-                  <span className="text-2xl font-semibold text-white">
-                    {member.avatar || member.name.split(" ").map((n) => n[0]).join("")}
-                  </span>
-                </div>
+              <div className="mb-4">
+                <ProfileAvatar member={member} size="large" />
               </div>
-              <h3 className="mb-1 text-lg font-semibold group-hover:text-brand-blue transition-colors">
-                {member.name}
-              </h3>
-              <p className={`mb-3 text-sm ${isDark ? "text-white/50" : "text-brand-dark/50"}`}>
-                {member.title}
-              </p>
-              <div className="mb-3">
-                <div className="flex flex-wrap gap-1.5">
-                  {member.icp.targetRoles.slice(0, 3).map((role) => (
-                    <span
-                      key={role}
-                      className="border border-brand-blue/20 bg-brand-blue/10 px-2 py-0.5 text-xs font-medium text-brand-blue"
-                    >
-                      {role}
-                    </span>
-                  ))}
+              <button
+                onClick={() => handleSelect(member.id)}
+                className="flex-1 text-left"
+                type="button"
+              >
+                <h3 className="mb-1 text-lg font-semibold hover:text-brand-blue transition-colors">
+                  {member.name}
+                </h3>
+                <p className={`mb-3 text-sm ${isDark ? "text-white/50" : "text-brand-dark/50"}`}>
+                  {member.title}
+                </p>
+                <div className="mb-3">
+                  <div className="flex flex-wrap gap-1.5">
+                    {member.icp.targetRoles.slice(0, 3).map((role) => (
+                      <span
+                        key={role}
+                        className="border border-brand-blue/20 bg-brand-blue/10 px-2 py-0.5 text-xs font-medium text-brand-blue"
+                      >
+                        {role}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </button>
               <span
                 className={`absolute right-4 top-4 text-xs font-medium transition-colors ${
                   isDark
@@ -601,7 +587,7 @@ function Landing() {
               >
                 <ArrowRight size={16} />
               </span>
-            </button>
+            </div>
           ))}
         </div>
       </main>
