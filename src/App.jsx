@@ -1,40 +1,115 @@
 import { Routes, Route, Link, useNavigate, useParams } from "react-router-dom";
 import {
   ArrowLeft,
+  ArrowRight,
   BadgeCheck,
   BookOpen,
   CheckCircle2,
-  Clipboard,
+  ChevronDown,
+  Copy,
+  FileText,
   Flame,
-  MessageSquareText,
-  Quote,
+  Lightbulb,
+  MessageCircle,
+  Moon,
+  Rocket,
   Sparkles,
+  Sun,
   ThumbsUp,
   TriangleAlert,
   Users,
 } from "lucide-react";
 import teamData from "./data/teamData.json";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-const sectionLinks = [
-  { id: "overview", label: "ICP Overview" },
-  { id: "connect-engage", label: "Connect vs Engage" },
-  { id: "starters", label: "Conversation Starters" },
-  { id: "quotes", label: "Real Quotes" },
-  { id: "content", label: "Content Pillars" },
-  { id: "boosters", label: "Engagement Boosters" },
-  { id: "red-flags", label: "Red Flags" },
-  { id: "trust", label: "Trust Builders" },
-  { id: "quick-ref", label: "Quick Reference" },
+// ---------------------------------------------------------------------------
+// Constants
+// ---------------------------------------------------------------------------
+
+const contentTemplates = [
+  {
+    category: "Hot Take",
+    template:
+      "Unpopular opinion: [controversial statement about your industry]",
+  },
+  {
+    category: "Value Bomb",
+    template:
+      "We just helped [client] achieve [result] in [timeframe]. Here's how:\n\u2022 [Step 1]\n\u2022 [Step 2]\n\u2022 [Step 3]\nThe result: [specific outcome]",
+  },
+  {
+    category: "Question Post",
+    template:
+      "Quick question: What's your biggest challenge with [pain point]?",
+  },
+  {
+    category: "Listicle",
+    template:
+      '3 things I learned this week about [topic]:\n1) [Lesson 1]\n2) [Lesson 2]\n3) [Lesson 3]\n\nWhich one surprises you?',
+  },
+  {
+    category: "Mistake Story",
+    template:
+      "I made a [big mistake] last [timeframe].\n\nWhat happened: [Story]\nWhat I learned: [Lesson]\nWhat I'd do differently: [Better approach]\n\nAnyone else done this?",
+  },
+  {
+    category: "Observation",
+    template:
+      "I noticed [trend/pattern] happening in [industry]. Anyone else seeing this?",
+  },
+  {
+    category: "Myth Buster",
+    template:
+      "Everyone says [common advice]. I disagree. Here's why...",
+  },
+  {
+    category: "Signs Post",
+    template:
+      "[Number] signs it's time to [take action]:\n1. [Sign 1]\n2. [Sign 2]\n3. [Sign 3]\n\nSeeing these? Here's what to do...",
+  },
 ];
 
-const serviceColors = {
-  Embedded: "bg-blue-100 text-blue-700",
-  Scoped: "bg-indigo-100 text-indigo-700",
-  Recruiting: "bg-purple-100 text-purple-700",
+const weeklyPlan = [
+  {
+    day: "Monday",
+    tasks: [
+      "Update your headline to mention what you help people do",
+      "Send 10 connection requests using the templates below",
+    ],
+  },
+  {
+    day: "Tuesday \u2013 Thursday",
+    tasks: [
+      "Comment on 5 posts daily from your target audience",
+      "Like 15 posts from your ICP feed daily",
+    ],
+  },
+  {
+    day: "Friday",
+    tasks: ["Post using one of the example posts below"],
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Utilities
+// ---------------------------------------------------------------------------
+
+const getTheme = () => {
+  if (typeof window === "undefined") return "dark";
+  return window.localStorage.getItem("slt-theme") || "dark";
 };
 
-const focusCard = "rounded-2xl border border-slate-200 bg-white p-6 shadow-subtle";
+const saveTheme = (theme) => {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem("slt-theme", theme);
+  if (theme === "dark") {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+  } else {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+  }
+};
 
 const getInitialMemberId = () => {
   if (typeof window === "undefined") return null;
@@ -46,98 +121,229 @@ const saveSelectedMember = (id) => {
   window.localStorage.setItem("selectedMemberId", id);
 };
 
-const Toast = ({ message }) => {
-  if (!message) return null;
-  return (
-    <div className="fixed right-6 top-6 z-50 rounded-full bg-slate-900 px-4 py-2 text-sm text-white shadow-lg">
-      {message}
-    </div>
+const getProgress = (memberId) => {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(
+      window.localStorage.getItem(`slt-progress-${memberId}`) || "{}"
+    );
+  } catch {
+    return {};
+  }
+};
+
+const saveProgress = (memberId, taskId, completed) => {
+  const progress = getProgress(memberId);
+  progress[taskId] = completed;
+  window.localStorage.setItem(
+    `slt-progress-${memberId}`,
+    JSON.stringify(progress)
   );
 };
 
-const Pill = ({ text }) => (
-  <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">
-    {text}
-  </span>
-);
+// ---------------------------------------------------------------------------
+// Shared Components
+// ---------------------------------------------------------------------------
 
-const SectionTitle = ({ icon: Icon, title, subtitle }) => (
-  <div className="mb-4 flex items-start gap-3">
-    <div className="rounded-xl bg-blue-50 p-2 text-primary">
-      <Icon className="h-5 w-5" />
+function Toast({ message, visible }) {
+  if (!message) return null;
+  return (
+    <div
+      className={`fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-brand-blue px-5 py-3 text-sm font-medium text-white shadow-lg ${
+        visible ? "animate-toastIn" : "animate-toastOut"
+      }`}
+      role="status"
+      aria-live="polite"
+    >
+      <CheckCircle2 size={16} />
+      {message}
     </div>
-    <div>
-      <h2 className="text-xl font-semibold text-slate-900">{title}</h2>
-      {subtitle ? <p className="mt-1 text-sm text-slate-500">{subtitle}</p> : null}
-    </div>
-  </div>
-);
+  );
+}
 
-const Landing = () => {
+function useToast() {
+  const [toast, setToast] = useState({ message: "", visible: false });
+  const timerRef = useRef(null);
+
+  const showToast = useCallback((msg) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setToast({ message: msg, visible: true });
+    timerRef.current = setTimeout(() => {
+      setToast((prev) => ({ ...prev, visible: false }));
+      timerRef.current = setTimeout(() => {
+        setToast({ message: "", visible: false });
+      }, 300);
+    }, 2000);
+  }, []);
+
+  return { toast, showToast };
+}
+
+function useTheme() {
+  const [theme, setThemeState] = useState(getTheme);
+
+  useEffect(() => {
+    saveTheme(theme);
+  }, [theme]);
+
+  // Set initial theme on mount
+  useEffect(() => {
+    saveTheme(getTheme());
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
+  }, []);
+
+  return { theme, isDark: theme === "dark", toggleTheme };
+}
+
+async function copyToClipboard(text, showToast) {
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast("Copied to clipboard!");
+  } catch {
+    showToast("Copy failed \u2013 please try again");
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Landing Page
+// ---------------------------------------------------------------------------
+
+function Landing() {
   const navigate = useNavigate();
-  const [selectedId, setSelectedId] = useState(getInitialMemberId());
+  const { theme, isDark, toggleTheme } = useTheme();
+  const [selectedId] = useState(getInitialMemberId);
 
   const handleSelect = (id) => {
     saveSelectedMember(id);
-    setSelectedId(id);
     navigate(`/member/${id}`);
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+    <div
+      className={`min-h-screen transition-colors ${
+        isDark ? "bg-brand-dark text-white" : "bg-brand-light text-brand-dark"
+      }`}
+    >
+      {/* Nav */}
+      <header
+        className={`border-b ${
+          isDark ? "border-white/10 bg-brand-dark/95" : "border-brand-dark/10 bg-brand-light/95"
+        } backdrop-blur`}
+      >
+        <div className="mx-auto flex max-w-dashboard items-center justify-between px-6 py-5">
           <div>
-            <p className="text-sm font-semibold text-primary">Midwestern Interactive</p>
-            <h1 className="text-2xl font-semibold text-slate-900">LinkedIn ICP Dashboard</h1>
-          </div>
-          {selectedId ? (
-            <Link
-              className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:text-slate-900"
-              to={`/member/${selectedId}`}
+            <p
+              className={`text-sm font-medium ${
+                isDark ? "text-white/60" : "text-brand-dark/60"
+              }`}
             >
-              Resume {teamData.teamMembers.find((member) => member.id === selectedId)?.name}
-            </Link>
-          ) : null}
+              Midwestern Interactive
+            </p>
+            <h1 className="text-2xl font-semibold">LinkedIn Playbook</h1>
+          </div>
+          <div className="flex items-center gap-4">
+            {selectedId && (
+              <Link
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  isDark
+                    ? "border border-white/20 text-white hover:bg-white/5"
+                    : "border border-brand-dark/20 text-brand-dark hover:bg-brand-dark/5"
+                }`}
+                to={`/member/${selectedId}`}
+              >
+                Resume{" "}
+                {
+                  teamData.teamMembers.find((m) => m.id === selectedId)
+                    ?.name
+                }
+              </Link>
+            )}
+            <button
+              onClick={toggleTheme}
+              className={`p-1 transition-colors ${
+                isDark
+                  ? "text-white/40 hover:text-white/80"
+                  : "text-brand-dark/40 hover:text-brand-dark/80"
+              }`}
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-6 py-10">
-        <div className="mb-8">
-          <h2 className="text-3xl font-semibold text-slate-900">Select your profile</h2>
-          <p className="mt-2 text-slate-600">
-            Choose your team member dashboard to access ICP insights, outreach templates, and
-            daily engagement guidance.
+      {/* Content */}
+      <main className="mx-auto max-w-dashboard px-6 py-12 md:py-16">
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            Select your profile
+          </h2>
+          <p
+            className={`mt-3 text-base ${
+              isDark ? "text-white/60" : "text-brand-dark/60"
+            }`}
+          >
+            Choose your dashboard to access your LinkedIn playbook, outreach
+            templates, and daily engagement plan.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {teamData.teamMembers.map((member) => (
             <button
               key={member.id}
               onClick={() => handleSelect(member.id)}
-              className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-subtle transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
+              className={`group relative flex flex-col p-6 text-left transition-all ${
+                isDark
+                  ? "border border-white/10 bg-white/[0.02] hover:border-brand-blue/50 hover:bg-white/[0.04]"
+                  : "border border-brand-dark/10 bg-white hover:border-brand-blue/50 hover:shadow-lg"
+              }`}
               type="button"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-primary">
-                <Users className="h-5 w-5" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center bg-brand-blue/10 text-brand-blue">
+                <Users size={18} />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900">{member.name}</h3>
-              <p className="mt-1 text-sm text-slate-500">{member.role}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p
+                className={`mt-1 text-sm ${
+                  isDark ? "text-white/50" : "text-brand-dark/50"
+                }`}
+              >
+                {member.role}
+              </p>
+              <p
+                className={`mt-2 text-sm ${
+                  isDark ? "text-white/40" : "text-brand-dark/40"
+                }`}
+              >
+                {member.icp.title}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
                 {member.icp.servicesFocus.map((service) => (
                   <span
                     key={service}
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                      serviceColors[service] || "bg-slate-100 text-slate-700"
+                    className={`px-2 py-1 text-xs font-medium ${
+                      isDark
+                        ? "bg-white/[0.06] text-white/70"
+                        : "bg-brand-dark/[0.06] text-brand-dark/70"
                     }`}
                   >
                     {service}
                   </span>
                 ))}
               </div>
-              <span className="absolute right-6 top-6 rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-500 group-hover:bg-blue-50 group-hover:text-primary">
-                View
+              <span
+                className={`absolute right-4 top-4 text-xs font-medium transition-colors ${
+                  isDark
+                    ? "text-white/30 group-hover:text-brand-blue"
+                    : "text-brand-dark/30 group-hover:text-brand-blue"
+                }`}
+              >
+                <ArrowRight size={16} />
               </span>
             </button>
           ))}
@@ -145,238 +351,536 @@ const Landing = () => {
       </main>
     </div>
   );
-};
+}
 
-const Dashboard = () => {
+// ---------------------------------------------------------------------------
+// Dashboard Page
+// ---------------------------------------------------------------------------
+
+function Dashboard() {
   const { id } = useParams();
-  const [toast, setToast] = useState("");
-  const [showWhy, setShowWhy] = useState(false);
+  const { theme, isDark, toggleTheme } = useTheme();
+  const { toast: toastState, showToast } = useToast();
+  const [showAdvanced, setShowAdvanced] = useState(false);
+  const [checkboxState, setCheckboxState] = useState({});
 
   const member = useMemo(
     () => teamData.teamMembers.find((entry) => entry.id === id),
     [id]
   );
 
+  // Load checkbox state
   useEffect(() => {
     if (member) {
       saveSelectedMember(member.id);
+      setCheckboxState(getProgress(member.id));
     }
   }, [member]);
 
+  const handleCheckbox = useCallback(
+    (taskId, checked) => {
+      if (!member) return;
+      saveProgress(member.id, taskId, checked);
+      setCheckboxState((prev) => ({ ...prev, [taskId]: checked }));
+    },
+    [member]
+  );
+
+  const handleCopy = useCallback(
+    (text) => copyToClipboard(text, showToast),
+    [showToast]
+  );
+
   if (!member) {
     return (
-      <div className="min-h-screen bg-slate-50 px-6 py-16 text-center">
-        <p className="text-lg text-slate-600">Team member not found.</p>
+      <div
+        className={`flex min-h-screen flex-col items-center justify-center px-6 ${
+          isDark ? "bg-brand-dark text-white" : "bg-brand-light text-brand-dark"
+        }`}
+      >
+        <p className="text-lg">Team member not found.</p>
         <Link
           to="/"
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700"
+          className="mt-6 inline-flex items-center gap-2 border border-white/20 px-4 py-2 text-sm font-medium"
         >
-          <ArrowLeft className="h-4 w-4" />
-          Back to team selection
+          <ArrowLeft size={16} />
+          Back to team
         </Link>
       </div>
     );
   }
 
-  const handleCopy = async (text) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setToast("Copied to clipboard");
-      setTimeout(() => setToast(""), 2000);
-    } catch (error) {
-      setToast("Copy failed - please try again");
-      setTimeout(() => setToast(""), 2000);
-    }
+  const examplePosts = member.examplePosts || [];
+
+  // ICP quick summary for mobile
+  const quickSummary = {
+    who: member.icp.targetRoles.join(", "),
+    topics: member.icp.theyrePostingAbout.slice(0, 3).join(", "),
+    skip:
+      member.redFlags.length > 0
+        ? member.redFlags.slice(0, 2).join("; ")
+        : "N/A",
   };
 
-  const quickReference = {
-    metrics: ["Connections sent", "Replies", "Booked calls", "Engaged posts"],
-    routine: [
-      "5 min: respond to notifications",
-      "4 min: comment on 2 ICP posts",
-      "3 min: send 3 targeted connection requests",
-      "2 min: draft one value-forward post",
-      "1 min: log outcomes",
-    ],
-    warmSignals: [
-      "Engaged with 2+ posts",
-      "Accepted connection request",
-      "Asked a follow-up question",
-      "Viewed your profile",
-    ],
-  };
+  // CSS helpers
+  const cardBg = isDark
+    ? "bg-white/[0.02] border border-white/10"
+    : "bg-white border border-brand-dark/10";
+  const cardBgSubtle = isDark
+    ? "bg-white/[0.03]"
+    : "bg-brand-dark/[0.03]";
+  const textPrimary = isDark ? "text-white" : "text-brand-dark";
+  const textSecondary = isDark ? "text-white/70" : "text-brand-dark/70";
+  const textMuted = isDark ? "text-white/50" : "text-brand-dark/50";
+  const textFaint = isDark ? "text-white/30" : "text-brand-dark/30";
+  const borderColor = isDark ? "border-white/10" : "border-brand-dark/10";
+  const hoverBg = isDark ? "hover:bg-white/[0.04]" : "hover:bg-brand-dark/[0.04]";
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Toast message={toast} />
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 lg:flex-row lg:items-center lg:justify-between">
+    <div
+      className={`min-h-screen transition-colors ${
+        isDark ? "bg-brand-dark" : "bg-brand-light"
+      }`}
+    >
+      <Toast message={toastState.message} visible={toastState.visible} />
+
+      {/* ---- Sticky Nav ---- */}
+      <nav
+        className={`sticky top-0 z-50 border-b backdrop-blur ${
+          isDark
+            ? "border-white/10 bg-brand-dark/95"
+            : "border-brand-dark/10 bg-brand-light/95"
+        }`}
+      >
+        <div className="mx-auto flex max-w-dashboard items-center justify-between px-6 py-4">
+          <Link
+            to="/"
+            className={`flex items-center gap-2 text-sm font-medium transition-colors ${
+              isDark
+                ? "text-white/60 hover:text-white"
+                : "text-brand-dark/60 hover:text-brand-dark"
+            }`}
+          >
+            <ArrowLeft size={18} />
+            <span className="hidden sm:inline">Back to Team</span>
+          </Link>
+
+          <h1 className={`text-base font-semibold sm:text-lg ${textPrimary}`}>
+            {member.name}
+          </h1>
+
+          <button
+            onClick={toggleTheme}
+            className={`p-1 transition-colors ${
+              isDark
+                ? "text-white/40 hover:text-white/80"
+                : "text-brand-dark/40 hover:text-brand-dark/80"
+            }`}
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* ---- Mobile Quick Reference ---- */}
+      <div
+        className={`lg:hidden sticky top-[57px] z-40 border-b backdrop-blur px-4 py-3 ${
+          isDark
+            ? "border-white/10 bg-brand-blue/10"
+            : "border-brand-dark/10 bg-brand-blue/5"
+        }`}
+      >
+        <h3 className={`mb-2 text-xs font-semibold ${textPrimary}`}>
+          At a Glance
+        </h3>
+        <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs">
           <div>
-            <p className="text-sm font-semibold text-primary">{member.role}</p>
-            <h1 className="text-2xl font-semibold text-slate-900">{member.name}'s ICP Dashboard</h1>
-            <p className="mt-1 text-sm text-slate-500">Daily LinkedIn playbook for high-intent outreach.</p>
+            <span className={textMuted}>Target: </span>
+            <span className={textSecondary}>{quickSummary.who}</span>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-slate-300"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to team selection
-            </Link>
+          <div>
+            <span className={textMuted}>Topics: </span>
+            <span className={textSecondary}>{quickSummary.topics}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ---- Main Content ---- */}
+      <main className="mx-auto max-w-dashboard px-4 py-8 sm:px-6 md:py-12">
+        {/* ================================================================
+            1. GET STARTED THIS WEEK
+        ================================================================ */}
+        <section className="mb-12 md:mb-20">
+          <div className="bg-brand-blue p-6 sm:p-8">
+            <div className="mb-6 flex items-center gap-3">
+              <Rocket size={24} className="text-white" />
+              <h2 className="text-2xl font-semibold text-white sm:text-3xl">
+                Get Started This Week
+              </h2>
+            </div>
+
+            <div className="space-y-6 text-white">
+              {weeklyPlan.map((block) => (
+                <div key={block.day}>
+                  <h3 className="mb-3 text-lg font-semibold sm:text-xl">
+                    {block.day}
+                  </h3>
+                  <div className="space-y-3">
+                    {block.tasks.map((task, tIdx) => {
+                      const taskId = `${block.day}-${tIdx}`;
+                      return (
+                        <label
+                          key={taskId}
+                          className="flex cursor-pointer items-start gap-3 group"
+                        >
+                          <input
+                            type="checkbox"
+                            className="mt-1 h-5 w-5 flex-shrink-0"
+                            checked={!!checkboxState[taskId]}
+                            onChange={(e) =>
+                              handleCheckbox(taskId, e.target.checked)
+                            }
+                          />
+                          <span
+                            className={`text-sm sm:text-base leading-relaxed transition-colors ${
+                              checkboxState[taskId]
+                                ? "text-white/50 line-through"
+                                : "text-white group-hover:text-white/90"
+                            }`}
+                          >
+                            {task}
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+
+              <div className="mt-6 border-t border-white/20 pt-4">
+                <p className="text-sm text-white/80 sm:text-base">
+                  <span className="font-semibold">Expected results:</span>{" "}
+                  40-50 new connections, visible in your ICP's feed, first
+                  post published, feeling confident.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            2. EXAMPLE POSTS YOU CAN COPY
+        ================================================================ */}
+        {examplePosts.length > 0 && (
+          <section className="mb-12 md:mb-20">
+            <div className="mb-6 flex items-center gap-3">
+              <FileText size={22} className="text-brand-blue" />
+              <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+                Example Posts You Can Copy
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              {examplePosts.map((post, idx) => (
+                <div key={idx} className={`${cardBg} overflow-hidden`}>
+                  {/* Header with metrics */}
+                  <div
+                    className={`flex flex-col gap-3 border-b px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 ${borderColor}`}
+                  >
+                    <div>
+                      <h3 className={`font-semibold ${textPrimary}`}>
+                        {post.title}
+                      </h3>
+                      <div className="mt-1 flex flex-wrap items-center gap-3 text-sm">
+                        <span className={`flex items-center gap-1 ${textMuted}`}>
+                          <ThumbsUp size={14} className="text-brand-blue" />
+                          {post.likes} likes
+                        </span>
+                        <span className={`flex items-center gap-1 ${textMuted}`}>
+                          <MessageCircle
+                            size={14}
+                            className="text-brand-blue"
+                          />
+                          {post.comments} comments
+                        </span>
+                        {post.leads > 0 && (
+                          <span className="bg-brand-lime/20 px-2 py-0.5 text-xs font-medium text-brand-lime">
+                            {post.leads} leads
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => handleCopy(post.content)}
+                      className="flex w-fit items-center gap-2 bg-brand-blue px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-blue/80"
+                    >
+                      <Copy size={14} />
+                      Copy
+                    </button>
+                  </div>
+
+                  {/* Post content */}
+                  <div className="p-4 sm:p-6">
+                    <pre
+                      className={`whitespace-pre-wrap font-sans text-sm leading-relaxed sm:text-base ${
+                        isDark ? "text-white/90" : "text-brand-dark/90"
+                      }`}
+                    >
+                      {post.content}
+                    </pre>
+                  </div>
+
+                  {/* Why it worked */}
+                  <div className="px-4 pb-4 sm:px-6 sm:pb-6">
+                    <div
+                      className={`border-l-2 border-brand-blue p-4 ${cardBgSubtle}`}
+                    >
+                      <p
+                        className={`mb-1 text-xs font-medium uppercase tracking-wide ${textMuted}`}
+                      >
+                        Why this worked
+                      </p>
+                      <p className={`text-sm leading-relaxed ${textSecondary}`}>
+                        {post.whyItWorked}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ================================================================
+            3. OPENING MESSAGES
+        ================================================================ */}
+        <section className="mb-12 md:mb-20">
+          <div className="mb-6 flex items-center gap-3">
+            <MessageCircle size={22} className="text-brand-blue" />
+            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+              Opening Messages
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {member.conversationStarters.map((starter, idx) => (
+              <div key={idx} className={`flex flex-col ${cardBg}`}>
+                {/* Card header - copy button here, NOT overlapping text */}
+                <div
+                  className={`flex items-center justify-between border-b px-4 py-3 ${borderColor}`}
+                >
+                  <span
+                    className={`text-xs font-medium uppercase tracking-wide ${textMuted}`}
+                  >
+                    Template {idx + 1}
+                  </span>
+                  <button
+                    onClick={() => handleCopy(starter.template)}
+                    className="flex items-center gap-1.5 bg-brand-blue px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-brand-blue/80"
+                  >
+                    <Copy size={12} />
+                    Copy
+                  </button>
+                </div>
+
+                {/* Template text */}
+                <div className="flex-grow p-4 sm:p-5">
+                  <p
+                    className={`text-sm leading-relaxed ${
+                      isDark ? "text-white/90" : "text-brand-dark/90"
+                    }`}
+                  >
+                    {starter.template}
+                  </p>
+                </div>
+
+                {/* When to use */}
+                <div className="px-4 pb-4 sm:px-5 sm:pb-5">
+                  <div className={`p-3 ${cardBgSubtle}`}>
+                    <p className={`text-xs italic ${textMuted}`}>
+                      <span className="font-medium not-italic">
+                        When to use:
+                      </span>{" "}
+                      {starter.whenToUse}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ================================================================
+            4. WHO TO CONNECT WITH
+        ================================================================ */}
+        <section className="mb-12 md:mb-20">
+          <div className="mb-6 flex items-center gap-3">
+            <Users size={22} className="text-brand-blue" />
+            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+              Who to Connect With
+            </h2>
+          </div>
+
+          {/* ICP summary */}
+          <div className={`mb-6 p-4 sm:p-6 ${cardBg}`}>
+            <div className="mb-3 flex items-center gap-2">
+              <Sparkles size={16} className="text-brand-blue" />
+              <h3 className={`text-base font-semibold ${textPrimary}`}>
+                Who You're Talking To
+              </h3>
+            </div>
+            <p className={`mb-2 text-lg font-semibold ${textPrimary}`}>
+              {member.icp.title}
+            </p>
+            <p className={`mb-3 text-sm ${textSecondary}`}>
+              {member.icp.companyStage}
+            </p>
             <div className="flex flex-wrap gap-2">
-              {member.icp.servicesFocus.map((service) => (
+              {member.icp.targetRoles.map((role) => (
                 <span
-                  key={service}
-                  className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                    serviceColors[service] || "bg-slate-100 text-slate-700"
+                  key={role}
+                  className={`px-2 py-1 text-xs font-medium ${
+                    isDark
+                      ? "bg-brand-blue/10 text-brand-blue"
+                      : "bg-brand-blue/10 text-brand-blue"
                   }`}
                 >
-                  {service}
+                  {role}
                 </span>
               ))}
             </div>
           </div>
-        </div>
-        <nav className="border-t border-slate-100 bg-slate-50">
-          <div className="mx-auto flex max-w-6xl flex-wrap gap-2 px-6 py-3 text-xs font-medium text-slate-500">
-            {sectionLinks.map((link) => (
-              <a
-                key={link.id}
-                className="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-600 transition hover:border-blue-200 hover:text-primary"
-                href={`#${link.id}`}
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {/* Connect */}
+            <div className={`border-l-4 border-brand-blue p-4 sm:p-6 ${cardBg}`}>
+              <h3 className={`mb-4 text-base font-semibold sm:text-lg ${textPrimary}`}>
+                Connect if they:
+              </h3>
+              <ul className="space-y-2">
+                {member.connectCriteria.map((criterion, idx) => (
+                  <li
+                    key={idx}
+                    className={`flex items-start gap-2 text-sm ${
+                      isDark ? "text-white/80" : "text-brand-dark/80"
+                    }`}
+                  >
+                    <span className="mt-0.5 text-brand-blue">&#9656;</span>
+                    {criterion}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Just engage */}
+            <div
+              className={`border-l-4 p-4 sm:p-6 ${cardBg} ${
+                isDark ? "border-white/20" : "border-brand-dark/20"
+              }`}
+            >
+              <h3 className={`mb-4 text-base font-semibold sm:text-lg ${textPrimary}`}>
+                Just engage if they:
+              </h3>
+              <ul className="space-y-2">
+                {member.engageCriteria.map((criterion, idx) => (
+                  <li
+                    key={idx}
+                    className={`flex items-start gap-2 text-sm ${textMuted}`}
+                  >
+                    <span className={`mt-0.5 ${textFaint}`}>&#9656;</span>
+                    {criterion}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            5. CONTENT IDEAS GENERATOR
+        ================================================================ */}
+        <section className="mb-12 md:mb-20">
+          <div className="mb-4 flex items-center gap-3">
+            <Lightbulb size={22} className="text-brand-blue" />
+            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+              Content Ideas
+            </h2>
+          </div>
+          <p className={`mb-6 text-sm ${textSecondary}`}>
+            Need a post idea? Pick a template and customize it:
+          </p>
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {contentTemplates.map((template, idx) => (
+              <div
+                key={idx}
+                className={`group p-4 transition-colors sm:p-5 ${cardBg} ${hoverBg}`}
               >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </nav>
-      </header>
-
-      <main className="mx-auto max-w-6xl px-6 py-10">
-        <section id="overview" className={focusCard}>
-          <SectionTitle icon={Sparkles} title="Your ICP Overview" />
-          <div className="grid gap-6 lg:grid-cols-3">
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold text-slate-500">Who you're targeting</p>
-              <p className="mt-2 text-lg font-semibold text-slate-900">{member.icp.title}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {member.icp.targetRoles.map((role) => (
-                  <Pill key={role} text={role} />
-                ))}
-              </div>
-            </div>
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold text-slate-500">Company profile</p>
-              <p className="mt-2 text-sm text-slate-700">{member.icp.companyStage}</p>
-            </div>
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold text-slate-500">They're posting about</p>
-              <ul className="mt-2 space-y-2 text-sm text-slate-700">
-                {member.icp.theyrePostingAbout.map((topic) => (
-                  <li key={topic} className="flex items-center gap-2">
-                    <Flame className="h-4 w-4 text-primary" />
-                    {topic}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="connect-engage" className={`mt-8 ${focusCard}`}>
-          <SectionTitle
-            icon={CheckCircle2}
-            title="Connect vs Engage"
-            subtitle="Use this decision tree when scanning LinkedIn feeds."
-          />
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-xl border border-green-100 bg-green-50 p-5">
-              <h3 className="mb-4 text-lg font-semibold text-green-800">✅ CONNECT if they...</h3>
-              <ul className="space-y-3 text-sm text-green-900">
-                {member.connectCriteria.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-xl border border-amber-100 bg-amber-50 p-5">
-              <h3 className="mb-4 text-lg font-semibold text-amber-800">👍 ENGAGE if they...</h3>
-              <ul className="space-y-3 text-sm text-amber-900">
-                {member.engageCriteria.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <ThumbsUp className="mt-0.5 h-4 w-4" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <button
-            type="button"
-            onClick={() => setShowWhy((value) => !value)}
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary"
-          >
-            <BadgeCheck className="h-4 w-4" />
-            {showWhy ? "Hide" : "Why this matters"}
-          </button>
-          {showWhy ? (
-            <div className="mt-3 rounded-xl bg-slate-50 p-4 text-sm text-slate-600">
-              Connecting is reserved for ICPs showing active buying signals. Engage when the intent is
-              weaker—your goal is to nurture until they match the connect criteria.
-            </div>
-          ) : null}
-        </section>
-
-        <section id="starters" className={`mt-8 ${focusCard}`}>
-          <SectionTitle icon={MessageSquareText} title="Conversation Starters" />
-          <div className="grid gap-4 lg:grid-cols-3">
-            {member.conversationStarters.map((starter) => (
-              <div key={starter.template} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-subtle">
-                <p className="text-sm text-slate-700">{starter.template}</p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400">When to use</p>
-                <p className="mt-1 text-sm text-slate-600">{starter.whenToUse}</p>
-                <button
-                  type="button"
-                  onClick={() => handleCopy(starter.template)}
-                  className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:text-primary"
+                <h3
+                  className={`mb-2 text-xs font-semibold uppercase tracking-wide ${textMuted}`}
                 >
-                  <Clipboard className="h-3.5 w-3.5" />
-                  Copy
+                  {template.category}
+                </h3>
+                <p className={`mb-3 text-sm leading-relaxed ${textSecondary}`}>
+                  {template.template}
+                </p>
+                <button
+                  onClick={() => handleCopy(template.template)}
+                  className="flex items-center gap-1 text-sm font-medium text-brand-blue transition-colors hover:underline"
+                >
+                  Copy template
+                  <ArrowRight size={14} />
                 </button>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="quotes" className={`mt-8 ${focusCard}`}>
-          <SectionTitle icon={Quote} title="What They're Actually Saying" />
-          <div className="grid gap-4 md:grid-cols-2">
-            {member.realQuotes.map((quote) => (
-              <div key={quote} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                <p className="text-sm text-slate-700">“{quote}”</p>
-                <span className="mt-3 inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-primary">
-                  Pain point
-                </span>
-              </div>
-            ))}
+        {/* ================================================================
+            6. WHAT TO POST ABOUT
+        ================================================================ */}
+        <section className="mb-12 md:mb-20">
+          <div className="mb-6 flex items-center gap-3">
+            <BookOpen size={22} className="text-brand-blue" />
+            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+              What to Post About
+            </h2>
           </div>
-        </section>
 
-        <section id="content" className={`mt-8 ${focusCard}`}>
-          <SectionTitle icon={BookOpen} title="Content You Should Post" />
-          <div className="space-y-4">
+          <div className="space-y-3">
             {member.contentPillars.map((pillar) => (
-              <details key={pillar.title} className="rounded-xl border border-slate-200 bg-white p-4">
-                <summary className="cursor-pointer text-sm font-semibold text-slate-900">
-                  {pillar.title} · <span className="text-slate-500">{pillar.frequency}</span>
+              <details
+                key={pillar.title}
+                className={`group ${cardBg} overflow-hidden`}
+              >
+                <summary
+                  className={`flex cursor-pointer items-center justify-between p-4 text-sm font-semibold sm:p-5 ${textPrimary}`}
+                >
+                  <span>
+                    {pillar.title}{" "}
+                    <span className={`font-normal ${textMuted}`}>
+                      &middot; {pillar.frequency}
+                    </span>
+                  </span>
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform group-open:rotate-180 ${textMuted}`}
+                  />
                 </summary>
-                <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                <ul
+                  className={`border-t px-4 py-4 sm:px-5 ${borderColor}`}
+                >
                   {pillar.examples.map((example) => (
-                    <li key={example} className="flex items-start gap-2">
-                      <Sparkles className="mt-0.5 h-4 w-4 text-primary" />
+                    <li
+                      key={example}
+                      className={`flex items-start gap-2 py-1.5 text-sm ${textSecondary}`}
+                    >
+                      <Sparkles
+                        size={14}
+                        className="mt-0.5 flex-shrink-0 text-brand-blue"
+                      />
                       {example}
                     </li>
                   ))}
@@ -386,86 +890,172 @@ const Dashboard = () => {
           </div>
         </section>
 
-        <section id="boosters" className={`mt-8 ${focusCard}`}>
-          <SectionTitle icon={Sparkles} title="5 Engagement Boosters" />
-          <div className="grid gap-4 md:grid-cols-2">
-            {member.engagementBoosters.map((booster, index) => (
-              <div key={booster} className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-sm font-semibold text-primary">
-                  {index + 1}
+        {/* ================================================================
+            COLLAPSIBLE ADVANCED SECTION
+        ================================================================ */}
+        <div className="mb-12 md:mb-20">
+          <button
+            onClick={() => setShowAdvanced((prev) => !prev)}
+            className={`flex w-full items-center justify-center gap-2 border-t py-5 text-sm font-medium transition-colors ${borderColor} ${textMuted} hover:${textSecondary}`}
+          >
+            {showAdvanced ? "Hide" : "Show"} Advanced Tips & Reference
+            <ChevronDown
+              size={18}
+              className={`transition-transform ${
+                showAdvanced ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {showAdvanced && (
+            <div className="mt-8 space-y-12 animate-fadeIn md:mt-12">
+              {/* ---- How to Get More Reach ---- */}
+              <section>
+                <div className="mb-4 flex items-center gap-3">
+                  <Sparkles size={20} className="text-brand-blue" />
+                  <h2
+                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
+                  >
+                    How to Get More Reach
+                  </h2>
                 </div>
-                <p className="text-sm text-slate-700">{booster}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {member.engagementBoosters.map((booster, index) => (
+                    <div
+                      key={booster}
+                      className={`flex items-start gap-3 p-4 ${cardBg}`}
+                    >
+                      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center bg-brand-blue/10 text-xs font-semibold text-brand-blue">
+                        {index + 1}
+                      </div>
+                      <p className={`text-sm ${textSecondary}`}>{booster}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
 
-        <section id="red-flags" className={`mt-8 ${focusCard}`}>
-          <SectionTitle icon={TriangleAlert} title="Red Flags" />
-          <div className="grid gap-4 md:grid-cols-2">
-            {member.redFlags.map((flag) => (
-              <div key={flag} className="flex items-start gap-3 rounded-xl border border-red-100 bg-red-50 p-4 text-sm text-red-900">
-                <TriangleAlert className="mt-0.5 h-4 w-4" />
-                {flag}
-              </div>
-            ))}
-          </div>
-        </section>
+              {/* ---- People to Avoid ---- */}
+              <section>
+                <div className="mb-4 flex items-center gap-3">
+                  <TriangleAlert size={20} className="text-brand-blue" />
+                  <h2
+                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
+                  >
+                    People to Avoid
+                  </h2>
+                </div>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {member.redFlags.map((flag) => (
+                    <div
+                      key={flag}
+                      className={`flex items-start gap-3 p-4 text-sm ${cardBg} ${textSecondary}`}
+                    >
+                      <TriangleAlert
+                        size={16}
+                        className="mt-0.5 flex-shrink-0 text-red-400"
+                      />
+                      {flag}
+                    </div>
+                  ))}
+                </div>
+              </section>
 
-        <section id="trust" className={`mt-8 ${focusCard}`}>
-          <SectionTitle icon={BadgeCheck} title="What They Need to See" />
-          <div className="grid gap-3 md:grid-cols-2">
-            {member.trustBuilders.map((item) => (
-              <div key={item} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-3 text-sm text-slate-700">
-                <BadgeCheck className="h-4 w-4 text-primary" />
-                {item}
-              </div>
-            ))}
-          </div>
-        </section>
+              {/* ---- What They're Actually Saying ---- */}
+              <section>
+                <div className="mb-4 flex items-center gap-3">
+                  <Flame size={20} className="text-brand-blue" />
+                  <h2
+                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
+                  >
+                    What They're Actually Saying
+                  </h2>
+                </div>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {member.realQuotes.map((quote) => (
+                    <div
+                      key={quote}
+                      className={`p-4 ${cardBg}`}
+                    >
+                      <p className={`text-sm italic leading-relaxed ${textSecondary}`}>
+                        &ldquo;{quote}&rdquo;
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
 
-        <section id="quick-ref" className={`mt-8 ${focusCard}`}>
-          <SectionTitle icon={Clipboard} title="Quick Reference" />
-          <div className="grid gap-6 lg:grid-cols-3">
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold text-slate-500">Key metrics to track</p>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                {quickReference.metrics.map((metric) => (
-                  <li key={metric} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                    {metric}
-                  </li>
-                ))}
-              </ul>
+              {/* ---- How to Build Credibility ---- */}
+              <section>
+                <div className="mb-4 flex items-center gap-3">
+                  <BadgeCheck size={20} className="text-brand-blue" />
+                  <h2
+                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
+                  >
+                    How to Build Credibility
+                  </h2>
+                </div>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {member.trustBuilders.map((item) => (
+                    <div
+                      key={item}
+                      className={`flex items-center gap-2 p-3 text-sm ${cardBg} ${textSecondary}`}
+                    >
+                      <BadgeCheck
+                        size={14}
+                        className="flex-shrink-0 text-brand-blue"
+                      />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* ---- They're Posting About ---- */}
+              <section>
+                <div className="mb-4 flex items-center gap-3">
+                  <Flame size={20} className="text-brand-blue" />
+                  <h2
+                    className={`text-lg font-semibold sm:text-xl ${textPrimary}`}
+                  >
+                    Hot Topics in Their Feed
+                  </h2>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {member.icp.theyrePostingAbout.map((topic) => (
+                    <span
+                      key={topic}
+                      className={`px-3 py-1.5 text-sm font-medium ${
+                        isDark
+                          ? "bg-brand-blue/10 text-white/80"
+                          : "bg-brand-blue/10 text-brand-dark/80"
+                      }`}
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </section>
             </div>
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold text-slate-500">Daily 15-min routine</p>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                {quickReference.routine.map((step) => (
-                  <li key={step} className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
-                    {step}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold text-slate-500">Warm indicators</p>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                {quickReference.warmSignals.map((signal) => (
-                  <li key={signal} className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
-                    {signal}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+          )}
+        </div>
+
+        {/* ---- Footer ---- */}
+        <footer
+          className={`border-t pt-8 pb-12 text-center text-xs ${borderColor} ${textMuted}`}
+        >
+          <p>
+            Midwestern Interactive &middot; LinkedIn Playbook &middot;{" "}
+            {member.name}
+          </p>
+        </footer>
       </main>
     </div>
   );
-};
+}
+
+// ---------------------------------------------------------------------------
+// App Router
+// ---------------------------------------------------------------------------
 
 export default function App() {
   return (
