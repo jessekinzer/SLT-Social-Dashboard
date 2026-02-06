@@ -666,6 +666,10 @@ function Dashboard() {
   );
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  useEffect(() => {
     if (member) {
       saveSelectedMember(member.id);
       if (checkIsNewWeek(member.id)) {
