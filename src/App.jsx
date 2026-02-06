@@ -337,12 +337,12 @@ function Landing() {
 
       <main className="mx-auto max-w-dashboard px-6 py-12 md:py-16">
         <div className="mb-12">
-          {/* Hero Illustration - color inverts based on theme */}
-          <div className="mb-8">
+          {/* Hero Illustration - full width, spans entire content area */}
+          <div className="mb-8 w-full">
             <img
               src="/illustration.svg"
               alt="Illustration"
-              className="max-h-32 w-auto object-contain transition-all"
+              className="w-full h-auto object-contain transition-all"
               style={{ filter: isDark ? "none" : "invert(0.9)" }}
               data-testid="hero-illustration"
             />
