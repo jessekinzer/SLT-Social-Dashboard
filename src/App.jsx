@@ -291,50 +291,10 @@ async function copyToClipboard(text, showToast) {
 function Landing() {
   const navigate = useNavigate();
   const { isDark, toggleTheme } = useTheme();
-  const [logo, setLogo] = useState(getLogo);
-  const [heroImage, setHeroImage] = useState(getHeroImage);
-  const logoInputRef = useRef(null);
-  const heroInputRef = useRef(null);
 
   const handleSelect = (id) => {
     saveSelectedMember(id);
     navigate(`/member/${id}`);
-  };
-
-  const handleLogoUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result;
-      setLogo(dataUrl);
-      saveLogo(dataUrl);
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleRemoveLogo = () => {
-    setLogo(null);
-    saveLogo(null);
-    if (logoInputRef.current) logoInputRef.current.value = "";
-  };
-
-  const handleHeroUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result;
-      setHeroImage(dataUrl);
-      saveHeroImage(dataUrl);
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleRemoveHero = () => {
-    setHeroImage(null);
-    saveHeroImage(null);
-    if (heroInputRef.current) heroInputRef.current.value = "";
   };
 
   return (
@@ -349,47 +309,16 @@ function Landing() {
         } backdrop-blur`}
       >
         <div className="mx-auto flex max-w-dashboard items-center justify-between px-6 py-4">
-          {/* Logo Section */}
-          <div className="flex items-center gap-3">
-            {logo ? (
-              <div className="group relative">
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="h-10 max-w-[180px] object-contain"
-                  data-testid="site-logo"
-                />
-                <button
-                  onClick={handleRemoveLogo}
-                  className={`absolute -right-2 -top-2 hidden h-5 w-5 items-center justify-center bg-red-500 text-white group-hover:flex`}
-                  aria-label="Remove logo"
-                  data-testid="remove-logo"
-                >
-                  <X size={12} />
-                </button>
-              </div>
-            ) : (
-              <label
-                className={`flex cursor-pointer items-center gap-2 border border-dashed px-3 py-2 text-xs font-medium transition-colors ${
-                  isDark
-                    ? "border-white/20 text-white/50 hover:border-white/40 hover:text-white/70"
-                    : "border-brand-dark/20 text-brand-dark/50 hover:border-brand-dark/40 hover:text-brand-dark/70"
-                }`}
-                data-testid="upload-logo-btn"
-              >
-                <Upload size={14} />
-                Upload Logo
-                <input
-                  ref={logoInputRef}
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleLogoUpload}
-                  data-testid="logo-input"
-                />
-              </label>
-            )}
-          </div>
+          {/* Logo - small, color inverts based on theme */}
+          <img
+            src="/mw-logo.svg"
+            alt="Midwestern Logo"
+            className={`h-6 w-auto transition-all ${
+              isDark ? "invert brightness-0 invert" : ""
+            }`}
+            style={{ filter: isDark ? "invert(1) brightness(2)" : "none" }}
+            data-testid="site-logo"
+          />
 
           <button
             onClick={toggleTheme}
@@ -408,46 +337,15 @@ function Landing() {
 
       <main className="mx-auto max-w-dashboard px-6 py-12 md:py-16">
         <div className="mb-12">
-          {/* Hero Image Section */}
+          {/* Hero Illustration - color inverts based on theme */}
           <div className="mb-8">
-            {heroImage ? (
-              <div className="group relative inline-block">
-                <img
-                  src={heroImage}
-                  alt="Hero illustration"
-                  className="max-h-48 max-w-md object-contain"
-                  data-testid="hero-illustration"
-                />
-                <button
-                  onClick={handleRemoveHero}
-                  className={`absolute -right-2 -top-2 hidden h-6 w-6 items-center justify-center bg-red-500 text-white group-hover:flex`}
-                  aria-label="Remove illustration"
-                  data-testid="remove-hero"
-                >
-                  <X size={14} />
-                </button>
-              </div>
-            ) : (
-              <label
-                className={`inline-flex cursor-pointer items-center gap-2 border border-dashed px-4 py-3 text-sm font-medium transition-colors ${
-                  isDark
-                    ? "border-white/20 text-white/50 hover:border-white/40 hover:text-white/70"
-                    : "border-brand-dark/20 text-brand-dark/50 hover:border-brand-dark/40 hover:text-brand-dark/70"
-                }`}
-                data-testid="upload-hero-btn"
-              >
-                <Upload size={16} />
-                Upload Illustration (optional)
-                <input
-                  ref={heroInputRef}
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleHeroUpload}
-                  data-testid="hero-input"
-                />
-              </label>
-            )}
+            <img
+              src="/illustration.svg"
+              alt="Illustration"
+              className="max-h-32 w-auto object-contain transition-all"
+              style={{ filter: isDark ? "none" : "invert(0.9)" }}
+              data-testid="hero-illustration"
+            />
           </div>
 
           {/* Left-aligned headings */}
