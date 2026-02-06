@@ -973,7 +973,7 @@ function Dashboard() {
               <MessageSquareQuote size={22} className="text-brand-blue" />
               <div>
                 <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-                  What {member.icp.targetRoles[0]}s Are Actually Saying Right Now
+                  What {member.icp.targetRoles[0]} Are Actually Saying Right Now
                 </h2>
                 <p className={`mt-1 text-sm ${textMuted}`}>
                   Current topics from Reddit, Hacker News, LinkedIn, and industry forums
