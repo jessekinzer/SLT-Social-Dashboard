@@ -100,6 +100,32 @@
         "Team credentials (who are the actual developers?)",
         "Speed guarantee and timeline proof",
         "Portfolio of similar builds"
+      ],
+      "examplePosts": [
+        {
+          "title": "Speed Win Story",
+          "likes": 47,
+          "comments": 12,
+          "leads": 2,
+          "content": "We just helped a founder ship their MVP in 6 weeks instead of 6 months.\n\nHere's what they cut:\n\u2022 Admin dashboard (not needed at $0 ARR)\n\u2022 User roles and permissions (launched single-user)\n\u2022 Email notifications (Slack worked fine for now)\n\u2022 Social login (email/password was enough)\n\nThe result? Shipped, validated with 10 customers, and raising a seed round.\n\nBuilding gets easier. Deciding what NOT to build stays hard.\n\nWhat would you cut from your MVP?",
+          "whyItWorked": "Contrarian timeframe (6 weeks vs 6 months) grabs attention. Specific, relatable cuts build credibility. Concrete outcome (raising seed) shows value. Question at end drives engagement."
+        },
+        {
+          "title": "Hiring Pain Point",
+          "likes": 62,
+          "comments": 18,
+          "leads": 3,
+          "content": "\"We can't ship until we hire 3 more engineers.\"\n\nI hear this from founders every week.\n\nThe math doesn't add up:\n\u2022 6-8 weeks to find candidates\n\u2022 3-4 weeks to close offers\n\u2022 2 weeks for them to give notice\n\u2022 2-4 weeks for onboarding\n\nThat's 4+ months before they ship a line of code.\n\nMeanwhile your competitor just launched.\n\nThere's a better way: Embedded teams ship code on week 1.\n\nThoughts? Am I missing something here?",
+          "whyItWorked": "Universal pain point (slow hiring). Specific timeline breakdown. Implicit value prop without hard sell. Humble question keeps it conversational."
+        },
+        {
+          "title": "Hot Take for Engagement",
+          "likes": 89,
+          "comments": 31,
+          "leads": 0,
+          "content": "Unpopular opinion: Most startups over-engineer their MVPs.\n\nYou don't need:\n\u274c A design system (a few Tailwind classes work fine)\n\u274c Automated testing (manual QA is faster for MVP)\n\u274c Microservices (a monolith ships faster)\n\u274c Perfect error handling (console.log is enough)\n\nYou DO need:\n\u2705 Something customers can use today\n\u2705 A way to collect feedback\n\u2705 The ability to change it tomorrow\n\n\"Tech debt\" doesn't matter if you never get customers.\n\nChange my mind.",
+          "whyItWorked": "Controversial opinion drives debate in comments. Clear structure (don't vs do). 'Change my mind' explicitly invites disagreement. Pure engagement play."
+        }
       ]
     },
     {
@@ -201,6 +227,32 @@
         "Clear delivery process",
         "Access to senior product guidance",
         "Case studies with metrics"
+      ],
+      "examplePosts": [
+        {
+          "title": "Roadmap Ruthlessness",
+          "likes": 74,
+          "comments": 22,
+          "leads": 2,
+          "content": "Last quarter we had 47 feature requests on the roadmap.\n\nWe shipped 6.\n\nHere's how we chose them:\n\u2022 Mapped each to a retention or expansion metric\n\u2022 Killed anything that didn't move the needle in 30 days\n\u2022 Forced every PM to answer: \"What happens if we DON'T build this?\"\n\nThe result?\n\u2192 18% improvement in 30-day retention\n\u2192 Team morale went UP (less context-switching)\n\u2192 Engineering actually finished what they started\n\nThe hardest product skill isn't prioritization.\n\nIt's saying no to good ideas.\n\nWhat's your framework for killing features?",
+          "whyItWorked": "Specific numbers (47 to 6) create curiosity. Shows a clear framework others can steal. Metrics prove the approach worked. Question invites PMs to share their own methods."
+        },
+        {
+          "title": "Onboarding Teardown",
+          "likes": 53,
+          "comments": 16,
+          "leads": 3,
+          "content": "We were losing 40% of new users before they reached their \"aha moment.\"\n\nThe fix wasn't a redesign. It was a stopwatch.\n\nWe timed every step of onboarding:\n\u2022 Sign-up to first action: 4 minutes (too long)\n\u2022 First action to value: 7 minutes (way too long)\n\u2022 Total time to \"aha\": 11 minutes\n\nWe cut it to 3 minutes by:\n1. Removing 2 setup screens\n2. Pre-populating sample data\n3. Adding a single guided tooltip\n\nNo new features. No engineering sprint. A 2-week scoped project.\n\nRetention jumped 23%.\n\nStop building new features. Fix the first 5 minutes.",
+          "whyItWorked": "Opens with a painful metric (40% drop-off). Simple, replicable framework (just time it). Concrete result (23% lift) with minimal effort. Ends with a punchy, shareable takeaway."
+        },
+        {
+          "title": "Product vs. Engineering Hot Take",
+          "likes": 108,
+          "comments": 35,
+          "leads": 0,
+          "content": "Hot take: Most product-engineering friction isn't about priorities.\n\nIt's about translation.\n\nProduct says: \"We need to improve activation.\"\nEngineering hears: \"Rebuild the onboarding flow.\"\n\nProduct says: \"Users are churning.\"\nEngineering hears: \"Build 10 new features.\"\n\nProduct says: \"We need to move faster.\"\nEngineering hears: \"Cut corners.\"\n\nThe fix isn't better roadmaps. It's better specs.\n\nOne page. Clear outcome. Measurable success criteria. Definition of done.\n\nDo this and watch shipping velocity double.\n\nAgree or disagree?",
+          "whyItWorked": "Reframes a common conflict in a new way. The parallel structure (says/hears) is instantly relatable. Simple solution that both PMs and engineers can rally behind. 'Agree or disagree' drives comment debate."
+        }
       ]
     },
     {
@@ -302,6 +354,32 @@
         "Tooling certifications",
         "Clear scope + timeline",
         "Reporting improvements"
+      ],
+      "examplePosts": [
+        {
+          "title": "CRM Horror Story",
+          "likes": 85,
+          "comments": 27,
+          "leads": 2,
+          "content": "I audited a $40M ARR company's CRM last month.\n\nWhat I found:\n\u2022 34% of deals had no next step logged\n\u2022 22% of contacts had invalid emails\n\u2022 Pipeline was overstated by $2.1M\n\u2022 3 reps were forecasting the same account\n\u2022 \"Closed Lost\" reasons were blank on 61% of records\n\nTheir forecast accuracy? 38%.\n\nThey didn't need a new CRM.\nThey didn't need a new sales methodology.\nThey needed 3 automations and 2 required fields.\n\nWe scoped it. Fixed it in 3 weeks.\n\nForecast accuracy is now 79%.\n\nYour CRM isn't broken. Your data hygiene is.\n\nWhat's the worst CRM data you've ever seen?",
+          "whyItWorked": "Shocking specifics (34%, $2.1M overstatement) grab attention. The simple fix (3 automations, 2 fields) is surprisingly actionable. Before/after metric proves ROI. Question invites horror story sharing in comments."
+        },
+        {
+          "title": "RevOps Stack Debate",
+          "likes": 112,
+          "comments": 38,
+          "leads": 0,
+          "content": "Unpopular RevOps opinion:\n\nYou don't need 12 tools in your revenue stack.\n\nYou need 4:\n1. CRM (your single source of truth)\n2. Engagement platform (sequences + tracking)\n3. BI layer (dashboards + forecasting)\n4. Integration glue (sync everything)\n\nEvery tool beyond these 4 should justify its existence quarterly.\n\nI've seen teams with 15+ tools that can't answer: \"What's our real pipeline?\"\n\nAnd I've seen teams with 4 tools that forecast within 5%.\n\nThe difference isn't the stack. It's the data flow.\n\nWhat's in your RevOps stack right now? (Be honest.)",
+          "whyItWorked": "Contrarian take on tool bloat resonates with budget-conscious ops leaders. Clear, simple framework (just 4 tools) is easy to remember. 'Be honest' creates vulnerability and drives comments. Pure engagement play that builds authority."
+        },
+        {
+          "title": "Handoff Revenue Leak",
+          "likes": 58,
+          "comments": 14,
+          "leads": 4,
+          "content": "The most expensive moment in your revenue cycle isn't closing.\n\nIt's the handoff.\n\nSales to CS. CS to Support. Support back to Sales for expansion.\n\nWe mapped one client's handoffs and found:\n\u2192 Average 4.2 days between close and CS intro\n\u2192 37% of expansion signals never reached sales\n\u2192 NPS dropped 18 points in the first 2 weeks post-sale\n\nThe fix was a scoped automation project:\n\u2022 Auto-trigger CS intro at contract signature\n\u2022 Usage alerts routed to expansion reps\n\u2022 Health score visible across all teams\n\nTime to build: 4 weeks.\nRevenue recovered: $380K in expansion pipeline (first quarter).\n\nWhere are your handoffs leaking?",
+          "whyItWorked": "Reframes a common problem (handoffs) as a revenue problem. Specific data points make it feel like a real audit. Clear ROI ($380K) justifies the investment. Targets multiple buyer personas (Sales, CS, RevOps) for broad reach."
+        }
       ]
     },
     {
@@ -403,6 +481,32 @@
         "Examples of scaled content",
         "Access to senior strategists",
         "Timeline to impact"
+      ],
+      "examplePosts": [
+        {
+          "title": "Content Repurposing Framework",
+          "likes": 93,
+          "comments": 24,
+          "leads": 2,
+          "content": "We turned 1 webinar into 23 pieces of content last month.\n\nHere's the exact breakdown:\n\nFrom a 45-minute webinar:\n\u2192 1 full blog post (from the transcript)\n\u2192 3 short blog posts (one per key theme)\n\u2192 1 gated PDF (slides + key takeaways)\n\u2192 8 LinkedIn posts (quotes + hot takes from speakers)\n\u2192 4 email nurture touches\n\u2192 3 short video clips (under 90 seconds each)\n\u2192 2 infographics\n\u2192 1 podcast episode (audio-only version)\n\nTotal time: 12 hours of work across the team.\nCost per asset: ~$47.\n\nStop creating content from scratch every time.\n\nStart with one anchor and multiply.\n\nWhat's your best content repurposing hack?",
+          "whyItWorked": "Extremely specific and actionable (23 pieces, exact list). The cost-per-asset math makes it tangible for budget holders. Framework is immediately stealable. Question drives comments from content marketers sharing tips."
+        },
+        {
+          "title": "Attribution Reality Check",
+          "likes": 67,
+          "comments": 19,
+          "leads": 3,
+          "content": "Honest question for B2B marketers:\n\nWhen's the last time your attribution model actually changed a decision?\n\nI'll go first.\n\nWe spent 6 months building a multi-touch attribution model. Beautiful dashboards. Every touchpoint tracked.\n\nThen I asked our CMO: \"Has this changed how you allocate budget?\"\n\nSilence.\n\nThe truth: 80% of attribution work is theater.\n\nWhat actually drives decisions:\n\u2022 Ask new customers \"how did you hear about us?\" (self-reported)\n\u2022 Track 3 metrics, not 30 (CPL, pipeline influence, CAC payback)\n\u2022 Run simple A/B holdout tests on channels\n\nPerfect attribution is a myth.\nDirectionally correct attribution is a weapon.\n\nAm I wrong?",
+          "whyItWorked": "Vulnerable admission (we wasted 6 months) builds trust. Challenges a sacred cow in marketing (attribution). Simple alternative framework is refreshing. 'Am I wrong?' invites healthy debate."
+        },
+        {
+          "title": "CPL Crisis Playbook",
+          "likes": 44,
+          "comments": 11,
+          "leads": 4,
+          "content": "Our CPL jumped 40% in one quarter.\n\nHere's the 3-week sprint that brought it back down:\n\nWeek 1 - Diagnose:\n\u2022 Audited every ad set (found 3 audiences with 60%+ overlap)\n\u2022 Checked landing pages (one had a 12-second load time)\n\u2022 Reviewed lead scoring (MQL definition had drifted)\n\nWeek 2 - Fix:\n\u2022 Consolidated overlapping audiences\n\u2022 Rebuilt the top landing page (load time: 2.1 seconds)\n\u2022 Tightened MQL criteria with sales alignment\n\nWeek 3 - Test:\n\u2022 Launched 4 new ad variations\n\u2022 A/B tested two landing page layouts\n\u2022 Set up weekly CPL alerts\n\nResult: CPL dropped 31% and pipeline quality improved.\n\nThe lesson: Rising CPL is usually 3-4 small problems, not 1 big one.\n\nWhat's your go-to move when CPL spikes?",
+          "whyItWorked": "Timely pain point (rising CPL affects every demand gen leader). Week-by-week structure is easy to follow and steal. Specific fixes are actionable, not theoretical. Lead-generating because it signals expertise in paid performance."
+        }
       ]
     },
     {
@@ -504,6 +608,32 @@
         "Integration process details",
         "Security and compliance proof",
         "References from engineering leaders"
+      ],
+      "examplePosts": [
+        {
+          "title": "Tech Debt Accounting",
+          "likes": 96,
+          "comments": 33,
+          "leads": 1,
+          "content": "Your tech debt has a dollar value. Have you calculated it?\n\nHere's a simple framework I use:\n\nFor every tech debt item, estimate:\n\u2022 How many hours/week it costs in workarounds\n\u2022 How many incidents it causes per month\n\u2022 How much it slows new feature delivery\n\nExample from a client:\n\u2192 Legacy auth system: 6 hrs/week in workarounds\n\u2192 3 incidents/month (avg 2 hrs each to resolve)\n\u2192 Every new feature takes 30% longer because of it\n\nAnnualized cost: ~$180K in lost engineering productivity.\n\nThe fix was a 6-week scoped project. Cost: $45K.\n\nROI: 4x in year one.\n\nTech debt isn't a \"someday\" problem. It's a math problem.\n\nStop calling it debt. Start calling it what it is: a recurring expense.\n\nHow do you prioritize tech debt on your team?",
+          "whyItWorked": "Reframes tech debt in business terms (dollars, not story points). The specific example with real numbers makes it concrete. 4x ROI makes the case for action. Engineering leaders share it because it helps them justify debt sprints to leadership."
+        },
+        {
+          "title": "Hiring Timeline Reality",
+          "likes": 71,
+          "comments": 26,
+          "leads": 3,
+          "content": "I tracked every engineering hire we made last year.\n\nAverage time from \"we need someone\" to \"they're productive\":\n\n\u2022 Writing the job description: 1-2 weeks\n\u2022 Sourcing candidates: 3-4 weeks\n\u2022 Interview loops: 2-3 weeks\n\u2022 Offer + negotiation: 1-2 weeks\n\u2022 Notice period: 2-4 weeks\n\u2022 Onboarding to productive: 4-8 weeks\n\nBest case: 13 weeks.\nRealistic case: 20+ weeks.\n\nThat's 5 months before they ship meaningful code.\n\nMeanwhile, the roadmap doesn't pause.\nCustomers don't wait.\nCompetitors don't slow down.\n\nThis is why smart engineering leaders run a dual strategy:\n1. Hire for the long term\n2. Embed for the short term\n\nBoth. Not either/or.\n\nWhat's your average time-to-productive for new hires?",
+          "whyItWorked": "Real data from actual tracking is more credible than estimates. The timeline adds up in a way that's undeniable. Positions embedded teams as complementary (not competitive) to hiring. Question drives engagement from engineering managers comparing notes."
+        },
+        {
+          "title": "Developer Productivity Hot Take",
+          "likes": 118,
+          "comments": 40,
+          "leads": 0,
+          "content": "Controversial opinion: Most developer productivity tools are solving the wrong problem.\n\nThe #1 thing slowing your engineers down isn't:\n\u274c Their IDE\n\u274c Their CI/CD pipeline\n\u274c Their code review process\n\u274c Their standup format\n\nIt's context switching.\n\nThe average engineer at a scaling startup is on:\n\u2022 2-3 projects simultaneously\n\u2022 4-6 Slack channels actively pinging\n\u2022 3+ meetings per day\n\u2022 1-2 on-call rotations per month\n\nYou don't need better tools. You need fewer priorities.\n\nOne engineer on one project ships 3x faster than one engineer split across three projects.\n\nThis isn't opinion. It's math.\n\nBut it requires something most leaders won't do: say no to stakeholders.\n\nWhat's the biggest productivity killer on your team?",
+          "whyItWorked": "Challenges the popular narrative around developer tooling. Specific numbers (2-3 projects, 4-6 channels) are instantly recognizable. The '3x faster' claim is bold but defensible. Drives debate between engineering leaders about focus vs. flexibility."
+        }
       ]
     },
     {
@@ -605,6 +735,32 @@
         "CS playbooks",
         "Timeline to impact",
         "References from CS leaders"
+      ],
+      "examplePosts": [
+        {
+          "title": "Churn Autopsy",
+          "likes": 76,
+          "comments": 21,
+          "leads": 3,
+          "content": "We lost 23 accounts last quarter.\n\nSo I did a churn autopsy on every single one.\n\nThe results surprised me:\n\n\u2022 4% left because of price\n\u2022 11% left for a competitor\n\u2022 31% left because of poor onboarding\n\u2022 54% left because they never adopted a key feature\n\nRead that again: 85% of churn was preventable.\n\nNot with discounts. Not with better features.\n\nWith better customer success in the first 30 days.\n\nHere's what we changed:\n1. Added a day-3 check-in call (not email, a call)\n2. Built an adoption checklist with 5 milestones\n3. Set up automated alerts when usage drops below threshold\n\n90-day retention improved by 19%.\n\nChurn is rarely about your product.\nIt's about the experience around your product.\n\nWhat's driving churn at your company?",
+          "whyItWorked": "Real data from actual churn analysis builds credibility. The '85% preventable' stat is attention-grabbing and shareable. Simple 3-step fix is actionable. Reframes churn as a CS problem, not a product problem, which resonates with CS leaders."
+        },
+        {
+          "title": "Health Score Reality",
+          "likes": 52,
+          "comments": 15,
+          "leads": 2,
+          "content": "Hot take: Most customer health scores are vanity metrics.\n\nI've seen health score dashboards that:\n\u2022 Show 90% of accounts as \"green\"\n\u2022 Never predicted a single churn\n\u2022 Don't trigger any action from CSMs\n\u2022 Haven't been recalibrated in 18 months\n\nIf your health score doesn't change how your team behaves, it's decoration.\n\nHere's what a useful health score actually needs:\n\n1. Leading indicators (login frequency, feature adoption, support tickets)\n2. A threshold that triggers action (not just a color change)\n3. Recalibration every quarter against actual churn data\n4. CSM accountability tied to score changes\n\nWe rebuilt a client's health scoring in a 4-week scoped project.\n\nBefore: Health scores predicted churn 12% of the time.\nAfter: 67% prediction accuracy.\n\nThe dashboard isn't the hard part. The scoring model is.\n\nWhat signals are in your health score?",
+          "whyItWorked": "Calls out a common problem (useless health scores) that CS ops people recognize instantly. Provides a clear 4-part framework. Before/after stat (12% to 67%) proves the point. Question invites CS leaders to share their own approaches."
+        },
+        {
+          "title": "Onboarding Speed Wins",
+          "likes": 63,
+          "comments": 18,
+          "leads": 4,
+          "content": "The fastest way to reduce churn doesn't cost anything.\n\nSpeed up onboarding.\n\nWe measured time-to-value across 200 customers:\n\n\u2022 Customers who reached value in < 7 days: 94% retention at 12 months\n\u2022 Customers who reached value in 7-30 days: 71% retention\n\u2022 Customers who took 30+ days: 43% retention\n\nThe gap is massive. And it's not about features.\n\nHere's what we did to compress time-to-value:\n\n1. Defined \"value\" as one specific action (not 10)\n2. Removed 4 optional setup steps that confused users\n3. Assigned a CSM on day 1 (not day 14)\n4. Built a 3-email drip focused only on that one action\n\nResult: Average time-to-value dropped from 18 days to 5 days.\n\nEvery day between signup and \"aha\" is a day they might leave.\n\nHow long does it take your customers to reach value?",
+          "whyItWorked": "Hard data (retention rates by time-to-value) is extremely compelling for CS leaders. The advice is counterintuitive (simplify, don't add). Specific result (18 days to 5) proves it works. High lead count because it signals expertise in the exact problem CS teams are solving."
+        }
       ]
     },
     {
@@ -706,6 +862,32 @@
         "Timeline to impact",
         "References from operators",
         "Benchmarks"
+      ],
+      "examplePosts": [
+        {
+          "title": "Spreadsheet to System",
+          "likes": 57,
+          "comments": 16,
+          "leads": 3,
+          "content": "Every scaling company has \"the spreadsheet.\"\n\nYou know the one.\n\nIt started as a quick tracker. Now it:\n\u2022 Has 47 tabs\n\u2022 Takes 3 hours to update weekly\n\u2022 Breaks when someone sorts wrong\n\u2022 Is the single source of truth for capacity planning\n\u2022 Only one person fully understands it\n\nWe see this in nearly every ops team we work with.\n\nHere's the progression that actually works:\n\nPhase 1: Identify the 3 spreadsheets that hurt the most\nPhase 2: Build lightweight automation (not a full platform)\nPhase 3: Create a dashboard that updates itself\n\nWe did this for a 90-person services company.\n\nBefore: 14 hours/week on manual reporting.\nAfter: 2 hours/week, with better accuracy.\n\nROI in 6 weeks.\n\nYou don't need a $200K platform. You need a scoped project.\n\nWhat's YOUR \"spreadsheet from hell\"?",
+          "whyItWorked": "Universal pain point (every company has that spreadsheet). Humor and specificity (47 tabs, breaks when sorted) make it relatable. Phased approach feels achievable, not overwhelming. ROI timeline (6 weeks) appeals to budget-conscious operators."
+        },
+        {
+          "title": "Margin Math Breakdown",
+          "likes": 43,
+          "comments": 12,
+          "leads": 2,
+          "content": "Most services businesses know their margins.\n\nFew know where they're leaking.\n\nWe ran a margin audit for a 60-person company. Here's what we found:\n\n\u2022 18% of billable capacity was lost to internal meetings\n\u2022 Scope creep on 40% of projects (untracked)\n\u2022 Utilization was reported at 78% but was actually 61%\n\u2022 Invoicing lag averaged 22 days (cash flow impact: $340K/year)\n\nThe margin they reported: 32%.\nThe real margin: 19%.\n\nThe fix wasn't layoffs or price increases.\n\nIt was process:\n1. Time tracking enforcement (simple tool, not complex)\n2. Scope change approval workflow\n3. Automated invoicing triggers\n4. Weekly utilization dashboard\n\nMargins recovered to 29% in one quarter.\n\nWhat's your biggest hidden margin leak?",
+          "whyItWorked": "The gap between reported and real margin (32% vs 19%) is a wake-up call. Specific, fixable problems make it feel solvable. No-drama solutions (process, not layoffs) resonate with operators. Drives comments from leaders sharing their own margin discoveries."
+        },
+        {
+          "title": "Forecasting Hot Take",
+          "likes": 81,
+          "comments": 28,
+          "leads": 0,
+          "content": "Unpopular opinion: Your financial forecast is fiction.\n\nAnd that's okay\u2014if you know which parts are fiction.\n\nMost forecasts I review have the same problems:\n\u274c Revenue assumes every pipeline deal closes\n\u274c Headcount plan assumes everyone starts on day 1\n\u274c Costs don't include the \"surprises\" that happen every quarter\n\u274c Growth rate is copy-pasted from the board deck\n\nHere's a better approach:\n\n\u2705 Forecast 3 scenarios (base, bull, bear)\n\u2705 Weight pipeline by stage probability\n\u2705 Add a 15% buffer for unplanned costs\n\u2705 Update monthly, not quarterly\n\u2705 Track forecast accuracy and improve the model\n\nThe goal isn't a perfect prediction.\n\nIt's a useful decision-making tool.\n\nA forecast that's directionally right and updated often beats a detailed forecast that's updated quarterly.\n\nHow often does your team update its forecast?",
+          "whyItWorked": "'Your forecast is fiction' is a bold hook that stops the scroll. The common problems list hits home for every ops/finance leader. Practical framework (3 scenarios, 15% buffer) is immediately useful. Drives engagement from finance-adjacent leaders who have strong opinions."
+        }
       ]
     },
     {
@@ -807,6 +989,32 @@
         "Delivery timelines",
         "References from alliances teams",
         "Clear scope"
+      ],
+      "examplePosts": [
+        {
+          "title": "Partner Prioritization Matrix",
+          "likes": 64,
+          "comments": 19,
+          "leads": 2,
+          "content": "We had 45 partners on paper.\n\n3 were driving 80% of our partner-sourced pipeline.\n\nThe other 42? Mostly logos on a webpage.\n\nHere's the prioritization matrix we built to fix this:\n\nTier 1 (Invest): Shared ICP + active co-selling + integration live\n\u2192 Dedicated partner manager, co-marketing budget, quarterly business reviews\n\nTier 2 (Enable): Shared ICP + willing to co-sell + integration planned\n\u2192 Self-serve enablement, monthly check-in, co-marketing templates\n\nTier 3 (Monitor): Loose ICP overlap + no active co-selling\n\u2192 Quarterly newsletter, annual review, no dedicated resources\n\nTier 4 (Sunset): No pipeline contribution in 12 months\n\u2192 Offboard gracefully\n\nResult after 6 months:\n\u2022 Partner-sourced pipeline up 34%\n\u2022 Team focused on 8 partners instead of 45\n\u2022 Co-sell win rate improved from 18% to 31%\n\nMore partners doesn't mean more pipeline.\n\nBetter partners does.\n\nHow do you tier your partners?",
+          "whyItWorked": "The 45-to-3 stat is immediately attention-grabbing. The tiered framework is practical and stealable. Results are specific and compelling. Partnership leaders share because it validates what they already suspect."
+        },
+        {
+          "title": "Integration Timeline Rant",
+          "likes": 48,
+          "comments": 13,
+          "leads": 3,
+          "content": "The #1 partnership killer isn't strategy.\n\nIt's integration timelines.\n\nI've seen this pattern dozens of times:\n\nMonth 1: \"We should integrate!\"\nMonth 2: \"Let's get the PMs aligned.\"\nMonth 3: \"Engineering will scope it next sprint.\"\nMonth 4: \"It's in the backlog.\"\nMonth 5: \"It got deprioritized.\"\nMonth 6: \"Let's revisit next quarter.\"\n\nMeanwhile, the partner champion leaves.\nThe momentum dies.\nThe pipeline projection gets zeroed out.\n\nThe fix: Treat integrations like scoped projects.\n\n\u2022 Dedicated team (not borrowed from product backlog)\n\u2022 Fixed timeline (4-6 weeks, not \"when we get to it\")\n\u2022 Ship an MVP integration first (sync 2 objects, not 20)\n\nWe helped a client ship 3 partner integrations in 8 weeks using this approach.\n\nPipeline from those integrations in Q1: $420K.\n\nWhat's your integration backlog look like?",
+          "whyItWorked": "The month-by-month timeline is painfully accurate for partnership people. Positions the problem as solvable with a clear approach. Revenue number ($420K) makes the business case. Drives comments from frustrated BD leaders sharing similar stories."
+        },
+        {
+          "title": "Co-Marketing Playbook",
+          "likes": 37,
+          "comments": 9,
+          "leads": 1,
+          "content": "We ran 12 co-marketing campaigns with partners last year.\n\n4 drove pipeline. 8 were duds.\n\nHere's what separated the winners:\n\nWhat flopped:\n\u2022 Co-branded whitepapers nobody downloaded\n\u2022 Joint webinars with no promotion plan\n\u2022 \"Partner spotlight\" blog posts\n\u2022 Social media cross-posts\n\nWhat worked:\n\u2022 Joint customer case study with both logos\n\u2022 Co-hosted workshop with hands-on demo\n\u2022 Shared SDR outreach to overlapping accounts\n\u2022 Integration launch event with live walkthrough\n\nThe pattern: Co-marketing works when both sides bring their audience AND there's a clear next step.\n\nA PDF isn't a next step.\nA live demo is.\n\nWhat's your best-performing co-marketing play?",
+          "whyItWorked": "Honest admission of failure (8 out of 12 flopped) builds trust. Clear contrast between what works and what doesn't. Practical insight (the pattern) is memorable. Low engagement numbers reflect the niche audience but high relevance drives quality comments."
+        }
       ]
     },
     {
@@ -908,6 +1116,32 @@
         "Clear build timelines",
         "Team credentials",
         "Proof of traction support"
+      ],
+      "examplePosts": [
+        {
+          "title": "Customer Discovery Confession",
+          "likes": 72,
+          "comments": 23,
+          "leads": 2,
+          "content": "I talked to 40 potential customers before writing a single line of code.\n\nHere's what I learned:\n\n\u2022 The problem I wanted to solve wasn't their top 3 pain\n\u2022 The feature I was most excited about? Nobody asked for it\n\u2022 Their willingness to pay was 2x higher than I assumed\n\u2022 The buyer wasn't who I thought (it was ops, not engineering)\n\n3 of those 40 conversations turned into design partners.\n\n2 of those 3 are now paying customers.\n\nThe MVP we built looked nothing like my original vision. And that's exactly the point.\n\nCustomer discovery isn't a phase you complete.\nIt's a muscle you build.\n\nMost founders skip this because building feels more productive than listening.\n\nIt's not.\n\nHow many customer conversations did you have before building?",
+          "whyItWorked": "Personal vulnerability (my idea was wrong) builds authenticity. Specific surprising outcomes (buyer was ops, not engineering) create genuine insight. The 40-to-3-to-2 funnel is a realistic conversion path. Question invites founders to reflect honestly."
+        },
+        {
+          "title": "MVP Scoping Framework",
+          "likes": 55,
+          "comments": 14,
+          "leads": 4,
+          "content": "Every founder I talk to wants to build too much for their MVP.\n\nHere's the scoping conversation I have every time:\n\nMe: \"What's the one thing a user MUST be able to do?\"\nFounder: \"Well, they need to...\"\n(lists 12 features)\n\nMe: \"Okay. If they could only do ONE thing, what is it?\"\nFounder: \"...upload data and see a dashboard.\"\n\nMe: \"Great. That's your MVP.\"\n\nEverything else is V2.\n\nThe framework:\n\n1. Define the ONE core action\n2. Build the shortest path to that action\n3. Make it work (not pretty, not perfect)\n4. Put it in front of 5 real users\n5. Watch what they do (not what they say)\n\nWe've used this to help founders go from idea to live product in 4-6 weeks.\n\nThe hardest part isn't building.\nIt's resisting the urge to build more.\n\nWhat's the ONE thing your MVP needs to do?",
+          "whyItWorked": "The dialogue format is engaging and feels like a real conversation. The framework is dead simple (5 steps). The insight (founders always list 12 features) is universally true. High lead count because it demonstrates scoping expertise that founders need."
+        },
+        {
+          "title": "Fundraising vs Building Tension",
+          "likes": 91,
+          "comments": 30,
+          "leads": 1,
+          "content": "The biggest lie in startups:\n\n\"We'll build after we raise.\"\n\nHere's what actually happens:\n\n\u2022 Investors want to see traction before they invest\n\u2022 You need product to show traction\n\u2022 You think you need money to build product\n\u2022 So you spend 6 months fundraising with a pitch deck\n\u2022 Meanwhile, the founder who just shipped is closing their round\n\nThe loop is broken by building.\n\nNot by raising.\n\n3 things that have worked for founders I've helped:\n\n1. Ship a crappy V1 in 4-6 weeks (not 6 months)\n2. Get 5-10 users (not 1,000)\n3. Show up to investor meetings with usage data (not projections)\n\nOne founder went from \"can't get meetings\" to \"oversubscribed round\" in 8 weeks.\n\nThe difference? A live product with 8 paying users.\n\nInvestors don't fund ideas. They fund momentum.\n\nAre you building or fundraising right now?",
+          "whyItWorked": "Challenges a deeply held assumption (raise then build). The circular logic breakdown is eye-opening. Real example (8 weeks, 8 paying users, oversubscribed) is inspiring and specific. Binary question at end (building or fundraising?) drives self-reflection and comments."
+        }
       ]
     }
   ]

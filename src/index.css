@@ -2,14 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scroll-behavior: smooth;
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Light mode defaults */
+  body {
+    background-color: #F6F7FE;
+    color: #010313;
+  }
+
+  /* Dark mode */
+  body.dark {
+    background-color: #010313;
+    color: #FFFFFF;
+  }
+
+  /* Ensure minimum touch targets */
+  @media (max-width: 768px) {
+    button,
+    a,
+    input[type="checkbox"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    input[type="checkbox"] {
+      min-height: 20px;
+      min-width: 20px;
+    }
+  }
 }
 
-body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+@layer components {
+  /* Focus visible for keyboard navigation */
+  .focus-ring:focus-visible {
+    outline: 2px solid #2337F1;
+    outline-offset: 2px;
+  }
+
+  /* Checkbox styling */
+  input[type="checkbox"] {
+    accent-color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  .dark input[type="checkbox"] {
+    accent-color: #FFFFFF;
+  }
+
+  /* Scrollbar styling for dark mode */
+  .dark ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
 }
 
-.gradient-border {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(99, 102, 241, 0.08));
+@layer utilities {
+  .text-primary-on-dark {
+    color: #FFFFFF;
+  }
+
+  .text-secondary-on-dark {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .text-primary-on-light {
+    color: #010313;
+  }
+
+  .text-secondary-on-light {
+    color: rgba(1, 3, 19, 0.7);
+  }
 }
