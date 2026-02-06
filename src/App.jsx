@@ -1417,6 +1417,12 @@ function Dashboard() {
 // ---------------------------------------------------------------------------
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(() => !!getAuthEmail());
+
+  if (!isAuthenticated) {
+    return <EmailGate onSuccess={() => setIsAuthenticated(true)} />;
+  }
+
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
