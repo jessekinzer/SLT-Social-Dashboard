@@ -233,7 +233,7 @@ function HeroIllustration({ isDark }) {
   const accentColor = "#C7FA50";
 
   return (
-    <div className="mx-auto mb-10 w-full max-w-md">
+    <div className="mb-10 w-full max-w-md">
       <svg viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="80" y1="90" x2="200" y2="50" stroke={lineColor} strokeWidth="2" />
         <line x1="200" y1="50" x2="320" y2="90" stroke={lineColor} strokeWidth="2" />
@@ -310,14 +310,7 @@ function Landing() {
           isDark ? "border-white/10 bg-brand-dark/95" : "border-brand-dark/10 bg-brand-light/95"
         } backdrop-blur`}
       >
-        <div className="mx-auto flex max-w-dashboard items-center justify-between px-6 py-4">
-          <span
-            className={`text-sm font-semibold tracking-wide ${
-              isDark ? "text-white/70" : "text-brand-dark/70"
-            }`}
-          >
-            Midwestern Interactive
-          </span>
+        <div className="mx-auto flex max-w-dashboard items-center justify-end px-6 py-4">
           <button
             onClick={toggleTheme}
             className={`flex h-8 w-8 items-center justify-center transition-colors ${
@@ -334,7 +327,7 @@ function Landing() {
 
       {/* Content */}
       <main className="mx-auto max-w-dashboard px-6 py-12 md:py-16">
-        <div className="mb-12 text-center">
+        <div className="mb-12">
           <HeroIllustration isDark={isDark} />
           <h2 className="text-4xl font-semibold md:text-5xl">
             LinkedIn Playbook
@@ -516,10 +509,6 @@ function Dashboard() {
   const quickSummary = {
     who: member.icp.targetRoles.join(", "),
     topics: member.icp.theyrePostingAbout.slice(0, 3).join(", "),
-    skip:
-      member.redFlags.length > 0
-        ? member.redFlags.slice(0, 2).join("; ")
-        : "N/A",
   };
 
   // CSS helpers
@@ -565,13 +554,6 @@ function Dashboard() {
               <ArrowLeft size={18} />
               <span className="hidden sm:inline">Back</span>
             </Link>
-            <span
-              className={`hidden text-sm font-semibold tracking-wide sm:inline ${
-                isDark ? "text-white/50" : "text-brand-dark/50"
-              }`}
-            >
-              Midwestern Interactive
-            </span>
           </div>
 
           <button
@@ -620,11 +602,10 @@ function Dashboard() {
           <div
             className={`border ${
               isDark
-                ? "border-[#2337F1]/30 bg-[rgba(35,55,241,0.15)]"
-                : "border-[#2337F1]/40 bg-[#2337F1]/10"
+                ? "bg-white/[0.03] border-white/10"
+                : "bg-gray-100 border-gray-300"
             }`}
           >
-            {/* Header - always visible, clickable */}
             <button
               onClick={() => {
                 setChecklistExpanded((prev) => {
@@ -633,24 +614,21 @@ function Dashboard() {
                 });
               }}
               className={`flex w-full items-center justify-between p-6 transition-colors sm:p-8 ${
-                isDark ? "hover:bg-white/5" : "hover:bg-[#2337F1]/5"
+                isDark ? "hover:bg-white/5" : "hover:bg-gray-200"
               }`}
             >
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">&#10024;</span>
-                <h2
-                  className={`text-xl font-semibold sm:text-2xl ${
-                    isDark ? "text-white" : "text-[#010313]"
-                  }`}
-                >
-                  Your Weekly Engagement Goals
-                </h2>
-              </div>
+              <h2
+                className={`text-xl font-semibold sm:text-2xl ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                Your Weekly Engagement Goals
+              </h2>
 
               <div className="flex items-center gap-4">
                 <span
                   className={`text-sm font-medium ${
-                    isDark ? "text-white/70" : "text-[#010313]/70"
+                    isDark ? "text-white/70" : "text-gray-600"
                   }`}
                 >
                   {engagementCompletedCount}/{weeklyEngagementChecklist.length} complete
@@ -659,12 +637,11 @@ function Dashboard() {
                   size={24}
                   className={`transition-transform duration-300 ${
                     checklistExpanded ? "rotate-180" : ""
-                  } ${isDark ? "text-white/70" : "text-[#010313]/70"}`}
+                  } ${isDark ? "text-white/70" : "text-gray-600"}`}
                 />
               </div>
             </button>
 
-            {/* Collapsible content */}
             {checklistExpanded && (
               <div className="animate-fadeIn px-6 pb-6 sm:px-8 sm:pb-8">
                 {isNewWeek && !newWeekDismissed && (
@@ -677,29 +654,28 @@ function Dashboard() {
                   >
                     <p
                       className={`font-medium ${
-                        isDark ? "text-white" : "text-[#010313]"
+                        isDark ? "text-white" : "text-gray-900"
                       }`}
                     >
-                      &#127919; New week, fresh start! Time to make some meaningful connections.
+                      New week, fresh start! Time to make some meaningful connections.
                     </p>
                     <button
                       onClick={() => setNewWeekDismissed(true)}
                       className={`mt-2 text-sm ${
                         isDark
                           ? "text-white/70 hover:text-white"
-                          : "text-[#010313]/60 hover:text-[#010313]"
+                          : "text-gray-600 hover:text-gray-900"
                       }`}
                     >
-                      Got it &#8594;
+                      Got it &rarr;
                     </button>
                   </div>
                 )}
 
-                {/* Progress bar */}
                 <div className="mb-6 flex items-center gap-3">
                   <div
                     className={`h-2 flex-grow overflow-hidden ${
-                      isDark ? "bg-white/10" : "bg-[#010313]/10"
+                      isDark ? "bg-white/10" : "bg-gray-300"
                     }`}
                   >
                     <div
@@ -711,13 +687,12 @@ function Dashboard() {
                   </div>
                 </div>
 
-                {/* Checklist items */}
                 <div className="space-y-3">
                   {weeklyEngagementChecklist.map((item) => (
                     <label
                       key={item.id}
                       className={`-m-2 flex cursor-pointer items-start gap-3 p-2 transition-colors group ${
-                        isDark ? "hover:bg-white/5" : "hover:bg-[#2337F1]/5"
+                        isDark ? "hover:bg-white/5" : "hover:bg-gray-200"
                       }`}
                     >
                       <input
@@ -733,10 +708,10 @@ function Dashboard() {
                           engagementState[item.id]
                             ? isDark
                               ? "text-white/40 line-through"
-                              : "text-[#010313]/40 line-through"
+                              : "text-gray-400 line-through"
                             : isDark
                               ? "text-white/90 group-hover:text-white"
-                              : "text-[#010313]/90 group-hover:text-[#010313]"
+                              : "text-gray-800 group-hover:text-gray-900"
                         }`}
                       >
                         {item.task}
@@ -745,20 +720,22 @@ function Dashboard() {
                   ))}
                 </div>
 
-                {/* Completion celebration */}
                 {allEngagementComplete && (
-                  <div className="mt-6 animate-fadeIn border-2 border-brand-lime bg-brand-lime/20 p-6 text-center">
-                    <p className="mb-2 text-3xl">&#127881;</p>
+                  <div
+                    className={`mt-6 animate-fadeIn border-2 border-brand-lime p-6 text-center ${
+                      isDark ? "bg-brand-lime/20" : "bg-brand-lime/30"
+                    }`}
+                  >
                     <p
                       className={`mb-2 text-lg font-semibold ${
-                        isDark ? "text-white" : "text-[#010313]"
+                        isDark ? "text-white" : "text-gray-900"
                       }`}
                     >
                       Awesome work this week!
                     </p>
                     <p
                       className={`text-sm ${
-                        isDark ? "text-white/80" : "text-[#010313]/70"
+                        isDark ? "text-white/80" : "text-gray-700"
                       }`}
                     >
                       You're building real relationships. See you next Monday for a fresh list!
@@ -768,7 +745,7 @@ function Dashboard() {
 
                 <p
                   className={`mt-4 text-sm italic ${
-                    isDark ? "text-white/50" : "text-[#010313]/50"
+                    isDark ? "text-white/50" : "text-gray-500"
                   }`}
                 >
                   Tip: Consistency beats intensity. Do a little every day.
@@ -928,10 +905,16 @@ function Dashboard() {
                   className={`border-l-4 border-brand-blue p-5 ${cardBg}`}
                 >
                   <p
-                    className={`text-sm italic leading-relaxed ${textSecondary}`}
+                    className={`mb-3 text-sm italic leading-relaxed ${textSecondary}`}
                   >
-                    &ldquo;{quote}&rdquo;
+                    &ldquo;{typeof quote === "string" ? quote : quote.text}&rdquo;
                   </p>
+                  {typeof quote === "object" && quote.source && (
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 bg-brand-blue" />
+                      <span className={`text-xs ${textMuted}`}>{quote.source}</span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
