@@ -98,6 +98,34 @@ const saveTheme = (theme) => {
   }
 };
 
+const getLogo = () => {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem("site-logo");
+};
+
+const saveLogo = (dataUrl) => {
+  if (typeof window === "undefined") return;
+  if (dataUrl) {
+    window.localStorage.setItem("site-logo", dataUrl);
+  } else {
+    window.localStorage.removeItem("site-logo");
+  }
+};
+
+const getHeroImage = () => {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem("hero-illustration");
+};
+
+const saveHeroImage = (dataUrl) => {
+  if (typeof window === "undefined") return;
+  if (dataUrl) {
+    window.localStorage.setItem("hero-illustration", dataUrl);
+  } else {
+    window.localStorage.removeItem("hero-illustration");
+  }
+};
+
 const getInitialMemberId = () => {
   if (typeof window === "undefined") return null;
   return window.localStorage.getItem("selectedMemberId");
