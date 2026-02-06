@@ -3,6 +3,8 @@
     {
       "id": "austin-daniel",
       "name": "Austin Daniel",
+      "avatar": "AD",
+      "profileImage": "/images/team/austin-daniel.png",
       "role": "CEO/Founder Specialist",
       "icp": {
         "title": "The Growth-Obsessed Founder",
@@ -129,8 +131,10 @@
       ]
     },
     {
-      "id": "morgan-lee",
-      "name": "Morgan Lee",
+      "id": "austin-eidson",
+      "name": "Austin Eidson",
+      "avatar": "AE",
+      "profileImage": "/images/team/austin-eidson.png",
       "role": "Product Strategy Lead",
       "icp": {
         "title": "The Product-Led Operator",
@@ -256,8 +260,10 @@
       ]
     },
     {
-      "id": "jordan-patel",
-      "name": "Jordan Patel",
+      "id": "cyril-jones",
+      "name": "Cyril Jones",
+      "avatar": "CJ",
+      "profileImage": "/images/team/cyril-jones.png",
       "role": "RevOps Connector",
       "icp": {
         "title": "The Revenue Systems Builder",
@@ -383,8 +389,10 @@
       ]
     },
     {
-      "id": "samantha-cho",
-      "name": "Samantha Cho",
+      "id": "dom-paulk",
+      "name": "Dom Paulk",
+      "avatar": "DP",
+      "profileImage": "/images/team/dom-paulk.png",
       "role": "Brand & Marketing Lead",
       "icp": {
         "title": "The Demand Gen Builder",
@@ -510,8 +518,10 @@
       ]
     },
     {
-      "id": "carlos-mendez",
-      "name": "Carlos Mendez",
+      "id": "jerrod-tracy",
+      "name": "Jerrod Tracy",
+      "avatar": "JT",
+      "profileImage": "/images/team/jerrod-tracy.png",
       "role": "Engineering Capacity Strategist",
       "icp": {
         "title": "The Scaling Engineering Leader",
@@ -637,8 +647,10 @@
       ]
     },
     {
-      "id": "priya-singh",
-      "name": "Priya Singh",
+      "id": "jesse-kinzer",
+      "name": "Jesse Kinzer",
+      "avatar": "JK",
+      "profileImage": "/images/team/jesse-kinzer.png",
       "role": "Customer Success Partner",
       "icp": {
         "title": "The Retention Guardian",
@@ -764,8 +776,10 @@
       ]
     },
     {
-      "id": "eli-brooks",
-      "name": "Eli Brooks",
+      "id": "ryan-doss",
+      "name": "Ryan Doss",
+      "avatar": "RD",
+      "profileImage": "/images/team/ryan-doss.png",
       "role": "Operations & Finance",
       "icp": {
         "title": "The Process-Driven Operator",
@@ -891,8 +905,10 @@
       ]
     },
     {
-      "id": "taylor-kim",
-      "name": "Taylor Kim",
+      "id": "scott-blevins",
+      "name": "Scott Blevins",
+      "avatar": "SB",
+      "profileImage": "/images/team/scott-blevins.png",
       "role": "Growth Partnerships",
       "icp": {
         "title": "The Partnership Multiplier",
@@ -1018,8 +1034,10 @@
       ]
     },
     {
-      "id": "riley-ward",
-      "name": "Riley Ward",
+      "id": "sonya-mead",
+      "name": "Sonya Mead",
+      "avatar": "SM",
+      "profileImage": "/images/team/sonya-mead.png",
       "role": "Founder Outreach",
       "icp": {
         "title": "The Early-Stage Builder",

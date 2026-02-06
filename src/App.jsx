@@ -7,15 +7,12 @@ import {
   CheckCircle2,
   ChevronDown,
   Copy,
-  FileText,
   Flame,
   Lightbulb,
   MessageCircle,
   Moon,
-  Rocket,
   Sparkles,
   Sun,
-  ThumbsUp,
   TriangleAlert,
   Users,
 } from "lucide-react";
@@ -69,25 +66,14 @@ const contentTemplates = [
   },
 ];
 
-const weeklyPlan = [
-  {
-    day: "Monday",
-    tasks: [
-      "Update your headline to mention what you help people do",
-      "Send 10 connection requests using the templates below",
-    ],
-  },
-  {
-    day: "Tuesday \u2013 Thursday",
-    tasks: [
-      "Comment on 5 posts daily from your target audience",
-      "Like 15 posts from your ICP feed daily",
-    ],
-  },
-  {
-    day: "Friday",
-    tasks: ["Post using one of the example posts below"],
-  },
+const weeklyEngagementChecklist = [
+  { id: "mon-connections", task: "Send 5-10 connection requests to people in your ICP" },
+  { id: "daily-likes", task: "Like 20 posts from your target audience (takes ~10 min)" },
+  { id: "daily-comments", task: "Leave 5 thoughtful comments on ICP posts (not just 'Great post!')" },
+  { id: "respond-comments", task: "Reply to anyone who comments on your posts within 24 hours" },
+  { id: "profile-views", task: "Check who viewed your profile and engage with 3-5 of them" },
+  { id: "dm-conversations", task: "Send 2-3 helpful DMs to recent connections (no pitching!)" },
+  { id: "weekend-review", task: "Review your engagement: What posts got the most interaction?" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -139,6 +125,39 @@ const saveProgress = (memberId, taskId, completed) => {
     `slt-progress-${memberId}`,
     JSON.stringify(progress)
   );
+};
+
+const getEngagementWeekStart = (memberId) => {
+  if (typeof window === "undefined") return null;
+  const stored = window.localStorage.getItem(`engagement_week_start_${memberId}`);
+  if (!stored) return null;
+  return new Date(stored);
+};
+
+const checkIsNewWeek = (memberId) => {
+  const weekStart = getEngagementWeekStart(memberId);
+  if (!weekStart) return true;
+  const now = new Date();
+  const daysSince = (now - weekStart) / (1000 * 60 * 60 * 24);
+  return daysSince >= 7;
+};
+
+const resetEngagementWeek = (memberId) => {
+  window.localStorage.setItem(`engagement_week_start_${memberId}`, new Date().toISOString());
+  window.localStorage.removeItem(`engagement_checklist_${memberId}`);
+};
+
+const getEngagementChecklist = (memberId) => {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(window.localStorage.getItem(`engagement_checklist_${memberId}`) || "{}");
+  } catch {
+    return {};
+  }
+};
+
+const saveEngagementChecklist = (memberId, checklist) => {
+  window.localStorage.setItem(`engagement_checklist_${memberId}`, JSON.stringify(checklist));
 };
 
 // ---------------------------------------------------------------------------
@@ -304,8 +323,26 @@ function Landing() {
               }`}
               type="button"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center bg-brand-blue/10 text-brand-blue">
-                <Users size={18} />
+              <div className="mb-4 h-20 w-20 flex-shrink-0 overflow-hidden">
+                {member.profileImage ? (
+                  <img
+                    src={member.profileImage}
+                    alt={member.name}
+                    className="h-full w-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "flex";
+                    }}
+                  />
+                ) : null}
+                <div
+                  className="h-full w-full items-center justify-center bg-gradient-to-br from-[#2337F1] to-[#1a2ac7]"
+                  style={{ display: member.profileImage ? "none" : "flex" }}
+                >
+                  <span className="text-2xl font-semibold text-white">
+                    {member.avatar || member.name.split(" ").map((n) => n[0]).join("")}
+                  </span>
+                </div>
               </div>
               <h3 className="text-lg font-semibold">{member.name}</h3>
               <p
@@ -362,29 +399,45 @@ function Dashboard() {
   const { theme, isDark, toggleTheme } = useTheme();
   const { toast: toastState, showToast } = useToast();
   const [showAdvanced, setShowAdvanced] = useState(false);
-  const [checkboxState, setCheckboxState] = useState({});
+  const [engagementState, setEngagementState] = useState({});
+  const [isNewWeek, setIsNewWeek] = useState(false);
+  const [newWeekDismissed, setNewWeekDismissed] = useState(false);
 
   const member = useMemo(
     () => teamData.teamMembers.find((entry) => entry.id === id),
     [id]
   );
 
-  // Load checkbox state
+  // Load engagement checklist state with weekly reset
   useEffect(() => {
     if (member) {
       saveSelectedMember(member.id);
-      setCheckboxState(getProgress(member.id));
+      if (checkIsNewWeek(member.id)) {
+        setIsNewWeek(true);
+        resetEngagementWeek(member.id);
+        setEngagementState({});
+      } else {
+        setEngagementState(getEngagementChecklist(member.id));
+      }
     }
   }, [member]);
 
-  const handleCheckbox = useCallback(
+  const handleEngagementToggle = useCallback(
     (taskId, checked) => {
       if (!member) return;
-      saveProgress(member.id, taskId, checked);
-      setCheckboxState((prev) => ({ ...prev, [taskId]: checked }));
+      setEngagementState((prev) => {
+        const next = { ...prev, [taskId]: checked };
+        saveEngagementChecklist(member.id, next);
+        return next;
+      });
     },
     [member]
   );
+
+  const engagementCompletedCount = weeklyEngagementChecklist.filter(
+    (t) => engagementState[t.id]
+  ).length;
+  const allEngagementComplete = engagementCompletedCount === weeklyEngagementChecklist.length;
 
   const handleCopy = useCallback(
     (text) => copyToClipboard(text, showToast),
@@ -409,8 +462,6 @@ function Dashboard() {
       </div>
     );
   }
-
-  const examplePosts = member.examplePosts || [];
 
   // ICP quick summary for mobile
   const quickSummary = {
@@ -509,211 +560,88 @@ function Dashboard() {
       {/* ---- Main Content ---- */}
       <main className="mx-auto max-w-dashboard px-4 py-8 sm:px-6 md:py-12">
         {/* ================================================================
-            1. GET STARTED THIS WEEK
+            1. WEEKLY ENGAGEMENT CHECKLIST
         ================================================================ */}
         <section className="mb-12 md:mb-20">
-          <div className="bg-brand-blue p-6 sm:p-8">
+          <div className="bg-[rgba(35,55,241,0.15)] border border-[#2337F1]/30 p-6 sm:p-8">
             <div className="mb-6 flex items-center gap-3">
-              <Rocket size={24} className="text-white" />
-              <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-                Get Started This Week
+              <span className="text-2xl">&#10024;</span>
+              <h2 className="text-2xl font-semibold text-white">
+                Your Weekly Engagement Goals
               </h2>
             </div>
 
-            <div className="space-y-6 text-white">
-              {weeklyPlan.map((block) => (
-                <div key={block.day}>
-                  <h3 className="mb-3 text-lg font-semibold sm:text-xl">
-                    {block.day}
-                  </h3>
-                  <div className="space-y-3">
-                    {block.tasks.map((task, tIdx) => {
-                      const taskId = `${block.day}-${tIdx}`;
-                      return (
-                        <label
-                          key={taskId}
-                          className="flex cursor-pointer items-start gap-3 group"
-                        >
-                          <input
-                            type="checkbox"
-                            className="mt-1 h-5 w-5 flex-shrink-0"
-                            checked={!!checkboxState[taskId]}
-                            onChange={(e) =>
-                              handleCheckbox(taskId, e.target.checked)
-                            }
-                          />
-                          <span
-                            className={`text-sm sm:text-base leading-relaxed transition-colors ${
-                              checkboxState[taskId]
-                                ? "text-white/50 line-through"
-                                : "text-white group-hover:text-white/90"
-                            }`}
-                          >
-                            {task}
-                          </span>
-                        </label>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-
-              <div className="mt-6 border-t border-white/20 pt-4">
-                <p className="text-sm text-white/80 sm:text-base">
-                  <span className="font-semibold">Expected results:</span>{" "}
-                  40-50 new connections, visible in your ICP's feed, first
-                  post published, feeling confident.
+            {isNewWeek && !newWeekDismissed && (
+              <div className="mb-4 border border-brand-lime/30 bg-brand-lime/20 p-4">
+                <p className="font-medium text-white">
+                  &#127919; New week, fresh start! Time to make some meaningful connections.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ================================================================
-            2. EXAMPLE POSTS YOU CAN COPY
-        ================================================================ */}
-        {examplePosts.length > 0 && (
-          <section className="mb-12 md:mb-20">
-            <div className="mb-6 flex items-center gap-3">
-              <FileText size={22} className="text-brand-blue" />
-              <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-                Example Posts You Can Copy
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              {examplePosts.map((post, idx) => (
-                <div key={idx} className={`${cardBg} overflow-hidden`}>
-                  {/* Header with metrics */}
-                  <div
-                    className={`flex flex-col gap-3 border-b px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 ${borderColor}`}
-                  >
-                    <div>
-                      <h3 className={`font-semibold ${textPrimary}`}>
-                        {post.title}
-                      </h3>
-                      <div className="mt-1 flex flex-wrap items-center gap-3 text-sm">
-                        <span className={`flex items-center gap-1 ${textMuted}`}>
-                          <ThumbsUp size={14} className="text-brand-blue" />
-                          {post.likes} likes
-                        </span>
-                        <span className={`flex items-center gap-1 ${textMuted}`}>
-                          <MessageCircle
-                            size={14}
-                            className="text-brand-blue"
-                          />
-                          {post.comments} comments
-                        </span>
-                        {post.leads > 0 && (
-                          <span className="bg-brand-lime/20 px-2 py-0.5 text-xs font-medium text-brand-lime">
-                            {post.leads} leads
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={() => handleCopy(post.content)}
-                      className="flex w-fit items-center gap-2 bg-brand-blue px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-blue/80"
-                    >
-                      <Copy size={14} />
-                      Copy
-                    </button>
-                  </div>
-
-                  {/* Post content */}
-                  <div className="p-4 sm:p-6">
-                    <pre
-                      className={`whitespace-pre-wrap font-sans text-sm leading-relaxed sm:text-base ${
-                        isDark ? "text-white/90" : "text-brand-dark/90"
-                      }`}
-                    >
-                      {post.content}
-                    </pre>
-                  </div>
-
-                  {/* Why it worked */}
-                  <div className="px-4 pb-4 sm:px-6 sm:pb-6">
-                    <div
-                      className={`border-l-2 border-brand-blue p-4 ${cardBgSubtle}`}
-                    >
-                      <p
-                        className={`mb-1 text-xs font-medium uppercase tracking-wide ${textMuted}`}
-                      >
-                        Why this worked
-                      </p>
-                      <p className={`text-sm leading-relaxed ${textSecondary}`}>
-                        {post.whyItWorked}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ================================================================
-            3. OPENING MESSAGES
-        ================================================================ */}
-        <section className="mb-12 md:mb-20">
-          <div className="mb-6 flex items-center gap-3">
-            <MessageCircle size={22} className="text-brand-blue" />
-            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-              Opening Messages
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {member.conversationStarters.map((starter, idx) => (
-              <div key={idx} className={`flex flex-col ${cardBg}`}>
-                {/* Card header - copy button here, NOT overlapping text */}
-                <div
-                  className={`flex items-center justify-between border-b px-4 py-3 ${borderColor}`}
+                <button
+                  onClick={() => setNewWeekDismissed(true)}
+                  className="mt-2 text-sm text-white/70 hover:text-white"
                 >
-                  <span
-                    className={`text-xs font-medium uppercase tracking-wide ${textMuted}`}
-                  >
-                    Template {idx + 1}
-                  </span>
-                  <button
-                    onClick={() => handleCopy(starter.template)}
-                    className="flex items-center gap-1.5 bg-brand-blue px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-brand-blue/80"
-                  >
-                    <Copy size={12} />
-                    Copy
-                  </button>
-                </div>
+                  Got it &#8594;
+                </button>
+              </div>
+            )}
 
-                {/* Template text */}
-                <div className="flex-grow p-4 sm:p-5">
-                  <p
-                    className={`text-sm leading-relaxed ${
-                      isDark ? "text-white/90" : "text-brand-dark/90"
+            <div className="mb-6 flex items-center gap-3">
+              <div className="h-2 flex-grow overflow-hidden bg-white/10">
+                <div
+                  className="h-full bg-brand-lime transition-all duration-500"
+                  style={{ width: `${(engagementCompletedCount / weeklyEngagementChecklist.length) * 100}%` }}
+                />
+              </div>
+              <span className="text-sm font-medium text-white/70">
+                {engagementCompletedCount}/{weeklyEngagementChecklist.length} complete
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              {weeklyEngagementChecklist.map((item) => (
+                <label
+                  key={item.id}
+                  className="-m-2 flex cursor-pointer items-start gap-3 p-2 transition-colors group hover:bg-white/5"
+                >
+                  <input
+                    type="checkbox"
+                    checked={!!engagementState[item.id]}
+                    onChange={(e) => handleEngagementToggle(item.id, e.target.checked)}
+                    className="mt-1 h-5 w-5 flex-shrink-0 accent-[#C7FA50]"
+                  />
+                  <span
+                    className={`text-sm leading-relaxed transition-colors sm:text-base ${
+                      engagementState[item.id]
+                        ? "text-white/50 line-through"
+                        : "text-white/90 group-hover:text-white"
                     }`}
                   >
-                    {starter.template}
-                  </p>
-                </div>
+                    {item.task}
+                  </span>
+                </label>
+              ))}
+            </div>
 
-                {/* When to use */}
-                <div className="px-4 pb-4 sm:px-5 sm:pb-5">
-                  <div className={`p-3 ${cardBgSubtle}`}>
-                    <p className={`text-xs italic ${textMuted}`}>
-                      <span className="font-medium not-italic">
-                        When to use:
-                      </span>{" "}
-                      {starter.whenToUse}
-                    </p>
-                  </div>
-                </div>
+            {allEngagementComplete && (
+              <div className="mt-6 animate-fadeIn border-2 border-brand-lime bg-brand-lime/20 p-6 text-center">
+                <p className="mb-2 text-3xl">&#127881;</p>
+                <p className="mb-2 text-lg font-semibold text-white">
+                  Awesome work this week!
+                </p>
+                <p className="text-sm text-white/80">
+                  You're building real relationships. See you next Monday for a fresh list!
+                </p>
               </div>
-            ))}
+            )}
+
+            <p className="mt-4 text-sm italic text-white/50">
+              Tip: Consistency beats intensity. Do a little every day.
+            </p>
           </div>
         </section>
 
         {/* ================================================================
-            4. WHO TO CONNECT WITH
+            2. WHO TO CONNECT WITH
         ================================================================ */}
         <section className="mb-12 md:mb-20">
           <div className="mb-6 flex items-center gap-3">
@@ -799,7 +727,7 @@ function Dashboard() {
         </section>
 
         {/* ================================================================
-            5. CONTENT IDEAS GENERATOR
+            3. CONTENT IDEAS
         ================================================================ */}
         <section className="mb-12 md:mb-20">
           <div className="mb-4 flex items-center gap-3">
@@ -839,7 +767,66 @@ function Dashboard() {
         </section>
 
         {/* ================================================================
-            6. WHAT TO POST ABOUT
+            4. OPENING MESSAGES
+        ================================================================ */}
+        <section className="mb-12 md:mb-20">
+          <div className="mb-6 flex items-center gap-3">
+            <MessageCircle size={22} className="text-brand-blue" />
+            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+              Opening Messages
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {member.conversationStarters.map((starter, idx) => (
+              <div key={idx} className={`flex flex-col ${cardBg}`}>
+                {/* Card header */}
+                <div
+                  className={`flex items-center justify-between border-b px-4 py-3 ${borderColor}`}
+                >
+                  <span
+                    className={`text-xs font-medium uppercase tracking-wide ${textMuted}`}
+                  >
+                    Template {idx + 1}
+                  </span>
+                  <button
+                    onClick={() => handleCopy(starter.template)}
+                    className="flex items-center gap-1.5 bg-brand-blue px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-brand-blue/80"
+                  >
+                    <Copy size={12} />
+                    Copy
+                  </button>
+                </div>
+
+                {/* Template text */}
+                <div className="flex-grow p-4 sm:p-5">
+                  <p
+                    className={`text-sm leading-relaxed ${
+                      isDark ? "text-white/90" : "text-brand-dark/90"
+                    }`}
+                  >
+                    {starter.template}
+                  </p>
+                </div>
+
+                {/* When to use */}
+                <div className="px-4 pb-4 sm:px-5 sm:pb-5">
+                  <div className={`p-3 ${cardBgSubtle}`}>
+                    <p className={`text-xs italic ${textMuted}`}>
+                      <span className="font-medium not-italic">
+                        When to use:
+                      </span>{" "}
+                      {starter.whenToUse}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ================================================================
+            5. WHAT TO POST ABOUT
         ================================================================ */}
         <section className="mb-12 md:mb-20">
           <div className="mb-6 flex items-center gap-3">
