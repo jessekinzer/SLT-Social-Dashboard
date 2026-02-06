@@ -3,820 +3,1842 @@
     {
       "id": "austin-daniel",
       "name": "Austin Daniel",
+      "title": "Chief Growth Officer",
       "avatar": "AD",
       "profileImage": "/images/team/austin-daniel.png",
       "offering": "Embedded Teams",
-      "talkingTo": "Founder-led sales to sales team transitions",
+      "nicheStatement": "You speak to revenue leaders and founders scaling B2B sales organizations — specifically those navigating the transition from founder-led sales to repeatable, scalable go-to-market engines across multiple verticals.",
       "icp": {
-        "title": "Founder-led sales to sales team transitions",
-        "targetRoles": ["CEO", "Founder", "COO"],
-        "companyStage": "Seed to Series C SaaS/tech startups (5-50 employees)",
+        "title": "CROs, VPs of Sales, startup founders scaling from founder-led sales",
+        "targetRoles": ["CROs", "VPs of Sales", "Heads of Revenue", "Startup Founders (Series A-C)"],
+        "companyStage": "20–500 employees, $2M–$50M ARR",
+        "industry": "SaaS, B2B tech, enterprise software",
+        "situation": "Scaling from founder-led sales to a structured sales org; expanding into new verticals; struggling with forecasting, hiring, or tooling",
         "theyrePostingAbout": [
-          "Building pipeline without burning out your team",
-          "Sales metrics that actually matter (not vanity numbers)",
-          "When to hire your first salesperson"
+          "Scaling sales teams without losing quality",
+          "VP of Sales hiring decisions",
+          "Revenue forecasting challenges",
+          "Sales and marketing alignment"
         ],
         "servicesFocus": ["Embedded"]
       },
-      "talkingAbout": [
-        "Building pipeline without burning out your team",
-        "Sales metrics that actually matter (not vanity numbers)",
-        "When to hire your first salesperson"
-      ],
-      "painPoints": [
-        "Need to grow without bloating headcount",
-        "Can't waste money on bad hires",
-        "Want 'try before you buy' flexibility"
-      ],
       "connectCriteria": [
-        "Founding CEO or technical co-founder at early-stage SaaS",
-        "Posts about building pipeline or scaling sales",
-        "Mentions 'founder-led sales' or 'first sales hire'",
-        "Active in SaaStr, YC, or similar communities",
-        "Raised seed/Series A in last 12 months"
+        "Are evaluating when to hire their first VP of Sales",
+        "Have a sales team scaling past 5 reps and need process discipline",
+        "Post about forecasting accuracy or pipeline reliability",
+        "Mention 'founder-led sales' transition or sales hiring challenges",
+        "Recently raised Series A-C and are building go-to-market"
       ],
       "engageCriteria": [
-        "Pre-revenue/pre-product (too early for sales help)",
-        "Posts general startup advice (not specific pain)",
-        "Serial entrepreneur not actively building",
-        "Focus only on fundraising/networking content"
+        "Generally interested in sales strategy and leadership",
+        "Share content about revenue operations or sales metrics",
+        "Post about CRM or sales tooling frustrations",
+        "Discuss sales team culture or motivation challenges"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "Scaling sales teams without losing quality or culture",
+          "whyItMatters": "Founders and CROs consistently struggle with growing sales teams without degrading process adherence or rep quality. Rushing hiring leads to chaos; going too slowly means missed revenue targets.",
+          "quotes": [
+            {
+              "text": "A challenge that comes up while scaling a sales team is in process execution. Are people following the process that they've been trained on? Are managers coaching to that process? Is everyone executing this at the same time?",
+              "attribution": "Brandon Calley, VP of Sales at Qualia (QuotaPath blog)"
+            },
+            {
+              "text": "Asking sales reps to do everything, from marketing to qualification to outbound to inbound. Sometimes you have no choice in the early days, but specialize as soon as possible. Closers are good at closing. Openers are good at opening. No sales professional is great at all of it.",
+              "attribution": "Jason Lemkin, Founder of SaaStr (SaaStr community)"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for knowing when to specialize vs. generalize your sales roles",
+            "Tell a story about a sales team that scaled too fast and what broke",
+            "Break down the metrics that indicate your sales process is degrading",
+            "Outline what 'process adherence' actually looks like at different scales"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Hiring the wrong VP of Sales or first sales leaders",
+          "whyItMatters": "The wrong sales leadership hire can set a startup back 6–12 months. Eight out of ten first VP Sales hires fail, averaging just 11 months in-role.",
+          "quotes": [
+            {
+              "text": "Roughly about eight out of ten first VP Sales hires for startups will also fail. If you get it wrong, the consequences are essentially you're going to lose one year of your startup life. For most startups, that's the difference between life or death.",
+              "attribution": "Brendon Cassidy, former VP Sales at LinkedIn/Talkdesk/Gong (SaaStr Scale presentation)"
+            },
+            {
+              "text": "You need to hire someone that can actually build the process and the foundation… You don't need to hire that hot-shot executive. They may not be in the position to roll up their sleeves and do the dirty work that needs to get done in the zero to $10 million stage.",
+              "attribution": "Doug Landis, Growth Partner at Emergence Capital (Avenue Talent Partners)"
+            }
+          ],
+          "postAngles": [
+            "Create a 'VP of Sales interview scorecard' — questions that expose builders vs. managers",
+            "Tell the story of a VP Sales hire gone wrong and the warning signs you missed",
+            "Share the profile of what a 'first VP of Sales' actually needs to be able to do",
+            "Explain why big-company sales execs often fail at startups"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Revenue forecasting is unreliable and high-stakes",
+          "whyItMatters": "Deals slip, pipeline is unreliable, and boards demand predictability that's nearly impossible in growth-stage companies. CROs walk into board meetings armed with forecasts only to explain why 30% of 'committed' deals disappeared.",
+          "quotes": [
+            {
+              "text": "Two massive contracts made up nearly 70% of our projected quarterly revenue. Both had verbal buy-in, and we'd already lined up resources assuming they'd close. Then one got delayed by six months… Overnight, our actual revenue came in 40% below forecast.",
+              "attribution": "Gregory Cave, AVP Healthcare Solutions, OSP Labs (Indinero)"
+            },
+            {
+              "text": "The sales cycle isn't linear; it's unpredictable by design. Prospects go quiet for weeks, then come back ready to sign. Budgets shift mid-quarter. Decision-makers change roles.",
+              "attribution": "Vito Vishnepolsky, Founder & Director, Martal Group (Indinero)"
+            }
+          ],
+          "postAngles": [
+            "Share your forecasting methodology and how accurate it actually is",
+            "Tell a story about a forecast miss and what you learned",
+            "Create a 'deal confidence scoring' framework your audience can steal",
+            "Explain how to have honest conversations with your board about forecast uncertainty"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Sales and marketing misalignment destroys revenue",
+          "whyItMatters": "Growth departments operating in silos — where marketing blames sales for not closing and sales blames marketing for poor leads — is a pervasive, costly problem.",
+          "quotes": [
+            {
+              "text": "Marketing say Sales aren't closing enough deals with the leads they're handing over. Sales say Marketing aren't generating good enough leads. Customer Success say they can't retain customers because Sales are closing deals at all costs.",
+              "attribution": "Cobloom (SaaS growth consultancy)"
+            }
+          ],
+          "postAngles": [
+            "Share the one meeting that fixed sales/marketing alignment at your company",
+            "Create a 'lead quality definition' template both teams can agree on",
+            "Tell a story about the cost of misalignment you've witnessed",
+            "Outline specific handoff processes that prevent finger-pointing"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "CRM and sales tooling frustrations",
+          "whyItMatters": "Sales reps widely dislike CRMs. Tools are built for managers, not sellers. Tool sprawl creates friction rather than enablement, and the effort to adopt new sales SaaS is rarely justified.",
+          "quotes": [
+            {
+              "text": "I rarely make or sponsor a sales SaaS purchase. Is it budget? Lack of need? The answer is: all of these, and more. The potential benefit to my business is either marginal or unproven and therefore not worth the effort.",
+              "attribution": "James Fielding, Former Head of Sales Enablement (Sales Enablement Collective)"
+            }
+          ],
+          "postAngles": [
+            "Share your 'essential vs. nice-to-have' sales tool framework",
+            "Tell a story about killing a tool that everyone thought was necessary",
+            "Create a CRM adoption checklist that actually gets reps to use it",
+            "Explain how to evaluate if a new sales tool is worth the switching cost"
+          ]
+        }
       ],
       "realQuotes": [
-        { "text": "Founder-led sales to sales team transitions", "source": "Industry Forums" },
-        { "text": "Building pipeline without burning out your team", "source": "r/startups" },
-        { "text": "Sales metrics that actually matter (not vanity numbers)", "source": "LinkedIn" },
-        { "text": "When to hire your first salesperson", "source": "Indie Hackers" }
+        { "topic": "Sales scaling chaos", "source": "QuotaPath blog, SaaStr", "context": "Leaders struggling with process execution as teams grow" },
+        { "topic": "VP Sales hiring failures", "source": "SaaStr Scale, industry data", "context": "8/10 first VP Sales hires fail, averaging 11 months in-role" },
+        { "topic": "Forecast unreliability", "source": "Indinero, CRO forums", "context": "Revenue leaders explaining forecast misses to boards" },
+        { "topic": "Sales/Marketing blame game", "source": "Cobloom, LinkedIn", "context": "Silos destroying revenue with finger-pointing" }
       ],
-      "conversationStarters": [
+      "topicCalendar": [
         {
-          "template": "Hey [Name], saw your post about [sales challenge]. That's exactly what we help founders solve - building consistent pipeline without burning out. Curious, are you handling all sales internally right now or exploring embedded help?",
-          "whenToUse": "When they post about sales struggles, pipeline challenges, or founder burnout"
+          "category": "Sales Scaling Strategy",
+          "frequency": "1x per week",
+          "whenToPost": "After you see hiring announcements, sales team growth posts, or scaling challenges shared",
+          "painPointsAddressed": [1, 2],
+          "templateSuggestions": ["Hot Take", "Story Post", "Listicle"],
+          "exampleTopics": [
+            "The #1 sign your sales team is scaling too fast",
+            "Why your first VP of Sales probably shouldn't be from a big company",
+            "3 process changes that fixed our scaling chaos"
+          ]
         },
         {
-          "template": "[Name], your post about [hiring] resonated. Most founders wait too long to get sales help but rush into bad full-time hires. Have you thought about testing a sales approach before committing to headcount?",
-          "whenToUse": "When they mention hiring challenges or sales team building"
+          "category": "Revenue Forecasting",
+          "frequency": "1x per week",
+          "whenToPost": "End of quarter, board meeting seasons, when you see forecast miss complaints",
+          "painPointsAddressed": [3],
+          "templateSuggestions": ["Value Bomb", "Myth Buster", "Signal Post"],
+          "exampleTopics": [
+            "How we improved forecast accuracy from 60% to 85%",
+            "The 'committed deal' lie we tell ourselves",
+            "5 signs your pipeline is less healthy than you think"
+          ]
         },
         {
-          "template": "Hey [Name], love your thinking on [sales topic]. Quick question - what metrics are you tracking right now? We help founders focus on the numbers that actually drive growth vs. vanity metrics.",
-          "whenToUse": "When they post about metrics, dashboards, or sales performance"
+          "category": "GTM Alignment",
+          "frequency": "1x per week",
+          "whenToPost": "When you see sales/marketing conflict posts, lead quality complaints",
+          "painPointsAddressed": [4, 5],
+          "templateSuggestions": ["Observation", "Question Post", "Story Post"],
+          "exampleTopics": [
+            "The meeting that finally aligned our sales and marketing teams",
+            "Why your CRM is a glorified spreadsheet (and what to do about it)",
+            "Quick question: How do you define a 'qualified lead'?"
+          ]
         }
       ],
-      "contentPillars": [
-        {
-          "title": "Sales Scaling",
-          "examples": [
-            "The biggest mistake founders make when scaling sales: [mistake]. Here's what works instead",
-            "We helped [founder] build a sales pipeline in [timeframe] without hiring. Here's how",
-            "Sales metrics that actually matter: [metric 1], [metric 2], [metric 3]"
-          ],
-          "frequency": "1-2x per week"
-        },
-        {
-          "title": "Founder Growth",
-          "examples": [
-            "Stop hiring full-time sales reps until you have [milestone]. Do this instead",
-            "Your first salesperson should do [X], not [Y]. Here's why",
-            "Quick poll: When did you hire your first sales rep?"
-          ],
-          "frequency": "1x per week"
-        }
-      ],
-      "contentTemplates": [
-        "The biggest mistake founders make when scaling sales: [mistake]. Here's what works instead: [solution]",
-        "We helped [founder] build a sales pipeline in [timeframe] without hiring. Here's how: [approach]",
-        "Stop hiring full-time sales reps until you have [milestone]. Do this instead: [embedded approach]",
-        "Sales metrics that actually matter: [metric 1], [metric 2], [metric 3]. Ignore: [vanity metric]",
-        "Your first salesperson should do [X], not [Y]. Here's why:",
-        "Quick poll: When did you hire your first sales rep? [seed stage/Series A/after $1M ARR/other]"
-      ]
+      "proTips": {
+        "superpower": "You've built sales organizations from founder-led to structured go-to-market engines. You speak the language of both scrappy founders and process-driven sales leaders.",
+        "uniqueVoice": [
+          "You've lived the founder-led sales grind and know the exact moment it breaks",
+          "You can translate between founder intuition and sales process discipline",
+          "You've made the VP Sales hiring mistake and can help others avoid it"
+        ],
+        "avoid": [
+          "Generic sales motivation content ('hustle harder!')",
+          "Pure theory without operational specifics",
+          "Bashing competitors or vendors by name"
+        ],
+        "leanInto": [
+          "Specific numbers from your experience (conversion rates, ramp times, forecast accuracy)",
+          "Honest stories about what went wrong, not just wins",
+          "Frameworks and templates your audience can immediately use",
+          "Contrarian takes on common sales advice"
+        ],
+        "bestTimes": "Tuesday–Thursday, 7-9am or 12-2pm CT",
+        "engagementHack": "When commenting on sales posts, add a specific number or timeframe from your experience. Example: 'We saw this exact pattern — took us 6 months to realize the fix was role specialization, not more training.'"
+      },
+      "closingMotivation": "Your audience is drowning in generic sales advice and desperately needs someone who's actually built what they're trying to build. Be specific. Be honest about failures. Give them frameworks they can use Monday morning."
     },
     {
       "id": "austin-eidson",
       "name": "Austin Eidson",
+      "title": "Design Director",
       "avatar": "AE",
       "profileImage": "/images/team/austin-eidson.png",
       "offering": "Embedded Teams",
-      "talkingTo": "Design news and trends",
+      "nicheStatement": "You speak to design leaders navigating the tension between creative vision and business reality — those fighting to prove design's strategic value while managing teams, brand systems, and organizational politics.",
       "icp": {
-        "title": "Design news and trends",
-        "targetRoles": ["Design Director", "Head of Product Design"],
-        "companyStage": "B2B SaaS and tech companies (50-500 employees)",
+        "title": "Design Directors, Heads of Product Design, VPs of Design",
+        "targetRoles": ["Design Directors", "Heads of Product Design", "VPs of Design", "Creative Directors"],
+        "companyStage": "100–5,000+ employees with in-house design teams of 5–50+",
+        "industry": "Tech, SaaS, DTC brands, agencies",
+        "situation": "Defending design's seat at the table; scaling design teams; battling speed-over-quality culture; building or maintaining brand systems",
         "theyrePostingAbout": [
-          "Leading and scaling design teams",
-          "Director-level insights (stakeholder management, design advocacy)",
-          "Design's impact on revenue and business outcomes",
-          "Design Led companies"
+          "Design leadership and team scaling",
+          "Proving design's business impact",
+          "Brand consistency at scale",
+          "Stakeholder management and politics"
         ],
         "servicesFocus": ["Embedded"]
       },
-      "talkingAbout": [
-        "Leading and scaling design teams",
-        "Director-level insights (stakeholder management, design advocacy)",
-        "Design's impact on revenue and business outcomes",
-        "Design Led companies"
-      ],
-      "painPoints": [
-        "Inconsistent user experiences and brand implementation",
-        "Lack of differentiation amongst competitors",
-        "Outdated interfaces and limited resources",
-        "Operating on 'gut-feeling' vs. research"
-      ],
       "connectCriteria": [
-        "Leads or manages a product design team",
-        "Posts about design systems, UX consistency, or brand implementation",
-        "Mentions design's business impact or stakeholder buy-in challenges",
-        "Looking to scale design output without full-time hires",
-        "Active in design leadership communities"
+        "Lead or manage a product design team of 5+ people",
+        "Post about design systems, UX consistency, or brand implementation challenges",
+        "Mention design's business impact or stakeholder buy-in struggles",
+        "Are scaling design output without proportional headcount growth",
+        "Active in design leadership communities or conferences"
       ],
       "engageCriteria": [
-        "Junior designers without team leadership role",
-        "Posts only design inspiration (no operational pain)",
-        "Freelance designers without delivery teams",
-        "No budget or decision-making authority"
+        "Generally interested in design trends and inspiration",
+        "Share concerns about design quality vs. speed pressures",
+        "Post about burnout, team dynamics, or leadership challenges",
+        "Discuss design tools, workflows, or process improvements"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "Design is consistently undervalued by the C-suite",
+          "whyItMatters": "More than 60% of design leaders feel unsupported by C-suite partners. Design is still treated as a service function rather than a strategic one, and gaining influence remains an uphill battle.",
+          "quotes": [
+            {
+              "text": "I don't think they truly understand how difficult it can be for the average designer who works at a company that doesn't see the value in design, or completely misunderstands it. I feel like we've been talking about a seat at the table for, what, ten years now? Something is fundamentally wrong.",
+              "attribution": "u/DesignGang, Reddit r/UXDesign (Nov 2024)"
+            },
+            {
+              "text": "Most are held down and back because value is attributed to Product or Engineering. They simply will always have more bodies than UX.",
+              "attribution": "u/Negneal, Reddit r/UXDesign (Nov 2024)"
+            }
+          ],
+          "postAngles": [
+            "Share how you got design 'a seat at the table' (specific tactics, not platitudes)",
+            "Tell a story about translating design value into executive language",
+            "Create a framework for measuring design's business impact",
+            "Address the uncomfortable truth: maybe the seat doesn't matter as much as influence"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Design leadership burnout from emotional labor and politics",
+          "whyItMatters": "Design leaders are burning out from being sandwiched between defending quality to stakeholders, managing team emotions, and navigating politics — leaving no time for design thinking.",
+          "quotes": [
+            {
+              "text": "You're defending why good design takes time to stakeholders who want everything yesterday, while simultaneously pushing your team to move faster. You're absorbing everyone's stress... You become the emotional shock absorber for the entire organization, and there's nowhere for that pressure to go.",
+              "attribution": "Jamie Rothwell, Medium (UX Management, 2024)"
+            },
+            {
+              "text": "We champion user empathy, and understanding of pain points and struggles... and then when a designer talks about not having influence, we finger-wag at them and tell them they're not working hard enough.",
+              "attribution": "u/IniNew, Reddit r/UXDesign (Nov 2024)"
+            }
+          ],
+          "postAngles": [
+            "Share your strategies for protecting your energy as a design leader",
+            "Tell an honest story about burnout and what you changed",
+            "Create boundaries templates for design leaders (what to say 'no' to)",
+            "Address the irony of user empathy professionals ignoring their own wellbeing"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Business metrics are overriding creative and emotional design",
+          "whyItMatters": "Design leaders face increasing pressure to optimize for engagement metrics and speed rather than craft, meaning, and emotional resonance — the things that differentiate great brands.",
+          "quotes": [
+            {
+              "text": "We're handing our design systems to growth teams so they can squeeze every last penny out of customers. We're optimizing our flows for clicks, not clarity. We stopped building tools and started building engagement traps… In many companies, the pursuit of growth is overshadowing the pursuit of meaning.",
+              "attribution": "Fabricio Teixeira & Caio Braga, The State of UX in 2025 (UX Collective)"
+            },
+            {
+              "text": "The quality of experience suffered due to shrinking budgets and overstretched Design Teams, pressured and measured against speed and volume over quality and impact. The result? An enterprise-wide erosion of trust.",
+              "attribution": "Aquent Blog, 'Is your Design Team proving its value in 2025?'"
+            }
+          ],
+          "postAngles": [
+            "Share how you balance metric optimization with design integrity",
+            "Tell a story about pushing back on 'dark pattern' requests",
+            "Create a framework for when to prioritize craft vs. speed",
+            "Address the tension between growth metrics and brand trust"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Brand consistency collapses at scale",
+          "whyItMatters": "As organizations grow, maintaining cohesive brand identity across multiple teams and products becomes a major operational challenge. Teams build parallel solutions independently, creating inconsistency.",
+          "quotes": [
+            {
+              "text": "Sales teams end up using outdated decks because they grabbed whatever was in the shared drive… Operations starts pulling their own visuals because they couldn't find the right one… Leadership wonders why everything looks completely different every quarter.",
+              "attribution": "Nicole Steffen Design (Blog, Jan 2026)"
+            }
+          ],
+          "postAngles": [
+            "Share your design system governance model that actually works",
+            "Tell a story about brand consistency breaking down and how you fixed it",
+            "Create a 'brand audit' checklist for scaling companies",
+            "Address the operational side of design systems (not just the components)"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "The isolation of being the most senior design leader",
+          "whyItMatters": "The most senior design leader often faces an isolating, uphill battle with limited support from peers who don't understand the design process.",
+          "quotes": [
+            {
+              "text": "To be the most senior designer in a business is a tough, isolating job: it's not always the VP of design's fault there are big problems.",
+              "attribution": "Scott Berkun, author of 'Why Design Is Hard' (Substack, Nov 2024)"
+            },
+            {
+              "text": "Less budget, less people, more work. Designers asked to do more with less. Majority of leaders are not 'truly' happy. Taking roles 1 or 2 levels below true skill set. In-house design leadership seen as a luxury.",
+              "attribution": "Tom Scott, Design Leadership Recruiter (LinkedIn, late 2023)"
+            }
+          ],
+          "postAngles": [
+            "Share how you built a peer support network outside your company",
+            "Tell an honest story about the loneliness of design leadership",
+            "Create a 'survival guide' for solo design leaders",
+            "Address what design leaders need from their organizations (not just more budget)"
+          ]
+        }
       ],
       "realQuotes": [
-        { "text": "Design news and trends", "source": "Design Leadership Forums" },
-        { "text": "Leading and scaling design teams", "source": "r/design" },
-        { "text": "Director-level insights (stakeholder management, design advocacy)", "source": "LinkedIn" },
-        { "text": "Design's impact on revenue and business outcomes", "source": "Design Twitter" }
+        { "topic": "Design's seat at the table", "source": "Reddit r/UXDesign, industry forums", "context": "10+ years of fighting for strategic recognition" },
+        { "topic": "Design leadership burnout", "source": "Medium, UX Management communities", "context": "Being the 'emotional shock absorber' for the org" },
+        { "topic": "Metrics vs. meaning", "source": "UX Collective, State of UX 2025", "context": "Growth optimization overriding design integrity" },
+        { "topic": "Solo design leader isolation", "source": "Scott Berkun, LinkedIn recruiters", "context": "Less budget, more work, no peer support" }
       ],
-      "conversationStarters": [
+      "topicCalendar": [
         {
-          "template": "Hey [Name], saw your post about [design challenge]. We work with design leaders who need to prove impact while scaling teams. Curious - how are you currently measuring design's contribution to business outcomes?",
-          "whenToUse": "When they post about design metrics, ROI, or business impact"
+          "category": "Design Leadership & Influence",
+          "frequency": "1x per week",
+          "whenToPost": "When you see 'seat at the table' discussions, design org announcements, or leadership transitions",
+          "painPointsAddressed": [1, 5],
+          "templateSuggestions": ["Hot Take", "Story Post", "Observation"],
+          "exampleTopics": [
+            "I stopped fighting for a 'seat at the table.' Here's what I did instead.",
+            "The loneliest job in tech: being the only design leader",
+            "How I got my CEO to understand design's value (finally)"
+          ]
         },
         {
-          "template": "[Name], your insights on [design topic] were spot-on. Most design leaders we work with struggle with: great ideas, limited capacity. How are you handling the gap between design demand and team bandwidth?",
-          "whenToUse": "When they mention team challenges, resource constraints, or capacity issues"
+          "category": "Design Team Health & Sustainability",
+          "frequency": "1x per week",
+          "whenToPost": "When you see burnout discussions, layoff announcements, or 'do more with less' pressures",
+          "painPointsAddressed": [2, 3],
+          "templateSuggestions": ["Myth Buster", "Question Post", "Story Post"],
+          "exampleTopics": [
+            "The boundaries I set that saved my sanity as a design leader",
+            "Quick question: What's draining you most as a design leader right now?",
+            "We optimized for clicks and lost our soul. Here's what we changed."
+          ]
         },
         {
-          "template": "Hey [Name], question about your [product/brand]. When every competitor looks the same, how do you approach differentiation? We help design teams create distinctive experiences when resources are tight.",
-          "whenToUse": "When they post about competitive analysis, branding, or standing out"
+          "category": "Design Systems & Brand Operations",
+          "frequency": "1x per week",
+          "whenToPost": "When you see brand inconsistency complaints, design system discussions, or scaling challenges",
+          "painPointsAddressed": [4],
+          "templateSuggestions": ["Value Bomb", "Listicle", "Signal Post"],
+          "exampleTopics": [
+            "5 signs your design system is a document, not a system",
+            "How we got 12 teams using the same brand assets (finally)",
+            "The operational side of design systems nobody talks about"
+          ]
         }
       ],
-      "contentPillars": [
-        {
-          "title": "Design Leadership",
-          "examples": [
-            "Design Directors face this challenge daily: [problem]. Here's how to solve it",
-            "Stop designing by gut feeling. Start with [research method]. Here's why",
-            "Your design system is broken if: [list of symptoms]. Here's how to fix it"
-          ],
-          "frequency": "1x per week"
-        },
-        {
-          "title": "Design Impact",
-          "examples": [
-            "How we helped [company] achieve [design outcome] in [timeframe]",
-            "Design's ROI: Before [metric], After [metric]. Here's what changed",
-            "Quick poll: What's your biggest design challenge?"
-          ],
-          "frequency": "1-2x per week"
-        }
-      ],
-      "contentTemplates": [
-        "Design Directors face this challenge daily: [problem]. Here's how to solve it: [framework]",
-        "How we helped [company] achieve [design outcome] in [timeframe]: [approach]",
-        "Stop designing by gut feeling. Start with [research method]. Here's why:",
-        "Design's ROI: Before [metric], After [metric]. Here's what changed: [specific design decision]",
-        "Your design system is broken if: [list of symptoms]. Here's how to fix it: [solutions]",
-        "Quick poll: What's your biggest design challenge? [consistency/resources/stakeholder buy-in/differentiation]"
-      ]
-    },
-    {
-      "id": "cyril-jones",
-      "name": "Cyril Jones",
-      "avatar": "CJ",
-      "profileImage": "/images/team/cyril-jones.png",
-      "offering": "Scoped Projects",
-      "talkingTo": "Discoveries and scoping projects that don't blow up",
-      "icp": {
-        "title": "Discoveries and scoping projects that don't blow up",
-        "targetRoles": ["Founder", "VP of Engineering", "Technical Founders"],
-        "companyStage": "Pre-seed to Series B startups (2-50 employees)",
-        "theyrePostingAbout": [
-          "AI implementation in real business contexts",
-          "MVP prioritization and 'what to build first' decisions",
-          "Managing client and stakeholder expectations"
+      "proTips": {
+        "superpower": "You understand both the emotional/creative side of design AND the operational/business reality. You can speak to the craft while acknowledging the constraints.",
+        "uniqueVoice": [
+          "You're honest about the political realities of design leadership",
+          "You blend brand design (emotional) with product design (functional)",
+          "You've felt the isolation and burnout — you're not preaching from a pedestal"
         ],
-        "servicesFocus": ["Scoped"]
-      },
-      "talkingAbout": [
-        "AI implementation in real business contexts",
-        "MVP prioritization and 'what to build first' decisions",
-        "Managing client and stakeholder expectations"
-      ],
-      "painPoints": [
-        "Needing to build an MVP to get initial product to customers",
-        "Has money but needs a team they can trust to execute",
-        "Needs proper planning and documentation to justify spend",
-        "Needs it done yesterday",
-        "Lack of skill on internal team",
-        "How do I turn this idea into something real without blowing my budget on the wrong partner?"
-      ],
-      "connectCriteria": [
-        "Technical founder or VP Eng at early-stage startup",
-        "Posts about MVP planning, scoping, or feature prioritization",
-        "Mentions needing a dev partner they can trust",
-        "Actively looking for agencies or contractors",
-        "Has budget but struggling with execution"
-      ],
-      "engageCriteria": [
-        "Idea stage only (no funding or validation)",
-        "Posts about building everything themselves",
-        "Looking for a co-founder, not a partner",
-        "No budget signal"
-      ],
-      "realQuotes": [
-        { "text": "Discoveries and scoping projects that don't blow up", "source": "Technical Founder Communities" },
-        { "text": "AI implementation in real business contexts", "source": "r/MachineLearning" },
-        { "text": "MVP prioritization and 'what to build first' decisions", "source": "Indie Hackers" },
-        { "text": "Managing client and stakeholder expectations", "source": "LinkedIn" }
-      ],
-      "conversationStarters": [
-        {
-          "template": "Hey [Name], saw your post about [MVP challenge]. That's literally our specialty - helping founders scope projects that don't blow up. Have you done formal discovery work yet or jumping straight to build?",
-          "whenToUse": "When they post about MVP planning, feature prioritization, or scoping challenges"
-        },
-        {
-          "template": "[Name], your post about [development challenge] resonated. Most founders we work with have budget but need a team they can trust to actually execute. How are you thinking about de-risking your build?",
-          "whenToUse": "When they mention contractor horror stories, trust issues, or execution concerns"
-        },
-        {
-          "template": "Hey [Name], question about your [project]. We help founders turn ideas into working MVPs without blowing the budget. Have you figured out how much this should actually cost or still getting wildly different estimates?",
-          "whenToUse": "When they ask about pricing, budgets, or are comparing vendor proposals"
-        }
-      ],
-      "contentPillars": [
-        {
-          "title": "MVP Strategy",
-          "examples": [
-            "Most MVPs fail because: [reason]. Here's how to scope one that validates",
-            "We turned [founder's] idea into a working MVP in [timeframe]. Here's what we cut",
-            "Stop building features. Start validating assumptions. Here's how"
-          ],
-          "frequency": "1-2x per week"
-        },
-        {
-          "title": "AI & Implementation",
-          "examples": [
-            "AI implementation that works: [use case]. AI that flops: [hype use case]",
-            "The real cost of MVP mistakes: [calculate opportunity cost]",
-            "Quick question: What's your biggest fear about building an MVP?"
-          ],
-          "frequency": "1x per week"
-        }
-      ],
-      "contentTemplates": [
-        "Most MVPs fail because: [reason]. Here's how to scope one that actually validates: [framework]",
-        "We turned [founder's] idea into a working MVP in [timeframe]. Here's what we cut: [list]",
-        "Stop building features. Start validating assumptions. Here's how: [approach]",
-        "The real cost of MVP mistakes: [calculate opportunity cost]. Here's how to avoid them:",
-        "AI implementation that works: [use case]. AI that flops: [hype use case]. Know the difference.",
-        "Quick question: What's your biggest fear about building an MVP? [wrong features/wrong partner/wrong timing/wrong budget]"
-      ]
-    },
-    {
-      "id": "dom-paulk",
-      "name": "Dom Paulk",
-      "avatar": "DP",
-      "profileImage": "/images/team/dom-paulk.png",
-      "offering": "Embedded Teams",
-      "talkingTo": "PM workflows that actually scale",
-      "icp": {
-        "title": "PM workflows that actually scale",
-        "targetRoles": ["VP of Product", "Project/Program Manager", "VP of Engineering"],
-        "companyStage": "Growth-stage product organizations (30-200 employees)",
-        "theyrePostingAbout": [
-          "PM tooling reviews and recommendations",
-          "Agile without the theater",
-          "Keeping cross-functional teams aligned"
+        "avoid": [
+          "Purely inspirational design content (pretty portfolios without context)",
+          "Blaming non-designers for 'not getting it'",
+          "Unrealistic advice that ignores budget/time constraints"
         ],
-        "servicesFocus": ["Embedded"]
+        "leanInto": [
+          "Honest stories about the hard parts of design leadership",
+          "Practical frameworks for proving design value",
+          "Emotional resonance — your audience is tired and needs validation",
+          "Specific tactics for stakeholder management and politics"
+        ],
+        "bestTimes": "Tuesday–Thursday, 8-10am or 12-2pm CT",
+        "engagementHack": "When commenting on design leadership posts, share a specific number or outcome. Example: 'We had the same issue — took 6 months but we reduced brand asset requests by 70% with a simple governance change.'"
       },
-      "talkingAbout": [
-        "PM tooling reviews and recommendations",
-        "Agile without the theater",
-        "Keeping cross-functional teams aligned"
-      ],
-      "painPoints": [
-        "Inefficiencies and misalignment on product development",
-        "Delays due to inefficient internal processes",
-        "Lack of clear strategic vision"
-      ],
-      "connectCriteria": [
-        "VP of Product or Program Manager at growth-stage company",
-        "Posts about roadmap execution or shipping velocity",
-        "Mentions agile process overhead or cross-functional alignment",
-        "Looking to add execution capacity to their team",
-        "Active in product management communities"
-      ],
-      "engageCriteria": [
-        "Individual contributor PMs without team oversight",
-        "Posts only about PM frameworks (no operational pain)",
-        "Consultants or coaches without delivery responsibility",
-        "No clear hiring or scaling needs"
-      ],
-      "realQuotes": [
-        { "text": "PM workflows that actually scale", "source": "Product Management Forums" },
-        { "text": "PM tooling reviews and recommendations", "source": "r/ProductManagement" },
-        { "text": "Agile without the theater", "source": "LinkedIn" },
-        { "text": "Keeping cross-functional teams aligned", "source": "Mind the Product Community" }
-      ],
-      "conversationStarters": [
-        {
-          "template": "Hey [Name], saw your post about [team velocity]. We work with VPs who have great roadmaps but can't ship fast enough. Curious - is your bottleneck capacity, clarity, or alignment?",
-          "whenToUse": "When they post about slow shipping, roadmap delays, or team capacity"
-        },
-        {
-          "template": "[Name], your insights on [agile/process] were dead-on. Most product leaders we work with are drowning in process overhead. How much time do you spend in ceremonies vs. actually moving work forward?",
-          "whenToUse": "When they complain about meetings, process, or Agile theater"
-        },
-        {
-          "template": "Hey [Name], question about your [roadmap/project]. If you could add execution capacity without the hiring timeline, what would you ship first? That's what embedded teams unlock.",
-          "whenToUse": "When they mention being understaffed, hiring challenges, or backlog pressure"
-        }
-      ],
-      "contentPillars": [
-        {
-          "title": "Execution Velocity",
-          "examples": [
-            "PM workflows that scale: [workflow]. PM workflows that break: [anti-pattern]",
-            "We helped [VP] ship [X] features in [timeframe] with an embedded team",
-            "Agile theater: [symptom]. Agile that works: [practice]"
-          ],
-          "frequency": "1-2x per week"
-        },
-        {
-          "title": "Team Alignment",
-          "examples": [
-            "Stop using [tool] for [purpose]. Use [better approach] instead",
-            "Cross-functional alignment framework: [step 1], [step 2], [step 3]",
-            "Quick poll: What's killing your team's velocity?"
-          ],
-          "frequency": "1x per week"
-        }
-      ],
-      "contentTemplates": [
-        "PM workflows that scale: [workflow]. PM workflows that break: [anti-pattern]. Know the difference.",
-        "We helped [VP] ship [X] features in [timeframe] with an embedded team. Here's the process:",
-        "Agile theater: [symptom]. Agile that works: [practice]. Which one are you doing?",
-        "Stop using [tool] for [purpose]. Use [better approach] instead. Here's why:",
-        "Cross-functional alignment framework: [step 1], [step 2], [step 3]. Works every time.",
-        "Quick poll: What's killing your team's velocity? [misalignment/unclear requirements/too many meetings/tool overhead]"
-      ]
+      "closingMotivation": "Your audience is exhausted from fighting for recognition while managing teams and delivering results. Validate their struggle, share your scars, and give them tactical wins they can implement this week."
     },
     {
       "id": "jerrod-tracy",
       "name": "Jerrod Tracy",
+      "title": "Director of Engineering",
       "avatar": "JT",
       "profileImage": "/images/team/jerrod-tracy.png",
       "offering": "Embedded Teams",
-      "talkingTo": "Greenfield project strategy and lessons learned",
+      "nicheStatement": "You speak to engineering leaders managing the tension between technical excellence and organizational scale — those responsible for infrastructure reliability, team culture, and developer productivity as organizations grow.",
       "icp": {
-        "title": "Greenfield project strategy and lessons learned",
-        "targetRoles": ["VP of Engineering", "Director of IT", "CTO"],
-        "companyStage": "Growth-stage SaaS (50-250 employees)",
+        "title": "VPs of Engineering, CTOs, Directors of IT, Engineering Managers",
+        "targetRoles": ["VPs of Engineering", "CTOs", "Directors of IT", "Engineering Managers"],
+        "companyStage": "50–2,000 employees with engineering teams of 15–200+",
+        "industry": "SaaS, fintech, enterprise tech, infrastructure",
+        "situation": "Scaling engineering orgs; managing technical debt; modernizing infrastructure; transitioning from IC to leader",
         "theyrePostingAbout": [
-          "AI in engineering workflows",
-          "Embedded engineering best practices",
-          "Infrastructure decisions that scale (or don't)"
+          "Technical debt and paying it down",
+          "Infrastructure firefighting",
+          "Engineering leadership transitions",
+          "Hiring and retaining engineers"
         ],
         "servicesFocus": ["Embedded"]
       },
-      "talkingAbout": [
-        "AI in engineering workflows",
-        "Embedded engineering best practices",
-        "Infrastructure decisions that scale (or don't)"
-      ],
-      "painPoints": [
-        "Legacy systems needing modernization",
-        "Overwhelming technical debt",
-        "Slow-to-launch timelines",
-        "Application performance bottlenecks"
-      ],
       "connectCriteria": [
-        "VP Engineering or CTO at growth-stage company",
-        "Posts about legacy modernization or tech debt",
-        "Mentions capacity issues or hiring bottlenecks",
-        "Discusses infrastructure upgrades or greenfield projects",
+        "Lead engineering teams of 15+ people",
+        "Post about technical debt decisions or modernization projects",
+        "Mention capacity issues, hiring bottlenecks, or team burnout",
+        "Discuss infrastructure upgrades or greenfield projects",
         "Active in engineering leadership communities"
       ],
       "engageCriteria": [
-        "Solo engineers without team leadership",
-        "Early-stage without funding",
-        "Only posts technical tutorials",
-        "No current hiring or scaling needs"
+        "Generally interested in engineering management trends",
+        "Share concerns about tech debt, legacy systems, or team dynamics",
+        "Post about development velocity or process improvements",
+        "Discuss engineering culture or retention challenges"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "Technical debt versus feature delivery — the impossible tradeoff",
+          "whyItMatters": "Engineering leaders face constant tension between paying down technical debt and shipping features. Ignoring debt erodes team morale, increases attrition, and slows velocity — but justifying it to stakeholders is extremely difficult.",
+          "quotes": [
+            {
+              "text": "Following an exit interview in which a departing engineer mentioned tech debt had contributed to their decision to leave, I started asking people during 1:1s how they felt about it. Their responses showed their frustration with me.",
+              "attribution": "Lou Franco, Head of Development at Atalasoft (The Pragmatic Engineer Newsletter, Sept 2024)"
+            },
+            {
+              "text": "One of the biggest challenges is just understanding and organizing the scope of technical debt… IT teams struggle with knowing the amount and impact of technical debt because it sprawls into different systems. It has knock-on effects.",
+              "attribution": "Andrew Sharp, Research Director, Info-Tech Research Group (CIO.com)"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for prioritizing tech debt vs. features",
+            "Tell a story about tech debt that caused an engineer to leave",
+            "Create a 'tech debt impact calculator' for justifying paydown to leadership",
+            "Address how to have honest conversations with your team about debt"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Infrastructure firefighting consumes engineering capacity",
+          "whyItMatters": "Growing companies get trapped in reactive mode. Firefighting consumes up to 90% of engineering time at its worst, preventing proactive improvements and infrastructure modernization.",
+          "quotes": [
+            {
+              "text": "When I arrived last year, it was probably 90% fire-fighting, and 10% actually improving things. Things are a lot better now days, so I'd say we're probably closer towards 60% 'near-term' issues and 40% 'longer-term' issues.",
+              "attribution": "u/jedberg, Reddit r/sysadmin (AMA thread)"
+            },
+            {
+              "text": "It would take 30+ hours for an engineer to spin up a cluster, including over 100 steps… Decommissioning a cluster amounted to an 'expensive archeology hunt.' It was a self-reinforcing cycle of inefficiency.",
+              "attribution": "Harvey Xia, Software Engineer at Reddit (The New Stack, KubeCon)"
+            }
+          ],
+          "postAngles": [
+            "Share your journey from 90% firefighting to proactive engineering",
+            "Create a 'firefighting ratio' metric and how to track it",
+            "Tell a story about breaking the reactive cycle",
+            "Outline specific automation that freed your team from firefighting"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Losing technical edge while transitioning to leadership",
+          "whyItMatters": "Engineering directors and managers struggle with losing their technical skills as they spend more time in meetings, on people management, and on strategy. This creates identity tension and limits effectiveness.",
+          "quotes": [
+            {
+              "text": "Balancing performance appraisals with financial constraints and no bonuses. Keeping team spirits high during tough times and uncertainty. Making the tough decision to lay off employees when things got even worse financially.",
+              "attribution": "Engineering Manager at a startup (Dev.to, Jan 2025)"
+            },
+            {
+              "text": "This high-level focus doesn't materialize 100% of the time in practice. As a growing company, there are always gaps appearing in a company's management coverage, and I often become closely involved in running day-to-day operations.",
+              "attribution": "Emily Nakashima, VP of Engineering at Honeycomb (LeadDev)"
+            }
+          ],
+          "postAngles": [
+            "Share how you stay technical while leading",
+            "Tell an honest story about the identity crisis of going from IC to manager",
+            "Create a framework for 'technical time' as a leader",
+            "Address the guilt of not coding anymore"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Hiring and retaining engineers amid burnout and tech debt frustration",
+          "whyItMatters": "Poor hiring decisions slow teams, and attrition from burnout or tech debt frustration is costly. The cost of ignoring team sentiment is losing your best people.",
+          "quotes": [
+            {
+              "text": "The cost of tech debt is borne daily by your team, and you risk damaging motivation and raising attrition by ignoring it. Doing nothing — like I did — is not a good option.",
+              "attribution": "Lou Franco (The Pragmatic Engineer Newsletter, Sept 2024)"
+            },
+            {
+              "text": "I got laid off during the pandemic from a job I worked at for 8 years with no raises and found a new job at 33% higher pay within two weeks. I learned not to let companies take advantage of me.",
+              "attribution": "u/zakabog, Reddit r/sysadmin"
+            }
+          ],
+          "postAngles": [
+            "Share what your best engineers actually care about (hint: not ping pong)",
+            "Tell a story about losing a great engineer and what you learned",
+            "Create a retention checklist that goes beyond compensation",
+            "Address the link between tech debt and attrition"
+          ]
+        }
       ],
       "realQuotes": [
-        { "text": "Greenfield project strategy and lessons learned", "source": "Engineering Leadership Forums" },
-        { "text": "AI in engineering workflows", "source": "r/programming" },
-        { "text": "Embedded engineering best practices", "source": "LinkedIn" },
-        { "text": "Infrastructure decisions that scale (or don't)", "source": "DevOps Communities" }
+        { "topic": "Tech debt causing attrition", "source": "Pragmatic Engineer, exit interviews", "context": "Engineers leaving because debt is ignored" },
+        { "topic": "90% firefighting mode", "source": "Reddit r/sysadmin, The New Stack", "context": "Teams trapped in reactive cycles" },
+        { "topic": "IC to manager identity crisis", "source": "Dev.to, LeadDev", "context": "Losing technical edge while leading" },
+        { "topic": "Retention beyond compensation", "source": "Reddit r/sysadmin, industry forums", "context": "What actually keeps engineers engaged" }
       ],
-      "conversationStarters": [
+      "topicCalendar": [
         {
-          "template": "Hey [Name], saw your post about [legacy system]. We specialize in modernization without business disruption. Curious - are you looking at full rewrite or incremental migration?",
-          "whenToUse": "When they post about legacy tech, modernization, or tech debt"
+          "category": "Technical Debt Strategy",
+          "frequency": "1x per week",
+          "whenToPost": "When you see tech debt discussions, modernization announcements, or refactoring debates",
+          "painPointsAddressed": [1],
+          "templateSuggestions": ["Hot Take", "Story Post", "Myth Buster"],
+          "exampleTopics": [
+            "The tech debt that caused my best engineer to leave",
+            "Unpopular opinion: Most tech debt doesn't need to be paid down",
+            "How I got my CEO to fund 3 months of pure refactoring"
+          ]
         },
         {
-          "template": "[Name], your thoughts on [infrastructure] were insightful. When you spin up greenfield projects, how do you resource them without pulling people from core systems?",
-          "whenToUse": "When they mention new projects, innovation, or resource allocation"
+          "category": "Infrastructure & Operations",
+          "frequency": "1x per week",
+          "whenToPost": "When you see outage postmortems, infrastructure complaints, or DevOps discussions",
+          "painPointsAddressed": [2],
+          "templateSuggestions": ["Value Bomb", "Listicle", "Observation"],
+          "exampleTopics": [
+            "We went from 90% firefighting to 40%. Here's exactly how.",
+            "5 automations that gave my team their weekends back",
+            "I noticed every fast-growing startup has the same infra problem..."
+          ]
         },
         {
-          "template": "Hey [Name], question about your [performance/bottleneck issue]. We help engineering leaders fix these without needing to hire a whole new team. What's the impact of the slowdown right now?",
-          "whenToUse": "When they post about performance problems, bottlenecks, or application issues"
+          "category": "Engineering Leadership & Team Health",
+          "frequency": "1x per week",
+          "whenToPost": "When you see leadership transition posts, burnout discussions, or retention concerns",
+          "painPointsAddressed": [3, 4],
+          "templateSuggestions": ["Question Post", "Story Post", "Signal Post"],
+          "exampleTopics": [
+            "Quick question: How do you stay technical as an engineering leader?",
+            "I stopped coding 2 years ago. Here's what I gained (and lost).",
+            "3 signs your engineers are about to leave"
+          ]
         }
       ],
-      "contentPillars": [
+      "proTips": {
+        "superpower": "You've led large engineering teams through scaling challenges. You understand both the technical and people sides of engineering leadership.",
+        "uniqueVoice": [
+          "You're honest about the ugly parts of engineering management",
+          "You've lived the firefighting cycle and found your way out",
+          "You can translate between technical depth and business impact"
+        ],
+        "avoid": [
+          "Pure technical tutorials (leave that to IC engineers)",
+          "Generic management advice without engineering context",
+          "Pretending everything is fine when your audience is struggling"
+        ],
+        "leanInto": [
+          "Specific metrics and ratios (firefighting %, debt paydown ROI)",
+          "Honest stories about failures and what you learned",
+          "Frameworks for making hard tradeoff decisions",
+          "Empathy for the IC-to-leader transition struggle"
+        ],
+        "bestTimes": "Tuesday–Thursday, 7-9am or 5-7pm CT",
+        "engagementHack": "When commenting on engineering posts, share a specific before/after metric. Example: 'We had the same firefighting problem — went from 85% reactive to 45% by [specific change]. Happy to share the playbook.'"
+      },
+      "closingMotivation": "Your audience is exhausted from firefighting, frustrated by tech debt politics, and questioning their career transition to leadership. Validate their struggle with your own scars and give them tactical wins."
+    },
+    {
+      "id": "cyril-jones",
+      "name": "Cyril Jones",
+      "title": "VP of Scoped Projects",
+      "avatar": "CJ",
+      "profileImage": "/images/team/cyril-jones.png",
+      "offering": "Scoped Projects",
+      "nicheStatement": "You speak to operations leaders and founders running fixed-scope project delivery — those balancing speed, quality, and cost while trying to build scalable project operations from scratch.",
+      "icp": {
+        "title": "Scaling founders, VPs of Engineering, Operations Directors, Agency owners",
+        "targetRoles": ["Scaling Founders", "VPs of Engineering", "Operations Directors", "Agency Owners", "Small Business Owners"],
+        "companyStage": "10–200 employees; agencies, consultancies, or product companies outsourcing project work",
+        "industry": "Digital agencies, SaaS, professional services, AI/tech consulting",
+        "situation": "Running fixed-scope client engagements; struggling with scope creep; building project operations; exploring AI transformation projects",
+        "theyrePostingAbout": [
+          "Scope creep horror stories",
+          "Fixed-price project challenges",
+          "Client expectation management",
+          "AI transformation project scoping"
+        ],
+        "servicesFocus": ["Scoped"]
+      },
+      "connectCriteria": [
+        "Run or manage fixed-scope client projects",
+        "Post about scope creep, pricing challenges, or project profitability",
+        "Mention needing a dev partner for specific deliverables",
+        "Are exploring AI transformation projects without clear scope",
+        "Active in agency, consulting, or project management communities"
+      ],
+      "engageCriteria": [
+        "Generally interested in project management best practices",
+        "Share concerns about client relationships or delivery challenges",
+        "Post about estimation, pricing, or scope definition",
+        "Discuss AI implementation or digital transformation"
+      ],
+      "painPoints": [
         {
-          "title": "Modernization Strategy",
-          "examples": [
-            "Legacy modernization that works: [approach]. Legacy rewrites that fail: [mistake]",
-            "We migrated [company] from [old tech] to [new tech] in [timeframe]",
-            "Technical debt costs: [calculate impact]. Technical debt paydown: [ROI approach]"
+          "id": 1,
+          "title": "Scope creep silently destroys project profitability",
+          "whyItMatters": "52% of projects experience scope creep, with an average cost overrun of 27%. The word 'just' is scope creep's best friend — small client requests accumulate into massive unbilled work.",
+          "quotes": [
+            {
+              "text": "'Can we just add a dropdown here?' 'Can we just change how this navigation works?' The word 'just' minimizes the perceived complexity, making requests seem trivial. Clients aren't trying to be manipulative — they genuinely don't understand the technical implications… Fixed-price projects that double in scope without corresponding budget adjustments become money-losing ventures.",
+              "attribution": "@michelle_turner (Nuvoro Digital), DEV Community"
+            },
+            {
+              "text": "I found myself working longer hours, juggling new features I hadn't priced for, and watching the project grow way beyond what I'd signed up for… Scope creep isn't just about clients asking for more — it's about the developer not setting boundaries.",
+              "attribution": "@debugger360, DEV Community"
+            }
           ],
-          "frequency": "1-2x per week"
+          "postAngles": [
+            "Share your 'scope creep early warning system' — red flags to watch for",
+            "Tell a story about a project that went 2x over scope and what you learned",
+            "Create a script for responding to 'can we just...' requests",
+            "Outline your change request process that protects profitability"
+          ]
         },
         {
-          "title": "Engineering Operations",
-          "examples": [
-            "AI in engineering workflows: [real use case]. AI hype: [fake use case]",
-            "Infrastructure decisions that scale: [decision]. Infrastructure that breaks: [anti-pattern]",
-            "Quick poll: What's your biggest infrastructure pain?"
+          "id": 2,
+          "title": "Accurate pricing for fixed-scope projects is nearly impossible",
+          "whyItMatters": "Estimating complex digital projects accurately is described as 'gambling.' Experience helps, but most estimates are a work of fiction.",
+          "quotes": [
+            {
+              "text": "I am sure you have read unrealistic articles that suggest there is some scientific approach to pricing that will magically allow you to create an accurate quote… Estimating a project comes down to intuition, experience, and an educated guess! As anybody who has worked in the field for any time will tell you, most estimates are a work of fiction.",
+              "attribution": "Paul Boag, Smashing Magazine (25+ years industry experience)"
+            },
+            {
+              "text": "A project kicks off with high hopes and a healthy-looking margin… But when the dust settles and you run the numbers, the profit you expected has vanished. This quiet erosion of agency profitability happens when small, untracked deviations accumulate over weeks or months.",
+              "attribution": "Glencoyne (agency finance consultants)"
+            }
           ],
-          "frequency": "1x per week"
+          "postAngles": [
+            "Share your actual estimation accuracy rate (be honest)",
+            "Tell a story about a project you massively underpriced and what you changed",
+            "Create an estimation framework that accounts for unknowns",
+            "Address when to walk away from a project that can't be priced safely"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Clients can't articulate what they need until they see it",
+          "whyItMatters": "Digital projects are abstract until tangible. Clients agree to specs, then realize what's missing once they see prototypes — creating perpetual scope expansion.",
+          "quotes": [
+            {
+              "text": "Clients often struggle to articulate exactly what they need at the project's start. It's only when clients see the initial designs or working prototypes that they can clearly envision the final product — and recognize what's missing. A client might agree that their website needs a 'contact page,' not realizing they also need a location finder, a service request form, an emergency contact option, and integration with their CRM system.",
+              "attribution": "@michelle_turner, DEV Community"
+            }
+          ],
+          "postAngles": [
+            "Share your discovery process that prevents 'I'll know it when I see it'",
+            "Tell a story about a client who completely changed direction after seeing v1",
+            "Create a requirements checklist that forces clarity upfront",
+            "Address how to price discovery vs. delivery separately"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Building a team for scoped work — the hiring tightrope",
+          "whyItMatters": "Finding talent with the right skill level for fixed-cost work is a persistent challenge. Too senior is too expensive, too junior is too slow. Over-hiring leads to overstaffing during project lulls.",
+          "quotes": [
+            {
+              "text": "The most difficult challenge we faced was hiring and getting the right people in the right seats. It's easy to hire when you're consistently bringing in new business, but if that new business slows down, you can be overstaffed very quickly. You need to be very slow to hire until you're absolutely sure you need that role.",
+              "attribution": "Unnamed entrepreneur (Spectup startup scaling guide)"
+            }
+          ],
+          "postAngles": [
+            "Share your 'bench calculation' — how much bench time is acceptable",
+            "Tell a story about overhiring that hurt your business",
+            "Create a framework for deciding when to hire vs. partner",
+            "Address the economics of senior vs. junior talent for scoped work"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "AI transformation projects have no clear definition of 'done'",
+          "whyItMatters": "95% of AI pilots fail to deliver expected value. Organizations know AI can transform their business but can't define scope, deliverables, or success criteria.",
+          "quotes": [
+            {
+              "text": "There is — rightfully — little patience for 'exploratory' AI investments. Each dollar spent should fuel measurable outcomes. But many agentic deployments last year didn't deliver much value. If you asked for a demo — to see an agent at work delivering value — you often couldn't get it because there wasn't anything to see.",
+              "attribution": "PwC, AI Predictions 2026"
+            }
+          ],
+          "postAngles": [
+            "Share how to scope an AI project when the client doesn't know what they want",
+            "Tell a story about an AI project that had no clear 'done' and how you fixed it",
+            "Create a framework for defining AI project success criteria",
+            "Address when to say 'no' to an AI project that can't be scoped"
+          ]
         }
       ],
-      "contentTemplates": [
-        "Legacy modernization that works: [approach]. Legacy rewrites that fail: [mistake]. Learn the difference.",
-        "We migrated [company] from [old tech] to [new tech] in [timeframe]. Here's the strategy:",
-        "Technical debt costs: [calculate impact]. Technical debt paydown: [ROI approach]. Do the math.",
-        "AI in engineering workflows: [real use case]. AI hype in engineering: [fake use case]. Know which is which.",
-        "Infrastructure decisions that scale: [decision]. Infrastructure that breaks: [anti-pattern].",
-        "Quick poll: What's your biggest infrastructure pain? [performance/legacy systems/DevOps chaos/tech debt]"
-      ]
+      "realQuotes": [
+        { "topic": "Scope creep profitability killer", "source": "DEV Community, agency forums", "context": "'Can we just...' destroying margins" },
+        { "topic": "Estimation is fiction", "source": "Smashing Magazine, Glencoyne", "context": "25+ year veterans admitting estimates are guesses" },
+        { "topic": "Clients don't know what they want", "source": "DEV Community, project managers", "context": "Specs change after prototypes" },
+        { "topic": "AI projects with no 'done'", "source": "PwC AI Predictions 2026", "context": "95% of AI pilots fail to deliver value" }
+      ],
+      "topicCalendar": [
+        {
+          "category": "Scope & Pricing Strategy",
+          "frequency": "1x per week",
+          "whenToPost": "When you see scope creep complaints, pricing discussions, or project post-mortems",
+          "painPointsAddressed": [1, 2],
+          "templateSuggestions": ["Hot Take", "Story Post", "Listicle"],
+          "exampleTopics": [
+            "The 3-word phrase that's killing your project margins ('can we just...')",
+            "I lost $40K on a project because I didn't do this one thing",
+            "5 signs your project is already in scope creep (before the client asks)"
+          ]
+        },
+        {
+          "category": "Client Management & Discovery",
+          "frequency": "1x per week",
+          "whenToPost": "When you see client relationship posts, discovery discussions, or requirements gathering content",
+          "painPointsAddressed": [3],
+          "templateSuggestions": ["Value Bomb", "Myth Buster", "Question Post"],
+          "exampleTopics": [
+            "How we get clients to know what they want (before they see the prototype)",
+            "Myth: Clients change their minds because they're difficult. Truth: We failed at discovery.",
+            "Quick question: How do you handle 'I'll know it when I see it'?"
+          ]
+        },
+        {
+          "category": "AI Project Scoping",
+          "frequency": "1x per week",
+          "whenToPost": "When you see AI hype, transformation discussions, or failed pilot stories",
+          "painPointsAddressed": [5],
+          "templateSuggestions": ["Signal Post", "Observation", "Story Post"],
+          "exampleTopics": [
+            "4 signs an AI project will never have a clear 'done'",
+            "I noticed every failed AI project had the same scoping problem...",
+            "The AI project we killed after 2 weeks (and why it was the right call)"
+          ]
+        }
+      ],
+      "proTips": {
+        "superpower": "You've built a scoped projects division from scratch. You understand the economics of fixed-price work intimately — the margins, the risks, the client dynamics.",
+        "uniqueVoice": [
+          "You're honest about how hard pricing and scoping really is",
+          "You've lost money on projects and can share those lessons",
+          "You bridge technical delivery with business operations"
+        ],
+        "avoid": [
+          "Pretending scoping is easy or scientific",
+          "Blaming clients for scope creep (it's a partnership problem)",
+          "Generic project management advice without financial context"
+        ],
+        "leanInto": [
+          "Specific numbers: margins, overruns, estimation accuracy",
+          "Honest failure stories that teach",
+          "Frameworks for having hard conversations with clients",
+          "The business side of project delivery (not just PM methodology)"
+        ],
+        "bestTimes": "Tuesday–Thursday, 8-10am or 1-3pm CT",
+        "engagementHack": "When commenting on project posts, share a specific margin or overrun number. Example: 'We had a similar project go 2.3x over scope. The fix was separating discovery from delivery pricing — happy to share our SOW template.'"
+      },
+      "closingMotivation": "Your audience is tired of losing money on projects that sounded good in the proposal. Share your scars, your numbers, and your frameworks for making scoped work actually profitable."
+    },
+    {
+      "id": "dom-paulk",
+      "name": "Dom Paulk",
+      "title": "Senior Product Manager",
+      "avatar": "DP",
+      "profileImage": "/images/team/dom-paulk.png",
+      "offering": "Embedded Teams",
+      "nicheStatement": "You speak to product managers and team leads navigating the chaos of cross-functional alignment — specifically those managing mixed teams of contractors, embedded members, and full-time staff while fighting Agile dysfunction.",
+      "icp": {
+        "title": "Product Managers, Heads of Product, Team Leads, Scrum Masters",
+        "targetRoles": ["Product Managers", "Heads of Product", "Team Leads", "Scrum Masters", "Product Ops"],
+        "companyStage": "50–1,000 employees using contractors or embedded team models",
+        "industry": "SaaS, tech, enterprise software, consultancies with embedded teams",
+        "situation": "Managing stakeholder conflicts; running Agile processes that feel broken; unifying mixed teams; improving delivery velocity",
+        "theyrePostingAbout": [
+          "Stakeholder alignment nightmares",
+          "Agile process frustrations",
+          "Contractor and team integration",
+          "Delivery velocity challenges"
+        ],
+        "servicesFocus": ["Embedded"]
+      },
+      "connectCriteria": [
+        "Manage product teams with mixed full-time and contractor members",
+        "Post about stakeholder alignment or prioritization challenges",
+        "Mention Agile process frustrations or ceremony overhead",
+        "Are looking to improve delivery velocity without adding headcount",
+        "Active in product management communities"
+      ],
+      "engageCriteria": [
+        "Generally interested in product management best practices",
+        "Share concerns about team dynamics or process improvements",
+        "Post about Agile methodology or tooling discussions",
+        "Discuss roadmap planning or feature prioritization"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "Stakeholder misalignment and competing priorities",
+          "whyItMatters": "33% of product managers cite aligning strategy as their biggest scaling challenge. Engineering, sales, leadership, and users pull in conflicting directions, making prioritization a constant battle.",
+          "quotes": [
+            {
+              "text": "One of the biggest challenges I faced as a product manager in 2024 was managing competing priorities among stakeholders. Engineering might advocate for technical feasibility and debt reduction, sales push for quick-win features to close deals, leadership focuses on long-term roadmap goals, and users want immediate solutions to their pain points.",
+              "attribution": "Lilian Ekpere, Senior Product Manager at SeamHealth Innovations (The Top Voices Roundtable, Feb 2025)"
+            },
+            {
+              "text": "I'm not surprised by the many examples of companies whose product teams don't really follow the tenets espoused by groups such as the Pragmatic Institute… Why don't they just cut the BS and have R&D teams work directly with executives to get things accomplished?",
+              "attribution": "Disenchanted Product Manager, Reddit r/ProductManagement"
+            }
+          ],
+          "postAngles": [
+            "Share your prioritization framework when everyone's #1 is different",
+            "Tell a story about a stakeholder conflict you navigated successfully",
+            "Create a 'stakeholder translation guide' for common conflicts",
+            "Address how to say 'no' without damaging relationships"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Agile has become ritualistic and disconnected from value delivery",
+          "whyItMatters": "Practitioners express deep frustration with how Agile/Scrum is implemented in practice. It becomes process-heavy theater rather than a tool for value delivery.",
+          "quotes": [
+            {
+              "text": "I can't take this Agile crap any longer. It has all the hallmarks of a religion. A lot of literature, a lot of disciples, hoards of money grabbing snake oil selling evangelists, and no evidence at all that it works.",
+              "attribution": "tomelders, Hacker News"
+            },
+            {
+              "text": "Yep, companies spool up Jira and suddenly claim they are agile.",
+              "attribution": "Reddit r/Agile user"
+            },
+            {
+              "text": "Instead of fixing dysfunctional management and team structures they reinforce them. The roles have new names but everyone just falls back into their old behaviours. Nothing really changes, we just have new meetings and new buzzwords.",
+              "attribution": "lucisferre, Hacker News"
+            }
+          ],
+          "postAngles": [
+            "Share what 'Agile that works' actually looks like in practice",
+            "Tell a story about killing ceremonies that weren't adding value",
+            "Create a 'ceremony audit' — which meetings to keep, kill, or change",
+            "Address why most Agile implementations fail (and what to do instead)"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Managing contractor and embedded team dynamics",
+          "whyItMatters": "Product managers struggle with outsourced and embedded team quality control, Agile integration, and cultural cohesion. Contracts aren't designed for agile workflows, and risk spikes whenever work is outsourced.",
+          "quotes": [
+            {
+              "text": "External dependencies (outsourced work), controlling for the quality of that work and managing it in an agile way. Contracts (SOWs) are usually not agile. Whenever anything is outsourced… risk spikes.",
+              "attribution": "Anonymous Product Manager, Quora"
+            },
+            {
+              "text": "The problem is, I'm just a lowly developer. I don't get a say in the matter. It's forced upon me. It's not the idiot who reads a book who has to make this stuff work, it's people like me.",
+              "attribution": "tomelders, Hacker News"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for integrating contractors into Agile teams",
+            "Tell a story about embedded team dynamics — what worked and what didn't",
+            "Create an onboarding checklist for contractors that actually works",
+            "Address the 'us vs. them' dynamic between FTEs and contractors"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Building a business case for process changes with no clear ROI metric",
+          "whyItMatters": "Leadership now demands 110% conviction in product bets. Getting buy-in for process improvements without clear revenue impact is increasingly difficult.",
+          "quotes": [
+            {
+              "text": "Building more substantial business cases for product features tied directly to revenue instead of having an option to focus on engagement/adoption growth… leadership sought not 100%, but 110% conviction in priorities.",
+              "attribution": "Daria Beliakova, Senior Product Manager at Monday.com (The Top Voices Roundtable, Feb 2025)"
+            },
+            {
+              "text": "25% of the product managers who participated in our poll said that scaling development processes faster is the biggest pain point for them as their company grows.",
+              "attribution": "ProductPlan survey"
+            }
+          ],
+          "postAngles": [
+            "Share how you built a business case for process changes",
+            "Tell a story about getting buy-in for a 'soft' improvement",
+            "Create a template for quantifying process improvement ROI",
+            "Address when to just do it vs. when to ask for permission"
+          ]
+        }
+      ],
+      "realQuotes": [
+        { "topic": "Stakeholder conflict exhaustion", "source": "LinkedIn Top Voices, Reddit r/ProductManagement", "context": "33% of PMs cite alignment as biggest challenge" },
+        { "topic": "Agile theater frustration", "source": "Hacker News, Reddit r/Agile", "context": "'Jira = Agile' dysfunction" },
+        { "topic": "Contractor integration challenges", "source": "Quora, Hacker News", "context": "SOWs aren't designed for Agile" },
+        { "topic": "110% conviction requirements", "source": "Monday.com PM, ProductPlan", "context": "Process improvements need revenue ties" }
+      ],
+      "topicCalendar": [
+        {
+          "category": "Stakeholder Alignment",
+          "frequency": "1x per week",
+          "whenToPost": "When you see prioritization debates, stakeholder conflict posts, or roadmap discussions",
+          "painPointsAddressed": [1],
+          "templateSuggestions": ["Hot Take", "Story Post", "Question Post"],
+          "exampleTopics": [
+            "The meeting that finally aligned my 4 stakeholders with different #1 priorities",
+            "Unpopular opinion: Most stakeholder conflicts are prioritization failures, not communication failures",
+            "Quick question: How do you handle 'but Sales said this is urgent'?"
+          ]
+        },
+        {
+          "category": "Agile Reality Check",
+          "frequency": "1x per week",
+          "whenToPost": "When you see Agile frustration posts, ceremony complaints, or process discussions",
+          "painPointsAddressed": [2],
+          "templateSuggestions": ["Myth Buster", "Listicle", "Observation"],
+          "exampleTopics": [
+            "Myth: More ceremonies = more Agile. Truth: Most of your meetings are waste.",
+            "5 Agile ceremonies we killed and what we replaced them with",
+            "I noticed every team with 'Agile theater' has the same root cause..."
+          ]
+        },
+        {
+          "category": "Team Dynamics & Process",
+          "frequency": "1x per week",
+          "whenToPost": "When you see contractor integration posts, team culture discussions, or process improvement content",
+          "painPointsAddressed": [3, 4],
+          "templateSuggestions": ["Value Bomb", "Story Post", "Signal Post"],
+          "exampleTopics": [
+            "How we integrated 5 contractors into our Agile team without chaos",
+            "The process change I made without asking permission (and why it worked)",
+            "3 signs your embedded team isn't actually integrated"
+          ]
+        }
+      ],
+      "proTips": {
+        "superpower": "You've managed mixed teams of contractors and FTEs. You understand the real-world messiness of Agile in practice, not just the theory.",
+        "uniqueVoice": [
+          "You're honest about Agile's failures in practice",
+          "You've lived the contractor integration struggle",
+          "You can translate between IC frustration and leadership priorities"
+        ],
+        "avoid": [
+          "Agile evangelism or methodology debates",
+          "Generic PM advice without operational specifics",
+          "Pretending mixed teams are easy to manage"
+        ],
+        "leanInto": [
+          "Specific tactics for stakeholder alignment",
+          "Honest stories about process failures and fixes",
+          "Frameworks for contractor integration",
+          "The political side of product management"
+        ],
+        "bestTimes": "Tuesday–Thursday, 8-10am or 12-2pm CT",
+        "engagementHack": "When commenting on PM posts, share a specific process or ceremony you changed. Example: 'We had the same stakeholder alignment issue — fixed it by replacing weekly status meetings with async updates + one 20-min decision meeting.'"
+      },
+      "closingMotivation": "Your audience is drowning in Agile theater and stakeholder conflicts. Validate their frustration and give them specific tactics they can try this sprint."
     },
     {
       "id": "jesse-kinzer",
       "name": "Jesse Kinzer",
+      "title": "Marketing Manager",
       "avatar": "JK",
       "profileImage": "/images/team/jesse-kinzer.png",
       "offering": "Embedded Teams",
-      "talkingTo": "Building marketing systems for lean teams (and when to embed vs. hire)",
+      "nicheStatement": "You speak to small-to-midsize marketing teams building scalable demand gen engines — specifically those leveraging AI and automation (Clay, Zapier, vibe coding) to punch above their weight without sacrificing content authenticity.",
       "icp": {
-        "title": "Building marketing systems for lean teams",
-        "targetRoles": ["Director of Marketing", "Founder"],
-        "companyStage": "B2B SaaS and tech startups (10-100 employees)",
+        "title": "Solo marketers, CMOs, Heads of Demand Gen at lean teams",
+        "targetRoles": ["Marketers (solo or small team)", "CMOs", "Heads of Demand Gen", "Marketing Ops Leaders"],
+        "companyStage": "10–300 employees with marketing teams of 1–5 people",
+        "industry": "SaaS, B2B tech, startups, professional services",
+        "situation": "Overwhelmed solo marketers; drowning in tool sprawl; struggling to produce content at scale; trying to prove marketing ROI",
         "theyrePostingAbout": [
-          "Motion design that explains complex products (SaaS, AI, technical offerings)",
-          "Building content teams with quick time to impact",
-          "Design-meets-code: automations and tools that scale creative output"
+          "Marketing burnout and overwhelm",
+          "Tool stack simplification",
+          "AI content vs. authentic content",
+          "Attribution challenges"
         ],
         "servicesFocus": ["Embedded"]
       },
-      "talkingAbout": [
-        "Motion design that explains complex products (SaaS, AI, technical offerings)",
-        "Building content teams with quick time to impact",
-        "Design-meets-code: automations and tools that scale creative output"
-      ],
-      "painPoints": [
-        "Need to stand out in crowded market",
-        "Limited resources",
-        "Doing too much themselves"
-      ],
       "connectCriteria": [
-        "Director of Marketing or founder handling marketing",
-        "Posts about creative production bottlenecks or limited resources",
-        "Mentions needing help explaining a complex product",
-        "Looking for creative/design help outside of agencies",
-        "Active in B2B marketing communities"
+        "Are solo marketers or lead teams of 1-5 people",
+        "Post about doing too much with too little resources",
+        "Mention marketing automation tools or AI content challenges",
+        "Struggle with attribution or proving marketing ROI",
+        "Active in B2B marketing or demand gen communities"
       ],
       "engageCriteria": [
-        "Junior marketers without budget authority",
-        "Posts only marketing theory (no operational pain)",
-        "Agencies looking to partner (not buy)",
-        "No clear creative or design needs"
+        "Generally interested in marketing automation and AI tools",
+        "Share concerns about content quality or production capacity",
+        "Post about marketing strategy or campaign performance",
+        "Discuss MarTech stack or tool consolidation"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "Small marketing teams are drowning and burning out",
+          "whyItMatters": "83% of marketing professionals report burnout — the highest rate of any corporate function. Solo marketers and small teams try to cover every channel with minimal resources.",
+          "quotes": [
+            {
+              "text": "I've been that person juggling everything — drafting LinkedIn posts while replying to leads, writing a blog post with one hand and prepping sales follow-ups with the other… I'd hit end of the day, kids telling me I was absent, while I'd look back at what I actually got done, and realize strategy — funnel review, campaign planning, big-picture thinking — was nowhere on the board. Again.",
+              "attribution": "Mark Tanko, solo marketer/founder (Medium, 2025)"
+            },
+            {
+              "text": "I've probably had 10 sessions in the last two months where people have come and burst into tears. They are so overwhelmed.",
+              "attribution": "Andrew Garrihy, former Huawei Global Chief Brand Officer (Marketing Week, 2026)"
+            }
+          ],
+          "postAngles": [
+            "Share your 'essential vs. optional' marketing activity framework",
+            "Tell a story about burnout and what you changed",
+            "Create a 'marketing triage' checklist for overwhelmed teams",
+            "Address what to stop doing without guilt"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Marketing automation tool overwhelm and integration chaos",
+          "whyItMatters": "Marketers use 5–10+ platforms that don't integrate well, spending more time managing the tech stack than actually marketing. Analysis paralysis around tool selection is pervasive.",
+          "quotes": [
+            {
+              "text": "I wish someone had told me to start simple and scale up.",
+              "attribution": "Aggregated from 100+ Reddit posts on r/smallbusiness, r/entrepreneur, r/marketing"
+            },
+            {
+              "text": "The companies winning in 2025 aren't using the most tools — they're using the right tools effectively. Simple, consistent automation beats complex, broken workflows every single time.",
+              "attribution": "Reddit-aggregated insight"
+            }
+          ],
+          "postAngles": [
+            "Share your 'minimal viable MarTech stack' recommendation",
+            "Tell a story about killing tools that weren't adding value",
+            "Create a tool audit checklist — what to keep, consolidate, or kill",
+            "Address the hidden cost of tool sprawl (time, not just money)"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "AI content quality versus authentic human creativity",
+          "whyItMatters": "Marketers face a paradox: they need more content, but AI outputs feel generic and lack the human touch that builds trust. Reddit communities have doubled their AI content rules in 16 months.",
+          "quotes": [
+            {
+              "text": "You have to come up with the right prompts... Then you often need to edit the output, because let's face it, the first draft from AI can be a little off — maybe too generic, or the tone isn't quite human enough.",
+              "attribution": "Mark Tanko, solo marketer (Medium, 2025)"
+            },
+            {
+              "text": "It's often hard to detect and we do see it as very disruptive to the actual running of the site… [AI content] tries to meet the substance and depth of a typical post… however, there are frequent glaring errors in both style and content.",
+              "attribution": "Reddit moderators (Cornell University study)"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for 'AI-assisted, human-finished' content",
+            "Tell a story about AI content that flopped and what you learned",
+            "Create guidelines for where AI helps vs. hurts authenticity",
+            "Address the audience trust implications of AI content"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Demand gen attribution is a black box nobody can explain",
+          "whyItMatters": "Multi-touch attribution is the #2 challenge for marketers globally. CMOs are held accountable for results they can't clearly measure.",
+          "quotes": [
+            {
+              "text": "Try as you might, multi-source attribution models are black boxes you can't begin to explain, and when you can't explain them, people — read: your boss — start to ask questions.",
+              "attribution": "Metadata.io"
+            },
+            {
+              "text": "Attribution will never be perfect. Buyers today might see a LinkedIn post, hear a podcast, and Google your brand three weeks later. That journey doesn't show up in a neat linear model.",
+              "attribution": "Search Engine Journal"
+            }
+          ],
+          "postAngles": [
+            "Share your 'good enough' attribution approach for small teams",
+            "Tell a story about defending marketing ROI without perfect data",
+            "Create a framework for what to measure vs. what to accept as unmeasurable",
+            "Address how to have honest attribution conversations with leadership"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Content demand outpaces capacity at an accelerating rate",
+          "whyItMatters": "B2B companies now juggle 10 channels (double from 8 years ago) while 78% report teams of just 1–3 people. As much as 70% of B2B content goes unused.",
+          "quotes": [
+            {
+              "text": "Content is so much better when it's firsthand data or firsthand stories. And as a team of one, that can be hard to prioritize.",
+              "attribution": "Ash Read, Editorial Director at Buffer (Animalz blog)"
+            },
+            {
+              "text": "I've done the interviews, I've come up with the messaging, the branding, I've written the landing page copy, and no one else has touched it. And I was just like, this isn't okay!",
+              "attribution": "Ash Read (Animalz blog)"
+            }
+          ],
+          "postAngles": [
+            "Share your content repurposing system that multiplies output",
+            "Tell a story about saying 'no' to a channel and what happened",
+            "Create a 'content leverage' framework — create once, use many",
+            "Address the 70% unused content problem and how to fix it"
+          ]
+        }
       ],
       "realQuotes": [
-        { "text": "Building marketing systems for lean teams (and when to embed vs. hire)", "source": "Marketing Leadership Forums" },
-        { "text": "Motion design that explains complex products (SaaS, AI, technical offerings)", "source": "r/marketing" },
-        { "text": "Building content teams with quick time to impact", "source": "LinkedIn" },
-        { "text": "Design-meets-code: automations and tools that scale creative output", "source": "Marketing Twitter" }
+        { "topic": "Marketing burnout crisis", "source": "Medium, Marketing Week", "context": "83% burnout rate — highest corporate function" },
+        { "topic": "Tool sprawl paralysis", "source": "Reddit aggregation, Salesforce", "context": "More time managing tools than marketing" },
+        { "topic": "AI content authenticity gap", "source": "Medium, Cornell study", "context": "Communities doubling AI content rules" },
+        { "topic": "Attribution black box", "source": "Metadata.io, Search Engine Journal", "context": "Can't explain models to leadership" }
       ],
-      "conversationStarters": [
+      "topicCalendar": [
         {
-          "template": "Hey [Name], saw your post about [crowded market]. We help B2B marketers create motion design that actually explains complex products. How are you currently approaching product demos/explainers?",
-          "whenToUse": "When they post about differentiation, explaining products, or visual content"
+          "category": "Marketing Team Survival",
+          "frequency": "1x per week",
+          "whenToPost": "When you see burnout posts, 'doing too much' complaints, or capacity discussions",
+          "painPointsAddressed": [1, 5],
+          "templateSuggestions": ["Story Post", "Listicle", "Question Post"],
+          "exampleTopics": [
+            "I was drowning as a solo marketer. Here's what I stopped doing.",
+            "5 marketing activities I cut that didn't hurt results",
+            "Quick question: What would you stop doing if you could?"
+          ]
         },
         {
-          "template": "[Name], your insights on [marketing challenge] were spot-on. Most lean marketing teams we work with need creative output but can't hire. Have you tried embedded designers vs. agencies?",
-          "whenToUse": "When they mention resource constraints, hiring challenges, or doing too much themselves"
+          "category": "MarTech & Automation",
+          "frequency": "1x per week",
+          "whenToPost": "When you see tool recommendation requests, stack discussions, or automation content",
+          "painPointsAddressed": [2],
+          "templateSuggestions": ["Hot Take", "Value Bomb", "Myth Buster"],
+          "exampleTopics": [
+            "Unpopular opinion: Most marketers need fewer tools, not better tools",
+            "My 3-tool marketing stack that does 90% of what I need",
+            "Myth: More automation = more efficiency. Truth: More automation = more complexity to manage."
+          ]
         },
         {
-          "template": "Hey [Name], question about your [content/creative needs]. If you could get design/motion help that's productive in week 1, what would you have them work on first?",
-          "whenToUse": "When they post about creative needs, content production, or backlog pressure"
+          "category": "AI & Content Strategy",
+          "frequency": "1x per week",
+          "whenToPost": "When you see AI content debates, authenticity discussions, or attribution complaints",
+          "painPointsAddressed": [3, 4],
+          "templateSuggestions": ["Observation", "Story Post", "Signal Post"],
+          "exampleTopics": [
+            "I noticed AI-generated LinkedIn posts all sound the same. Here's how to fix yours.",
+            "The AI content that flopped and what I do differently now",
+            "3 signs your attribution model is giving you false confidence"
+          ]
         }
       ],
-      "contentPillars": [
-        {
-          "title": "Lean Marketing Systems",
-          "examples": [
-            "Marketing for lean teams: [system]. Marketing that burns out teams: [anti-pattern]",
-            "We helped [marketer] explain [complex product] in [format] in [timeframe]",
-            "Stop hiring for [role] until you have [milestone]. Embed instead"
-          ],
-          "frequency": "1-2x per week"
-        },
-        {
-          "title": "Creative Output",
-          "examples": [
-            "Motion design that converts: [example]. Motion design that's just pretty: [example]",
-            "Content systems that scale: [automation]. Content bottlenecks: [manual process]",
-            "Quick poll: What's your biggest marketing bottleneck?"
-          ],
-          "frequency": "1x per week"
-        }
-      ],
-      "contentTemplates": [
-        "Marketing for lean teams: [system]. Marketing that burns out teams: [anti-pattern]. Know the difference.",
-        "We helped [marketer] explain [complex product] in [format] in [timeframe]. Here's the approach:",
-        "Motion design that converts: [example]. Motion design that's just pretty: [example]. Which are you creating?",
-        "Stop hiring for [role] until you have [milestone]. Embed instead. Here's why:",
-        "Content systems that scale: [automation]. Content bottlenecks: [manual process]. Which one are you doing?",
-        "Quick poll: What's your biggest marketing bottleneck? [creative production/standing out/explaining product/limited budget]"
-      ]
+      "proTips": {
+        "superpower": "You understand both the strategic and tactical sides of lean marketing. You've built systems that let small teams punch above their weight.",
+        "uniqueVoice": [
+          "You're honest about marketing burnout and resource constraints",
+          "You blend AI/automation with authentic human creativity",
+          "You've been the solo marketer doing everything — you get it"
+        ],
+        "avoid": [
+          "Enterprise marketing advice that doesn't apply to small teams",
+          "Pure tool recommendations without workflow context",
+          "Pretending AI can replace human creativity entirely"
+        ],
+        "leanInto": [
+          "Specific systems and workflows for lean teams",
+          "Honest stories about what didn't work",
+          "The human side of AI-assisted marketing",
+          "Practical attribution approaches for imperfect data"
+        ],
+        "bestTimes": "Tuesday–Thursday, 7-9am or 12-2pm CT",
+        "engagementHack": "When commenting on marketing posts, share a specific tool or workflow that saved you time. Example: 'We had the same content capacity issue — solved it by repurposing one blog post into 5 LinkedIn posts + 1 newsletter. Happy to share the template.'"
+      },
+      "closingMotivation": "Your audience is exhausted, overwhelmed, and being asked to do more with less. Validate their struggle, share your shortcuts, and give them permission to stop doing things that don't matter."
     },
     {
       "id": "ryan-doss",
       "name": "Ryan Doss",
+      "title": "CTO",
       "avatar": "RD",
       "profileImage": "/images/team/ryan-doss.png",
       "offering": "Embedded Teams",
-      "talkingTo": "CTO budget decisions and trade-offs",
+      "nicheStatement": "You speak to technical leaders evaluating and implementing AI-powered development tools — specifically CTOs navigating the gap between AI coding tool hype and production-grade reliability.",
       "icp": {
-        "title": "CTO budget decisions and trade-offs",
-        "targetRoles": ["CTO", "Technical Founders", "Scaling Startups"],
-        "companyStage": "Scaling startups and mid-market tech (20-200 employees)",
+        "title": "CTOs, Technical Founders, Engineering Leads evaluating AI tools",
+        "targetRoles": ["CTOs", "Technical Founders", "Engineering Leads", "VPs of Engineering"],
+        "companyStage": "20–500 employees building software products",
+        "industry": "SaaS, fintech, healthtech, developer tooling, enterprise software",
+        "situation": "Evaluating AI coding tools (Copilot, Cursor, etc.); managing code quality with AI; making architecture decisions for AI-native apps; justifying AI tooling ROI",
         "theyrePostingAbout": [
-          "Scaling engineering teams without losing culture",
-          "Tech stack decisions (when to adopt, when to wait)",
-          "Technical debt — when to pay it down, when to live with it"
+          "AI coding tool evaluations",
+          "Code quality with AI assistance",
+          "AI tool ROI justification",
+          "Security concerns with AI tools"
         ],
         "servicesFocus": ["Embedded"]
       },
-      "talkingAbout": [
-        "Scaling engineering teams without losing culture",
-        "Tech stack decisions (when to adopt, when to wait)",
-        "Technical debt — when to pay it down, when to live with it"
-      ],
-      "painPoints": [
-        "Overwhelming technical debt",
-        "Data management issues",
-        "Slow-to-launch",
-        "Want to test engineers before full-time commitment"
-      ],
       "connectCriteria": [
-        "CTO or technical founder at scaling startup",
-        "Posts about engineering team growth or budget trade-offs",
-        "Mentions technical debt, hiring challenges, or capacity issues",
-        "Looking for ways to test before committing to full-time hires",
+        "Are actively evaluating or using AI coding tools",
+        "Post about AI code quality, productivity, or security concerns",
+        "Mention struggling to prove AI tooling ROI",
+        "Make architecture decisions for AI-native applications",
         "Active in CTO or engineering leadership communities"
       ],
       "engageCriteria": [
-        "Solo developers without team leadership",
-        "Posts only about specific technologies (no leadership pain)",
-        "Early-stage without meaningful engineering budget",
-        "Only looking for full-time hires, no flexibility"
+        "Generally interested in AI development tool trends",
+        "Share concerns about AI code quality or security",
+        "Post about developer productivity or tooling decisions",
+        "Discuss technical debt from AI-generated code"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "AI generates 70% of the code by volume but not 70% of the solution",
+          "whyItMatters": "66% of developers cite AI code quality as their biggest frustration. AI produces code that looks right but introduces subtle bugs, creating a false sense of progress.",
+          "quotes": [
+            {
+              "text": "It's more like it can generate 70% of the code by volume, rather than get you 70% of the way to a complete solution. 12 week projects don't become 4 week projects, at best they are 9-10 week projects.",
+              "attribution": "jeremyjh, Hacker News (Dec 2024)"
+            },
+            {
+              "text": "Following the logic of genAI code is complicated by the fact that AI can make different mistakes than humans do, and it speaks/documents with much more authority, both of which make it not only more difficult to spot issues, but make it difficult in a frustrating way.",
+              "attribution": "happytoexplain, Hacker News (Sept 2024)"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for measuring real AI productivity (not lines of code)",
+            "Tell a story about AI code that looked right but broke production",
+            "Create guidelines for which tasks AI helps vs. hurts",
+            "Address the '70% problem' — volume vs. value"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "AI tooling creates a new form of technical debt",
+          "whyItMatters": "GitClear tracked an 8x increase in duplicated code blocks in AI-assisted repos during 2024. AI produces code faster but creates systems nobody fully understands.",
+          "quotes": [
+            {
+              "text": "AI tech debt is created because no one really understands those systems. So we will have systems that no one understands, not even the person who submits the PR.",
+              "attribution": "Senior developer, Reddit r/ExperiencedDevs"
+            },
+            {
+              "text": "AI is like a brand new credit card here that is going to allow us to accumulate technical debt in ways we were never able to do before.",
+              "attribution": "Prof. Armando Solar-Lezama, MIT (Wall Street Journal)"
+            }
+          ],
+          "postAngles": [
+            "Share how you track and manage AI-generated tech debt",
+            "Tell a story about AI debt that bit you later",
+            "Create an 'AI code review checklist' for your team",
+            "Address the 'nobody understands this code' problem"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Proving ROI on AI coding tools is extremely difficult",
+          "whyItMatters": "The METR 2025 study found experienced developers using AI tools were actually 19% slower — even though they felt 20% faster. Only 1 in 4 AI initiatives deliver expected ROI.",
+          "quotes": [
+            {
+              "text": "It will be challenging to prove the ROI of AI tooling. It all sounds great, but it's difficult to measure how much more productive a developer or a team is without slowing them down.",
+              "attribution": "Rupert Colbourne, CTO of Orbus Software (DEVOPSdigest)"
+            },
+            {
+              "text": "If the tool doesn't reduce the menial and the mundane work of an engineer, it won't be adopted. This is where the 'fad' aspect of the industry will struggle. 'AI is just a fad' will be shouted from the rooftops because tools that were purchased simply didn't solve the core problems.",
+              "attribution": "Sterling Chin, Senior Developer Advocate at Postman (DEVOPSdigest)"
+            }
+          ],
+          "postAngles": [
+            "Share your AI tooling ROI framework (what actually matters)",
+            "Tell a story about justifying AI tool spend to your board",
+            "Create metrics that capture real productivity, not perceived productivity",
+            "Address the 'feeling faster vs. being faster' paradox"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "AI tools fail at the work that matters most — complexity management",
+          "whyItMatters": "AI handles boilerplate well but fails at architectural decisions, cross-cutting concerns, and system-level complexity. Only 29% of developers say AI handles complex tasks well (down from 35% in 2024).",
+          "quotes": [
+            {
+              "text": "AI is a fabulous tool… But it can't do the essential work of complexity management for the same reason it can't prove an unproven maths problem. As it stands we still need human brains to do those things.",
+              "attribution": "neilwilson, Hacker News (Dec 2024)"
+            },
+            {
+              "text": "In the next 10-15 years I'm either going to be a CTO going around cleaning up after AI, or maybe they're not going to need people like me anymore because we're just going to write the specs and generate the whole app from scratch every time.",
+              "attribution": "Meri Williams, CTO at Pleo (Aviator Blog)"
+            }
+          ],
+          "postAngles": [
+            "Share where AI helps your team vs. where it creates problems",
+            "Tell a story about AI failing at architectural complexity",
+            "Create guidelines for 'AI-assisted' vs. 'human-led' tasks",
+            "Address the future of the CTO role in an AI-assisted world"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Security risks from AI-generated code are accelerating",
+          "whyItMatters": "40% of AI-generated code contains vulnerabilities. GitHub repos with Copilot enabled leak secrets at 6.4% versus 4.6% for standard repos. Speed gains come at a real security cost.",
+          "quotes": [
+            {
+              "text": "Developers learned the hard way that rapid adoption can pose serious security and reliability challenges… MCP's flexible architecture created a Wild West of potentially untrusted code, where community-published servers could be backdoored or abandoned.",
+              "attribution": "Gil Feig, CTO of Merge (The New Stack)"
+            },
+            {
+              "text": "[The challenge is] if they can secure applications at the same velocity that they're building them… [AI tools] often run in an unmanaged or 'headless' capacity. This makes developers the last line of defense.",
+              "attribution": "Cristian Rodriguez, Field CTO at CrowdStrike (Fortune)"
+            }
+          ],
+          "postAngles": [
+            "Share your AI code security review process",
+            "Tell a story about a security issue in AI-generated code you caught",
+            "Create an AI security checklist for your team",
+            "Address the speed vs. security tradeoff honestly"
+          ]
+        }
       ],
       "realQuotes": [
-        { "text": "CTO budget decisions and trade-offs", "source": "CTO Forums" },
-        { "text": "Scaling engineering teams without losing culture", "source": "r/ExperiencedDevs" },
-        { "text": "Tech stack decisions (when to adopt, when to wait)", "source": "LinkedIn" },
-        { "text": "Technical debt — when to pay it down, when to live with it", "source": "Engineering Leadership" }
+        { "topic": "70% code, not 70% solution", "source": "Hacker News, developer forums", "context": "Volume vs. value mismatch" },
+        { "topic": "AI tech debt explosion", "source": "GitClear, MIT research, WSJ", "context": "8x increase in duplicated code" },
+        { "topic": "Feeling faster ≠ being faster", "source": "METR 2025 study, DEVOPSdigest", "context": "19% slower while feeling 20% faster" },
+        { "topic": "AI fails at complexity", "source": "Hacker News, CTOs", "context": "Only 29% say AI handles complex tasks well" }
       ],
-      "conversationStarters": [
+      "topicCalendar": [
         {
-          "template": "Hey [Name], saw your post about [CTO challenge]. We work with CTOs who need to make smart budget decisions on capacity. Curious - when you add engineering resources, what's your process for evaluating options?",
-          "whenToUse": "When they post about budget, hiring decisions, or resource allocation"
+          "category": "AI Coding Tool Reality Check",
+          "frequency": "1x per week",
+          "whenToPost": "When you see AI productivity claims, tool announcements, or Copilot/Cursor discussions",
+          "painPointsAddressed": [1, 3],
+          "templateSuggestions": ["Hot Take", "Myth Buster", "Observation"],
+          "exampleTopics": [
+            "Unpopular opinion: AI makes my team feel faster but they're not",
+            "Myth: AI generates 70% of the code. Truth: It generates 70% of the volume.",
+            "I noticed every CTO has the same AI productivity measurement problem..."
+          ]
         },
         {
-          "template": "[Name], your thoughts on [hiring/team building] resonated. Most CTOs we work with wish they could test engineers for 3 months before committing. That's our embedded model. Ever tried that approach?",
-          "whenToUse": "When they mention hiring challenges, bad hires, or wanting to de-risk team building"
+          "category": "AI Code Quality & Debt",
+          "frequency": "1x per week",
+          "whenToPost": "When you see code quality discussions, tech debt posts, or AI architecture debates",
+          "painPointsAddressed": [2, 4],
+          "templateSuggestions": ["Story Post", "Value Bomb", "Signal Post"],
+          "exampleTopics": [
+            "The AI-generated code that passed review and broke production",
+            "Our AI code review checklist that catches the subtle bugs",
+            "4 signs you're accumulating AI tech debt faster than you realize"
+          ]
         },
         {
-          "template": "Hey [Name], question about your [technical debt issue]. We help CTOs prioritize what debt to pay vs. what to live with. Have you done a formal debt triage or just fighting fires?",
-          "whenToUse": "When they post about technical debt, refactoring, or system performance"
+          "category": "AI Security & Risk",
+          "frequency": "1x per week",
+          "whenToPost": "When you see AI security discussions, vulnerability reports, or risk management content",
+          "painPointsAddressed": [5],
+          "templateSuggestions": ["Listicle", "Story Post", "Question Post"],
+          "exampleTopics": [
+            "5 security issues we've caught in AI-generated code",
+            "The vulnerability Copilot introduced that took us 3 days to find",
+            "Quick question: How are you reviewing AI-generated code for security?"
+          ]
         }
       ],
-      "contentPillars": [
-        {
-          "title": "CTO Decisions",
-          "examples": [
-            "CTO budget trade-offs: [spend on X]. CTO budget mistakes: [waste on Y]",
-            "We helped [CTO] scale from [X] to [Y] engineers without losing culture",
-            "Tech stack decisions: When to adopt [new tech]. When to wait on [hyped tech]"
-          ],
-          "frequency": "1-2x per week"
-        },
-        {
-          "title": "Engineering Scale",
-          "examples": [
-            "Technical debt triage: Pay down [type]. Live with [type]. Here's when to choose each",
-            "Test before you hire: [embedded approach]. Hire then hope: [traditional approach]",
-            "Quick poll: What's your biggest CTO challenge?"
-          ],
-          "frequency": "1x per week"
-        }
-      ],
-      "contentTemplates": [
-        "CTO budget trade-offs: [spend on X]. CTO budget mistakes: [waste on Y]. Know the difference.",
-        "We helped [CTO] scale from [X] to [Y] engineers without losing culture. Here's how:",
-        "Tech stack decisions: When to adopt [new tech]. When to wait on [hyped tech]. Our framework:",
-        "Technical debt triage: Pay down [type]. Live with [type]. Here's when to choose each:",
-        "Test before you hire: [embedded approach]. Hire then hope: [traditional approach]. We prefer option 1.",
-        "Quick poll: What's your biggest CTO challenge? [tech debt/scaling team/budget decisions/culture]"
-      ]
+      "proTips": {
+        "superpower": "You build AI tools AND evaluate them for production use. You understand both the promise and the reality of AI-assisted development.",
+        "uniqueVoice": [
+          "You're skeptical of AI hype but practical about adoption",
+          "You've seen what works and what doesn't in production",
+          "You can translate AI tooling decisions into business impact"
+        ],
+        "avoid": [
+          "Pure AI hype or doom — stay balanced",
+          "Generic productivity advice without AI context",
+          "Dismissing AI entirely or embracing it uncritically"
+        ],
+        "leanInto": [
+          "Specific metrics and measurements from your experience",
+          "Honest assessments of where AI helps vs. hurts",
+          "Security and quality concerns that others gloss over",
+          "The CTO's perspective on AI adoption decisions"
+        ],
+        "bestTimes": "Tuesday–Thursday, 7-9am or 5-7pm CT",
+        "engagementHack": "When commenting on AI coding posts, share a specific before/after measurement. Example: 'We tracked this — our team felt 25% faster but cycle time only improved 8%. The gap was review and debugging time.'"
+      },
+      "closingMotivation": "Your audience is being pressured to adopt AI tools but can't prove ROI and worries about quality. Give them frameworks for making smart decisions and honest data about what actually works."
     },
     {
       "id": "scott-blevins",
       "name": "Scott Blevins",
+      "title": "Director of AI",
       "avatar": "SB",
       "profileImage": "/images/team/scott-blevins.png",
       "offering": "Embedded Teams",
-      "talkingTo": "AI tooling reviews and recommendations",
+      "nicheStatement": "You speak to technical and business leaders caught between the pressure to deploy AI and the reality that most AI initiatives fail — you help them cut through hype and implement AI that actually works.",
       "icp": {
-        "title": "AI tooling reviews and recommendations",
-        "targetRoles": ["CTO", "Scaling Startups", "Technical Founders", "VP of Engineering"],
-        "companyStage": "Mid-market tech companies (50-300 employees)",
+        "title": "CTOs, VPs of Engineering, Founders, COOs, Heads of Innovation",
+        "targetRoles": ["CTOs", "VPs of Engineering", "Technical Founders", "COOs", "Heads of Innovation", "Product Leaders"],
+        "companyStage": "50–2,000 employees, mid-market to enterprise",
+        "industry": "Enterprise software, professional services, financial services, healthcare, manufacturing, SaaS",
+        "situation": "Under board/executive pressure to 'do something with AI' but lack clarity on where to start. Skeptical of vendor promises, worried about security, struggling to justify ROI. Many have tried AI pilots that went nowhere.",
         "theyrePostingAbout": [
-          "AI news that actually matters for business (wins and failures)",
-          "AI implementation stories (wins and failures)",
-          "Evaluating AI ROI — cutting through the hype"
+          "AI ROI and business value",
+          "AI pilot failures and lessons",
+          "AI security concerns",
+          "Build vs. buy AI decisions"
         ],
         "servicesFocus": ["Embedded"]
       },
-      "talkingAbout": [
-        "AI news that actually matters for business (wins and failures)",
-        "AI implementation stories (wins and failures)",
-        "Evaluating AI ROI — cutting through the hype"
-      ],
-      "painPoints": [
-        "Need to innovate offerings",
-        "Take manual operations and make them efficient using digital tools",
-        "Need a team to help expand horizons with new products"
-      ],
       "connectCriteria": [
-        "CTO or VP Engineering evaluating AI adoption",
-        "Posts about AI strategy, implementation, or ROI",
-        "Mentions needing innovation capacity separate from core product",
-        "Looking to automate manual operations with technology",
-        "Active in AI/ML or technical leadership communities"
+        "Are evaluating build vs. buy for their first AI implementation",
+        "Have an AI pilot that's been running 6+ months with no clear path to production",
+        "Are concerned about security/compliance implications of AI adoption",
+        "Need to present an AI strategy to their board but don't know where to start",
+        "Are dealing with 'shadow AI' (employees using unauthorized AI tools)",
+        "Are technical enough to spot BS but need practical frameworks for AI adoption"
       ],
       "engageCriteria": [
-        "Posts only AI news without operational context",
-        "Researchers without business application focus",
-        "No budget or decision-making authority",
-        "Early-stage without clear AI use case"
+        "Are generally interested in AI trends and technical architecture",
+        "Share concerns about AI hype, security, or implementation challenges",
+        "Post about development velocity, technical debt, or modernization efforts",
+        "Are wrestling with organizational change management around new technology",
+        "Lead technical teams exploring AI tools for development"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "AI Hype vs. Business Value — The ROI Gap",
+          "whyItMatters": "Less than 30% of AI leaders report their CEOs are happy with AI investment returns. 95% of AI pilots fail to deliver measurable value. Companies chase AI because of FOMO, not because they've identified a problem worth solving.",
+          "quotes": [
+            {
+              "text": "Here's this great new thing that we can use now, let's go out and find a use for it. What you really want to be doing is finding a problem to solve with it first.",
+              "attribution": "Stuart King, CTO of AnzenSage (CIO.com)"
+            },
+            {
+              "text": "LLMs might be really useful, but as far as I can see all the AI companies are not making money on inference alone. We might be hitting plateau in capabilities with money being raised on vision of being this godlike tech that will change the world completely. Sooner or later the costs will have to meet the reality.",
+              "attribution": "dejv, Hacker News (Dec 2025)"
+            },
+            {
+              "text": "There is — rightfully — little patience for 'exploratory' AI investments. Each dollar spent should fuel measurable outcomes. But many agentic deployments last year didn't deliver much value. If you asked for a demo — to see an agent at work delivering value — you often couldn't get it because there wasn't anything to see.",
+              "attribution": "PwC, AI Predictions 2026"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for 'problem-first AI adoption' vs. 'solution-looking-for-a-problem'",
+            "Tell a story about an AI pilot you killed early (and why that was the right call)",
+            "Break down the math: what does 'AI ROI' actually mean in practical terms?",
+            "Call out specific vendor claims that don't match reality",
+            "Share a decision tree: 'Should you even be investing in AI right now?'"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "AI-Generated Code Creates More Problems Than It Solves",
+          "whyItMatters": "AI coding tools promise 10x developer productivity, but the reality is messier. GitClear found an 8x increase in duplicated code blocks in AI-assisted repos. Code gets written faster but creates bottlenecks in review, QA, and maintenance.",
+          "quotes": [
+            {
+              "text": "Sure, code gen is faster now. And the industry might finally be waking up to the fact that writing code is a small part of producing software. Getting infinitely faster at one step doesn't speed up the overall process. In fact, there's good evidence that rapid code gen actually slows down other steps like code review and QA.",
+              "attribution": "perrygeo, Hacker News (Dec 2025)"
+            },
+            {
+              "text": "So much wasted time debating whether the 1000 lines of generated code are actually necessary when the actual transform in question is 3 of them. 'But it works,' goes the refrain.",
+              "attribution": "binary132, Hacker News (Dec 2025)"
+            },
+            {
+              "text": "It's more like it can generate 70% of the code by volume, rather than get you 70% of the way to a complete solution. 12 week projects don't become 4 week projects, at best they are 9-10 week projects.",
+              "attribution": "jeremyjh, Hacker News (Dec 2024)"
+            }
+          ],
+          "postAngles": [
+            "Share how you measure actual AI developer productivity (beyond 'lines of code')",
+            "Tell a cautionary tale about AI-generated code that passed review but broke production",
+            "Explain where AI tools shine vs. where they create more work",
+            "Outline your team's AI code review checklist",
+            "Address the question: 'Should we even be tracking AI usage on our team?'"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "AI Security & Data Privacy Concerns Are Spiking",
+          "whyItMatters": "69% of leaders cite AI data privacy concerns (up from 43% in just 6 months). 40% of AI-generated code contains vulnerabilities. Shadow AI — unauthorized tools employees are using — creates massive hidden risk.",
+          "quotes": [
+            {
+              "text": "With many organizations, it's very easy to slap a credit card down and procure cloud services and procure additional AI services. But you're invariably putting the organization at risk by doing that.",
+              "attribution": "Brassor, technology leader (RSM US)"
+            },
+            {
+              "text": "Early adopters approached these tools with a mix of excitement and scepticism. Many now report declining trust in output accuracy. They've encountered too many subtle bugs, too many instances where plausible looking code concealed logical errors or security vulnerabilities.",
+              "attribution": "Reddit r/ExperiencedDevs developer sentiment (Medium compilation)"
+            },
+            {
+              "text": "[The challenge is] if they can secure applications at the same velocity that they're building them… [AI tools] often run in an unmanaged or 'headless' capacity. This makes developers the last line of defense.",
+              "attribution": "Cristian Rodriguez, Field CTO at CrowdStrike (Fortune)"
+            }
+          ],
+          "postAngles": [
+            "Share your organization's AI security policy template",
+            "Explain how to do a 'shadow AI audit' (and what you'll probably find)",
+            "Walk through a specific vulnerability you caught in AI-generated code",
+            "Compare security risks: AI coding tools vs. Stack Overflow copy-paste",
+            "Create a decision framework: when is AI data exposure acceptable vs. not?"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Build vs. Buy Decisions for AI Are Agonizing",
+          "whyItMatters": "Building custom AI costs $600K–$1.5M per agent. Buying accelerates time-to-value but introduces vendor lock-in and integration nightmares. 46% of tech leaders cite AI skill gaps as a barrier.",
+          "quotes": [
+            {
+              "text": "You want to experiment quickly to understand how complex the problem really is. Sometimes you discover it's more feasible to buy and get to market fast.",
+              "attribution": "Alex Tyrrell, CTO of Health at Wolters Kluwer (CIO.com)"
+            },
+            {
+              "text": "Embedding an agent in a transactional workflow means customers expect near-instant results. Even small delays create a bad experience, and understanding the source of latency in a vendor solution can be difficult.",
+              "attribution": "Alex Tyrrell (CIO.com)"
+            },
+            {
+              "text": "AI tech debt is created because no one really understands those systems. So we will have systems that no one understands, not even the person who submits the PR.",
+              "attribution": "Senior developer, Reddit r/ExperiencedDevs"
+            }
+          ],
+          "postAngles": [
+            "Share your 'build vs. buy' decision matrix for AI",
+            "Tell a story: when you chose to build and it was right (or wrong)",
+            "Break down hidden costs of both paths (not just upfront price)",
+            "Explain what questions to ask AI vendors that expose whether they're real or vaporware",
+            "Address: 'We don't have ML engineers — should we even try to build?'"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Organizations Don't Know Where to Start With AI",
+          "whyItMatters": "Only 13% of companies are actually ready to leverage AI to its full potential, despite 85% saying they have less than 18 months to deploy AI or face negative business effects. The 'death by use case' problem.",
+          "quotes": [
+            {
+              "text": "Achieving ROI demands immense effort, vision, and commitment, and many enterprises simply aren't equipped to overcome their internal barriers. Hype won't close the gap between ambition and implementation.",
+              "attribution": "David S. Linthicum, former CTO/CEO (InfoWorld)"
+            },
+            {
+              "text": "CIOs and CTOs should be the antidote to the 'death by use case' frenzy that we already see in many companies.",
+              "attribution": "McKinsey, 'Technology's generational moment with generative AI'"
+            }
+          ],
+          "postAngles": [
+            "Share your 'AI readiness assessment' (3-5 questions leaders should ask first)",
+            "Create a prioritization framework: which use cases to tackle first",
+            "Tell the story of how you picked your first AI project (and what you learned)",
+            "Address the elephant: 'What if AI isn't right for your business right now?'",
+            "Explain how to build an AI strategy when you're not an AI expert"
+          ]
+        }
       ],
       "realQuotes": [
-        { "text": "AI tooling reviews and recommendations", "source": "AI/ML Communities" },
-        { "text": "AI news that actually matters for business (wins and failures)", "source": "r/MachineLearning" },
-        { "text": "AI implementation stories (wins and failures)", "source": "LinkedIn" },
-        { "text": "Evaluating AI ROI — cutting through the hype", "source": "Technical Leadership Forums" }
+        { "topic": "AI productivity paradox", "source": "Hacker News, Reddit r/ExperiencedDevs", "context": "Developers feel faster but data shows they're not — AI code requires more review time" },
+        { "topic": "Shadow AI is our biggest risk", "source": "CIO forums, RSM US research", "context": "Employees using unauthorized AI tools with company data" },
+        { "topic": "Where do we even start?", "source": "McKinsey, InfoWorld", "context": "Enterprises paralyzed by too many AI use cases, unclear prioritization" },
+        { "topic": "Vendor demos vs. production reality", "source": "CIO.com, Hacker News", "context": "Beautiful demos that don't match integration complexity" },
+        { "topic": "AI skill gap is blocking us", "source": "Multiple CTO forums", "context": "46% of leaders say they lack in-house AI expertise to build" }
       ],
-      "conversationStarters": [
+      "topicCalendar": [
         {
-          "template": "Hey [Name], saw your post about [AI topic]. We help technical leaders evaluate AI opportunities based on real ROI, not hype. Curious - are you in validation mode or active implementation?",
-          "whenToUse": "When they post about AI strategy, evaluation, or board pressure"
+          "category": "AI Adoption Strategy",
+          "frequency": "1x per week",
+          "whenToPost": "After board meetings (Q1, Q2, Q3, Q4), when competitors announce AI features, when major AI news breaks",
+          "painPointsAddressed": [1, 5],
+          "templateSuggestions": ["Hot Take", "Value Bomb", "Question Post"],
+          "exampleTopics": [
+            "The 3 questions I ask before any AI investment",
+            "Your board wants AI — here's what to say",
+            "Why most AI strategies fail in the first 90 days"
+          ]
         },
         {
-          "template": "[Name], your insights on [innovation/AI] were spot-on. Most CTOs we work with need dedicated innovation capacity separate from core product. How are you resourcing new initiatives?",
-          "whenToUse": "When they mention innovation challenges, new products, or resource constraints"
+          "category": "AI Security & Governance",
+          "frequency": "1x per week",
+          "whenToPost": "After security incidents make headlines, during budget/planning season, when new AI regulations are announced",
+          "painPointsAddressed": [3],
+          "templateSuggestions": ["Signal Post", "Listicle", "Observation"],
+          "exampleTopics": [
+            "Shadow AI audit: what we found in our first sweep",
+            "5 AI security risks your CISO isn't thinking about",
+            "How to write an AI usage policy people actually follow"
+          ]
         },
         {
-          "template": "Hey [Name], question about your [manual process/operations]. We help teams automate operations without betting the company on unproven tech. What's the biggest bottleneck in your current workflows?",
-          "whenToUse": "When they post about operations, manual processes, or efficiency improvements"
+          "category": "AI Implementation Reality",
+          "frequency": "1x per week",
+          "whenToPost": "During project retrospectives, when you see unrealistic vendor claims, after successful (or failed) AI deployments",
+          "painPointsAddressed": [2, 4],
+          "templateSuggestions": ["Story Post", "Myth Buster", "Value Bomb"],
+          "exampleTopics": [
+            "We killed our $400K AI project — here's what went wrong",
+            "AI coding tools: where they shine vs. where they break",
+            "The hidden costs of 'buying' vs. 'building' AI"
+          ]
         }
       ],
-      "contentPillars": [
-        {
-          "title": "AI Reality Check",
-          "examples": [
-            "AI that delivers ROI: [use case]. AI that's pure hype: [use case]",
-            "We helped [company] implement [AI feature] in [timeframe]. Here's what worked (and what flopped)",
-            "Cutting through AI hype: [real metric]. Ignoring AI vanity: [fake metric]"
-          ],
-          "frequency": "1-2x per week"
-        },
-        {
-          "title": "Innovation Capacity",
-          "examples": [
-            "Stop adding AI because [bad reason]. Start adding AI when [good reason]",
-            "AI implementation wins: [example]. AI implementation failures: [example]",
-            "Quick poll: What's your AI strategy?"
-          ],
-          "frequency": "1x per week"
-        }
-      ],
-      "contentTemplates": [
-        "AI that delivers ROI: [use case]. AI that's pure hype: [use case]. Know the difference.",
-        "We helped [company] implement [AI feature] in [timeframe]. Here's what worked (and what flopped):",
-        "Stop adding AI because [bad reason]. Start adding AI when [good reason]. Our framework:",
-        "AI implementation wins: [example]. AI implementation failures: [example]. Lessons learned:",
-        "Cutting through AI hype: [real metric]. Ignoring AI vanity: [fake metric]. Track what matters.",
-        "Quick poll: What's your AI strategy? [validation mode/active implementation/watching and waiting/board pressure]"
-      ]
+      "proTips": {
+        "superpower": "You've built AI tools from scratch AND advised businesses on adoption. You speak both languages — technical and strategic.",
+        "uniqueVoice": [
+          "You're not selling AI hype — you're helping people navigate it realistically",
+          "You've seen both successful and failed implementations firsthand",
+          "You can translate technical AI complexity into business decision frameworks"
+        ],
+        "avoid": [
+          "Overly academic AI discussions (leave that to researchers)",
+          "Pure vendor bashing (be critical but fair)",
+          "Doom-and-gloom 'AI will replace everyone' takes"
+        ],
+        "leanInto": [
+          "Practical, battle-tested frameworks",
+          "Honest assessments of what works and what doesn't",
+          "Specific numbers and real examples from your work",
+          "Questions that prompt your audience to think differently"
+        ],
+        "bestTimes": "Tuesday–Thursday, 7-9am or 12-2pm CT",
+        "engagementHack": "When you comment on others' posts, add value by sharing a specific counter-perspective or framework, not just agreement. Example: 'Interesting take. I'd add that when we see this pattern, it usually means [specific insight].'"
+      },
+      "closingMotivation": "Your audience is drowning in AI hype and desperately needs someone who can cut through it with honesty and practical guidance. Be that voice."
     },
     {
       "id": "sonya-mead",
       "name": "Sonya Mead",
+      "title": "Senior/Lead Recruiter",
       "avatar": "SM",
       "profileImage": "/images/team/sonya-mead.png",
       "offering": "Recruiting",
-      "talkingTo": "Hiring without slowing down your builders",
+      "nicheStatement": "You speak to hiring leaders and decision-makers struggling with engineering recruitment — specifically those dealing with broken interview processes, AI-generated resumes, and the widening gap between what hiring managers want and what the talent market offers.",
       "icp": {
-        "title": "Hiring without slowing down your builders",
-        "targetRoles": ["Founder", "Director of HR"],
-        "companyStage": "Growing companies (10-100 employees)",
+        "title": "HR Directors, Heads of Talent, VPs of People, Hiring Managers",
+        "targetRoles": ["HR Directors", "Heads of Talent", "VPs of People", "Hiring Managers (engineering)", "Talent Acquisition Leads"],
+        "companyStage": "50–1,000 employees actively hiring engineers",
+        "industry": "SaaS, tech, fintech, any company with significant engineering hiring needs",
+        "situation": "Losing candidates to slow processes; struggling to screen AI-enhanced resumes; misaligned with hiring managers on requirements; under pressure on time-to-hire and cost-per-hire",
         "theyrePostingAbout": [
-          "Recruiting strategy for lean teams",
-          "Talent market insights (what candidates actually want)",
-          "Building a recruiting engine from scratch"
+          "Interview process length and complexity",
+          "AI-generated resume challenges",
+          "Recruiter/hiring manager misalignment",
+          "Candidate experience and ghosting"
         ],
         "servicesFocus": ["Recruiting"]
       },
-      "talkingAbout": [
-        "Recruiting strategy for lean teams",
-        "Talent market insights (what candidates actually want)",
-        "Building a recruiting engine from scratch"
-      ],
-      "painPoints": [
-        "Makers spending time sourcing talent instead of moving product forward",
-        "Needing to hire a lot over time",
-        "No time to sift through applicants"
-      ],
       "connectCriteria": [
-        "Founder or HR Director actively hiring",
-        "Posts about recruiting challenges or time spent on hiring",
-        "Mentions needing to scale the team quickly",
-        "Struggling with candidate quality or screening volume",
-        "Active in startup recruiting or HR communities"
+        "Are actively hiring engineers and struggling with process",
+        "Post about interview length, candidate drop-off, or process inefficiency",
+        "Mention AI-generated resumes or screening challenges",
+        "Deal with recruiter/hiring manager misalignment",
+        "Are concerned about employer brand impact from candidate experience"
       ],
       "engageCriteria": [
-        "Not currently hiring",
-        "Posts only about company culture (no recruiting pain)",
-        "Recruiters or agencies (competitors)",
-        "No budget for external recruiting help"
+        "Generally interested in recruiting and talent acquisition trends",
+        "Share concerns about hiring market or candidate quality",
+        "Post about interview best practices or employer branding",
+        "Discuss recruiting tools, ATS systems, or screening methods"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "Hiring processes are too long and lose top candidates",
+          "whyItMatters": "Engineering interviews routinely stretch to 5–8+ rounds over weeks or months, causing top candidates to drop out. The process is widely seen as toxic and antiquated.",
+          "quotes": [
+            {
+              "text": "Interviews upon interviews, frivolous personality quizzes, unscheduled hour-long calls to discuss said quizzes, team/roundtable interviews with a half a dozen people grilling you and throwing you curveballs, creative submissions galore (requiring substantial unpaid work).",
+              "attribution": "Anonymous (viral Reddit post, r/TrueOffMyChest, 3,500+ comments)"
+            },
+            {
+              "text": "They said it would be two rounds. It turned into six, plus a reference check before the final.",
+              "attribution": "Anonymous, Reddit r/AskHR"
+            }
+          ],
+          "postAngles": [
+            "Share how you cut your interview process length (and what you learned)",
+            "Tell a story about losing a great candidate to process length",
+            "Create a 'process audit' checklist for identifying unnecessary steps",
+            "Address the tradeoff between thoroughness and speed"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Recruiters and hiring managers are fundamentally misaligned",
+          "whyItMatters": "63% of hiring managers feel recruiters don't understand the jobs they recruit for. Hiring managers give vague requirements then reject candidates for not meeting unstated criteria.",
+          "quotes": [
+            {
+              "text": "We're consistently hearing that recruiters and hiring managers aren't on the same page… Corporate recruiters are well familiar with the 'where's my candidates?' response from hiring managers, yet they can't get fast and accurate feedback on the candidates they've already submitted.",
+              "attribution": "Jason Webster, co-founder of Ongig"
+            },
+            {
+              "text": "Why should I spend my time talking to candidates? I don't want to waste my time on intro calls. Candidates should join me because I am an ex-MAANG. Send them a coding test first, if they pass it, I will talk to them.",
+              "attribution": "Typical hiring manager response documented by TalentNauts blog"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for getting real requirements from hiring managers",
+            "Tell a story about misalignment that cost you a hire",
+            "Create an 'intake meeting' checklist that prevents vague requirements",
+            "Address how to push back on unrealistic hiring manager expectations"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "AI-generated resumes have broken the screening process",
+          "whyItMatters": "25–57% of resumes now show signs of AI generation, making skill assessment from paper nearly impossible. Traditional screening no longer works.",
+          "quotes": [
+            {
+              "text": "ChatGPT resumes accounted for 30%+ of the ones we just received. Any ideas on how to vet the candidate without it being an interrogation? We are seeing a lot of candidates applying for senior devops positions using ChatGPT to create their resumes.",
+              "attribution": "Anonymous hiring manager, Reddit r/ExperiencedDevs"
+            },
+            {
+              "text": "Most [recruiters] are bad. The good ones, instead of spending time on tasks for which they're uniquely qualified, are instead stuck at the top of the funnel sourcing engineers whose qualifications they don't have the domain expertise to evaluate.",
+              "attribution": "Aline Lerner, founder of interviewing.io"
+            }
+          ],
+          "postAngles": [
+            "Share how you screen for signal when resumes are AI-generated",
+            "Tell a story about catching an AI-embellished candidate",
+            "Create alternative screening methods that bypass resume reliance",
+            "Address what AI resumes mean for the future of screening"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "The hiring bar in engineering is staggeringly inefficient",
+          "whyItMatters": "Companies conduct 10–30 onsite interviews per hire, wasting enormous recruiter and engineer time. 76% of employers globally struggle to fill technical roles.",
+          "quotes": [
+            {
+              "text": "Primarily in the Engineering world we hear that the bar is too high. It's common to hear that it takes 10-15 onsite interviews to get a hire. We've even heard as high as 25-30 onsite interviews to get to a hire. That could be up to 90 hours of recruiting time without an actual hire.",
+              "attribution": "Jason Webster, Ongig"
+            }
+          ],
+          "postAngles": [
+            "Share your 'interviews per hire' ratio and how you improved it",
+            "Tell a story about an overly high bar that hurt your hiring",
+            "Create a framework for calibrating the right hiring bar",
+            "Address when 'high standards' becomes 'unrealistic expectations'"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Ghosting candidates destroys employer brand in tight-knit engineering communities",
+          "whyItMatters": "Companies routinely ghost candidates after multiple interview rounds, and word travels fast in engineering communities (Reddit, Hacker News, Blind). Recruiters are overwhelmed managing 15–50 open requisitions simultaneously.",
+          "quotes": [
+            {
+              "text": "The thing that blows my mind is that almost zero companies call you back to tell you that you didn't get the job, even after you've interviewed one or multiple times. They seriously don't give a single [expletive] about you as a person.",
+              "attribution": "u/ZipZopZoopittyBop, Reddit r/TrueOffMyChest"
+            },
+            {
+              "text": "Even with the best intentions, I've slipped up. I've ghosted (by accident), delayed feedback, and sent a vague rejection. Not because I didn't care, but because I was too busy to realize how much it mattered.",
+              "attribution": "Jyoti Yadav, Recruiting Lead (Medium, July 2025)"
+            }
+          ],
+          "postAngles": [
+            "Share your system for never ghosting a candidate",
+            "Tell an honest story about accidentally ghosting and what you changed",
+            "Create a 'candidate communication' checklist for high-volume recruiting",
+            "Address the employer brand cost of ghosting (with specific examples)"
+          ]
+        }
       ],
       "realQuotes": [
-        { "text": "Hiring without slowing down your builders", "source": "Startup Recruiting Forums" },
-        { "text": "Recruiting strategy for lean teams", "source": "r/startups" },
-        { "text": "Talent market insights (what candidates actually want)", "source": "LinkedIn" },
-        { "text": "Building a recruiting engine from scratch", "source": "HR Tech Communities" }
+        { "topic": "5-8 round interview gauntlets", "source": "Reddit r/TrueOffMyChest (viral post)", "context": "Candidates exhausted by endless process" },
+        { "topic": "Recruiter/HM misalignment", "source": "Ongig research, TalentNauts", "context": "63% of HMs feel recruiters don't understand the role" },
+        { "topic": "30%+ AI-generated resumes", "source": "Reddit r/ExperiencedDevs, hiring managers", "context": "Traditional screening broken" },
+        { "topic": "10-30 interviews per hire", "source": "Ongig industry data", "context": "Staggering inefficiency in engineering hiring" },
+        { "topic": "Ghosting destroys brand", "source": "Reddit, Medium", "context": "Word travels fast in engineering communities" }
       ],
-      "conversationStarters": [
+      "topicCalendar": [
         {
-          "template": "Hey [Name], saw your post about [hiring challenge]. Quick question - how much time are your founders/makers spending on recruiting vs. building product? That ratio usually shocks people.",
-          "whenToUse": "When they post about hiring timelines, founder involvement, or recruiting overhead"
+          "category": "Interview Process Efficiency",
+          "frequency": "1x per week",
+          "whenToPost": "When you see process complaints, candidate experience posts, or hiring timeline discussions",
+          "painPointsAddressed": [1, 4],
+          "templateSuggestions": ["Hot Take", "Listicle", "Story Post"],
+          "exampleTopics": [
+            "Unpopular opinion: Your 6-round interview process is why you can't hire",
+            "We cut our engineering interviews from 8 rounds to 3. Here's what happened.",
+            "The candidate who got away because of our process (and what we changed)"
+          ]
         },
         {
-          "template": "[Name], your insights on [recruiting] were spot-on. Most talent leaders we work with are drowning in applications but short on qualified candidates. How are you handling the signal-to-noise problem?",
-          "whenToUse": "When they mention application volume, screening challenges, or quality issues"
+          "category": "Recruiter-HM Alignment",
+          "frequency": "1x per week",
+          "whenToPost": "When you see hiring manager complaints, requirement discussions, or sourcing challenges",
+          "painPointsAddressed": [2],
+          "templateSuggestions": ["Value Bomb", "Question Post", "Myth Buster"],
+          "exampleTopics": [
+            "The intake meeting framework that finally aligned me with my hiring managers",
+            "Quick question: How do you get hiring managers to give you real requirements?",
+            "Myth: Hiring managers know what they want. Truth: They know it when they see it."
+          ]
         },
         {
-          "template": "Hey [Name], question about your [hiring goals]. If you could offload sourcing and screening but stay involved in final decisions, what would that free you up to do? That's what our recruiting engine provides.",
-          "whenToUse": "When they post about time constraints, wanting to focus elsewhere, or scaling challenges"
+          "category": "Modern Screening & Candidate Experience",
+          "frequency": "1x per week",
+          "whenToPost": "When you see AI resume discussions, candidate ghosting complaints, or employer brand content",
+          "painPointsAddressed": [3, 5],
+          "templateSuggestions": ["Observation", "Signal Post", "Story Post"],
+          "exampleTopics": [
+            "I noticed 30% of our resumes now look AI-generated. Here's how we're adapting.",
+            "4 signs your candidate experience is hurting your employer brand",
+            "I accidentally ghosted a candidate. Here's the system I built so it never happens again."
+          ]
         }
       ],
-      "contentPillars": [
-        {
-          "title": "Recruiting Strategy",
-          "examples": [
-            "Recruiting for lean teams: [system]. Recruiting that kills productivity: [anti-pattern]",
-            "We helped [company] fill [X] roles in [timeframe] without internal recruiting",
-            "Founder time cost: [hours on recruiting] x [hourly value] = [opportunity cost]"
-          ],
-          "frequency": "1-2x per week"
-        },
-        {
-          "title": "Talent Insights",
-          "examples": [
-            "What candidates actually want in 2026: [insight 1], [insight 2], [insight 3]",
-            "Building a recruiting engine: [step 1], [step 2], [step 3]",
-            "Quick poll: What's your biggest recruiting challenge?"
-          ],
-          "frequency": "1x per week"
-        }
-      ],
-      "contentTemplates": [
-        "Recruiting for lean teams: [system]. Recruiting that kills productivity: [anti-pattern]. Choose wisely.",
-        "We helped [company] fill [X] roles in [timeframe] without internal recruiting. Here's how:",
-        "What candidates actually want in 2026: [insight 1], [insight 2], [insight 3]. Stop offering: [outdated perk].",
-        "Founder time cost: [hours on recruiting] x [hourly value] = [opportunity cost]. Here's how to reclaim it:",
-        "Building a recruiting engine: [step 1], [step 2], [step 3]. Works every time.",
-        "Quick poll: What's your biggest recruiting challenge? [sourcing/screening/speed/quality/founder time]"
-      ]
+      "proTips": {
+        "superpower": "You specialize in engineering recruitment — you understand the technical hiring landscape and the unique challenges of hiring developers.",
+        "uniqueVoice": [
+          "You're honest about recruiting's broken processes",
+          "You understand both recruiter and candidate perspectives",
+          "You can translate engineering requirements into actionable sourcing"
+        ],
+        "avoid": [
+          "Generic HR advice that doesn't apply to technical hiring",
+          "Blaming candidates or hiring managers exclusively",
+          "Pretending recruiting is easy or straightforward"
+        ],
+        "leanInto": [
+          "Specific metrics (time-to-hire, interviews per hire, offer acceptance)",
+          "Honest stories about mistakes and what you learned",
+          "Tactical advice for managing high-volume technical recruiting",
+          "The candidate experience perspective (you're their advocate too)"
+        ],
+        "bestTimes": "Tuesday–Thursday, 8-10am or 12-2pm CT",
+        "engagementHack": "When commenting on recruiting posts, share a specific metric or process change. Example: 'We had the same ghosting problem — implemented a 48-hour SLA on all candidate communication and our Glassdoor reviews improved within 2 months.'"
+      },
+      "closingMotivation": "Your audience is overwhelmed with requisitions and frustrated by broken processes. Help them work smarter, treat candidates better, and actually fill roles without burning out."
     }
   ]
 }
