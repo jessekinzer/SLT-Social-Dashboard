@@ -3,16 +3,19 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  Calendar,
   CheckCircle2,
   ChevronDown,
   Copy,
   Flame,
   Lightbulb,
-  MessageCircle,
+  MessageSquareQuote,
   Moon,
   Sparkles,
   Sun,
+  Target,
   Users,
+  Zap,
 } from "lucide-react";
 import teamData from "./data/teamData.json";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -24,43 +27,43 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 const contentTemplates = [
   {
     category: "Hot Take",
-    template:
-      "Unpopular opinion: [controversial statement about your industry]",
+    template: "Unpopular opinion: [Controversial statement about your industry]",
+    example: "Unpopular opinion: If your 'AI strategy' is just 'give everyone Copilot and see what happens,' you don't have a strategy — you have hope disguised as governance.",
   },
   {
     category: "Value Bomb",
-    template:
-      "We just helped [client] achieve [result] in [timeframe]. Here's how:\n\u2022 [Step 1]\n\u2022 [Step 2]\n\u2022 [Step 3]\nThe result: [specific outcome]",
+    template: "We just helped [client/scenario] [achieve result] in [timeframe]. Here's what [5 things we learned]:\n1. [Lesson + why it mattered]\n2. [Lesson + why it mattered]\n3. [Lesson + why it mattered]\n4. [Lesson + why it mattered]\n5. [Lesson + why it mattered]",
+    example: null,
   },
   {
     category: "Question Post",
-    template:
-      "Quick question: What's your biggest challenge with [pain point]?",
+    template: "Quick question: What's your biggest challenge with [pain point]?",
+    example: "Quick question: What's your biggest challenge with proving AI ROI to your board? I'll share what's working for teams I'm advising.",
   },
   {
     category: "Listicle",
-    template:
-      '3 things I learned this week about [topic]:\n1) [Lesson 1]\n2) [Lesson 2]\n3) [Lesson 3]\n\nWhich one surprises you?',
-  },
-  {
-    category: "Mistake Story",
-    template:
-      "I made a [big mistake] last [timeframe].\n\nWhat happened: [Story]\nWhat I learned: [Lesson]\nWhat I'd do differently: [Better approach]\n\nAnyone else done this?",
-  },
-  {
-    category: "Observation",
-    template:
-      "I noticed [trend/pattern] happening in [industry]. Anyone else seeing this?",
+    template: "I audited [X] companies' [area] this week. Here are [number] mistakes I saw repeatedly:\n1. [Mistake]\n2. [Mistake]\n3. [Mistake]\n\nThe good news? [Positive spin / solution teaser]",
+    example: null,
   },
   {
     category: "Myth Buster",
-    template:
-      "Everyone says [common advice]. I disagree. Here's why...",
+    template: "Everyone says [common advice]. I disagree. Here's why...\n[Counter-argument backed by experience/data]",
+    example: "Everyone says 'start with a pilot.' I disagree. Most pilots fail because they're too small to prove value but too big to fail fast.",
   },
   {
-    category: "Signs Post",
-    template:
-      "[Number] signs it's time to [take action]:\n1. [Sign 1]\n2. [Sign 2]\n3. [Sign 3]\n\nSeeing these? Here's what to do...",
+    category: "Story Post",
+    template: "I made a big [mistake/decision] last [timeframe]: [What happened]\n\nWhat I'd do differently now: [lessons]",
+    example: "I killed a $400K AI project 3 months in last year. The vendor demos were impressive. The integration reality was hell. What I'd do differently: [lessons]",
+  },
+  {
+    category: "Observation",
+    template: "I noticed [trend/pattern] happening in [industry]. Anyone else seeing this?",
+    example: "I noticed CTOs are now being held personally accountable for AI spend in board meetings. 18 months ago it was 'experiment freely.' Now it's 'show me the money.' Anyone else seeing this shift?",
+  },
+  {
+    category: "Signal Post",
+    template: "[Number] signs it's time to [take action]:\n→ [Sign 1]\n→ [Sign 2]\n→ [Sign 3]",
+    example: "5 signs your AI pilot will never make it to production:\n→ You can't demo it to a real user\n→ The vendor keeps saying 'next release'\n→ Your engineers are working around it instead of with it",
   },
 ];
 
@@ -73,18 +76,6 @@ const weeklyEngagementChecklist = [
   { id: "dm-conversations", task: "Send 2-3 helpful DMs to recent connections (no pitching!)" },
   { id: "weekend-review", task: "Review your engagement: What posts got the most interaction?" },
 ];
-
-const realQuotesTitles = {
-  "austin-daniel": "What Founding CEOs Are Actually Saying",
-  "austin-eidson": "What Design Leaders Are Actually Saying",
-  "cyril-jones": "What Technical Founders Are Actually Saying",
-  "dom-paulk": "What Product Leaders Are Actually Saying",
-  "jerrod-tracy": "What Engineering Leaders Are Actually Saying",
-  "jesse-kinzer": "What Marketing Directors Are Actually Saying",
-  "ryan-doss": "What CTOs Are Actually Saying",
-  "scott-blevins": "What Innovation Leaders Are Actually Saying",
-  "sonya-mead": "What Talent Leaders Are Actually Saying",
-};
 
 // ---------------------------------------------------------------------------
 // Utilities
@@ -115,26 +106,6 @@ const getInitialMemberId = () => {
 const saveSelectedMember = (id) => {
   if (typeof window === "undefined") return;
   window.localStorage.setItem("selectedMemberId", id);
-};
-
-const getProgress = (memberId) => {
-  if (typeof window === "undefined") return {};
-  try {
-    return JSON.parse(
-      window.localStorage.getItem(`slt-progress-${memberId}`) || "{}"
-    );
-  } catch {
-    return {};
-  }
-};
-
-const saveProgress = (memberId, taskId, completed) => {
-  const progress = getProgress(memberId);
-  progress[taskId] = completed;
-  window.localStorage.setItem(
-    `slt-progress-${memberId}`,
-    JSON.stringify(progress)
-  );
 };
 
 const getEngagementWeekStart = (memberId) => {
@@ -215,7 +186,6 @@ function useTheme() {
     saveTheme(theme);
   }, [theme]);
 
-  // Set initial theme on mount
   useEffect(() => {
     saveTheme(getTheme());
   }, []);
@@ -280,7 +250,7 @@ async function copyToClipboard(text, showToast) {
     await navigator.clipboard.writeText(text);
     showToast("Copied to clipboard!");
   } catch {
-    showToast("Copy failed \u2013 please try again");
+    showToast("Copy failed – please try again");
   }
 }
 
@@ -290,8 +260,7 @@ async function copyToClipboard(text, showToast) {
 
 function Landing() {
   const navigate = useNavigate();
-  const { theme, isDark, toggleTheme } = useTheme();
-  const [selectedId] = useState(getInitialMemberId);
+  const { isDark, toggleTheme } = useTheme();
 
   const handleSelect = (id) => {
     saveSelectedMember(id);
@@ -304,7 +273,6 @@ function Landing() {
         isDark ? "bg-brand-dark text-white" : "bg-brand-light text-brand-dark"
       }`}
     >
-      {/* Nav */}
       <header
         className={`border-b ${
           isDark ? "border-white/10 bg-brand-dark/95" : "border-brand-dark/10 bg-brand-light/95"
@@ -319,13 +287,13 @@ function Landing() {
                 : "text-brand-dark/40 hover:text-brand-dark/80"
             }`}
             aria-label="Toggle theme"
+            data-testid="theme-toggle"
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
       </header>
 
-      {/* Content */}
       <main className="mx-auto max-w-dashboard px-6 py-12 md:py-16">
         <div className="mb-12">
           <HeroIllustration isDark={isDark} />
@@ -337,12 +305,12 @@ function Landing() {
               isDark ? "text-white/60" : "text-brand-dark/60"
             }`}
           >
-            Choose your dashboard to access your LinkedIn playbook, outreach
-            templates, and daily engagement plan.
+            Choose your dashboard to access your LinkedIn playbook, pain point research,
+            and daily engagement plan.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-testid="team-grid">
           {teamData.teamMembers.map((member) => (
             <button
               key={member.id}
@@ -353,6 +321,7 @@ function Landing() {
                   : "border border-brand-dark/10 bg-white hover:border-brand-blue/50 hover:shadow-lg"
               }`}
               type="button"
+              data-testid={`team-member-${member.id}`}
             >
               <div className="mb-4 h-20 w-20 flex-shrink-0 overflow-hidden">
                 {member.profileImage ? (
@@ -375,17 +344,13 @@ function Landing() {
                   </span>
                 </div>
               </div>
-              <h3 className="mb-3 text-lg font-semibold group-hover:text-brand-blue transition-colors">
+              <h3 className="mb-1 text-lg font-semibold group-hover:text-brand-blue transition-colors">
                 {member.name}
               </h3>
+              <p className={`mb-3 text-sm ${isDark ? "text-white/50" : "text-brand-dark/50"}`}>
+                {member.title}
+              </p>
               <div className="mb-3">
-                <p
-                  className={`mb-2 text-xs font-medium uppercase tracking-wide ${
-                    isDark ? "text-white/40" : "text-brand-dark/40"
-                  }`}
-                >
-                  Targets:
-                </p>
                 <div className="flex flex-wrap gap-1.5">
                   {member.icp.targetRoles.slice(0, 3).map((role) => (
                     <span
@@ -396,20 +361,6 @@ function Landing() {
                     </span>
                   ))}
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {member.icp.servicesFocus.map((service) => (
-                  <span
-                    key={service}
-                    className={`px-2 py-1 text-xs font-medium ${
-                      isDark
-                        ? "bg-white/[0.06] text-white/70"
-                        : "bg-brand-dark/[0.06] text-brand-dark/70"
-                    }`}
-                  >
-                    {service}
-                  </span>
-                ))}
               </div>
               <span
                 className={`absolute right-4 top-4 text-xs font-medium transition-colors ${
@@ -429,12 +380,104 @@ function Landing() {
 }
 
 // ---------------------------------------------------------------------------
+// Pain Point Card Component
+// ---------------------------------------------------------------------------
+
+function PainPointCard({ painPoint, isDark, onCopy }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  const cardBg = isDark
+    ? "bg-white/[0.02] border border-white/10"
+    : "bg-white border border-brand-dark/10";
+  const textPrimary = isDark ? "text-white" : "text-brand-dark";
+  const textSecondary = isDark ? "text-white/70" : "text-brand-dark/70";
+  const textMuted = isDark ? "text-white/50" : "text-brand-dark/50";
+
+  return (
+    <div className={`${cardBg} overflow-hidden`} data-testid={`pain-point-${painPoint.id}`}>
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className={`flex w-full items-start justify-between p-5 text-left transition-colors ${
+          isDark ? "hover:bg-white/[0.02]" : "hover:bg-brand-dark/[0.02]"
+        }`}
+      >
+        <div className="flex-1 pr-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="flex h-6 w-6 items-center justify-center bg-brand-blue text-xs font-bold text-white">
+              {painPoint.id}
+            </span>
+            <h4 className={`text-base font-semibold ${textPrimary}`}>
+              {painPoint.title}
+            </h4>
+          </div>
+          <p className={`text-sm ${textMuted}`}>
+            {painPoint.whyItMatters}
+          </p>
+        </div>
+        <ChevronDown
+          size={20}
+          className={`mt-1 flex-shrink-0 transition-transform duration-300 ${
+            isExpanded ? "rotate-180" : ""
+          } ${textMuted}`}
+        />
+      </button>
+
+      {isExpanded && (
+        <div className={`animate-fadeIn border-t px-5 pb-5 ${isDark ? "border-white/10" : "border-brand-dark/10"}`}>
+          {/* Quotes Section */}
+          <div className="mt-4">
+            <h5 className={`mb-3 text-xs font-semibold uppercase tracking-wide ${textMuted}`}>
+              What they're saying:
+            </h5>
+            <div className="space-y-3">
+              {painPoint.quotes.map((quote, idx) => (
+                <div
+                  key={idx}
+                  className={`border-l-2 border-brand-blue pl-4 py-2 ${
+                    isDark ? "bg-white/[0.02]" : "bg-brand-dark/[0.02]"
+                  }`}
+                >
+                  <p className={`text-sm italic ${textSecondary}`}>
+                    "{quote.text}"
+                  </p>
+                  <p className={`mt-2 text-xs font-medium ${textMuted}`}>
+                    — {quote.attribution}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Post Angles Section */}
+          <div className="mt-5">
+            <h5 className={`mb-3 text-xs font-semibold uppercase tracking-wide ${textMuted}`}>
+              Post angles when addressing this:
+            </h5>
+            <ul className="space-y-2">
+              {painPoint.postAngles.map((angle, idx) => (
+                <li
+                  key={idx}
+                  className={`flex items-start gap-2 text-sm ${textSecondary}`}
+                >
+                  <Sparkles size={14} className="mt-0.5 flex-shrink-0 text-brand-lime" />
+                  {angle}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Dashboard Page
 // ---------------------------------------------------------------------------
 
 function Dashboard() {
   const { id } = useParams();
-  const { theme, isDark, toggleTheme } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const { toast: toastState, showToast } = useToast();
   const [engagementState, setEngagementState] = useState({});
   const [isNewWeek, setIsNewWeek] = useState(false);
@@ -450,7 +493,6 @@ function Dashboard() {
     [id]
   );
 
-  // Load engagement checklist state with weekly reset
   useEffect(() => {
     if (member) {
       saveSelectedMember(member.id);
@@ -497,6 +539,7 @@ function Dashboard() {
         <Link
           to="/"
           className="mt-6 inline-flex items-center gap-2 border border-white/20 px-4 py-2 text-sm font-medium"
+          data-testid="back-link"
         >
           <ArrowLeft size={16} />
           Back to team
@@ -504,12 +547,6 @@ function Dashboard() {
       </div>
     );
   }
-
-  // ICP quick summary for mobile
-  const quickSummary = {
-    who: member.icp.targetRoles.join(", "),
-    topics: member.icp.theyrePostingAbout.slice(0, 3).join(", "),
-  };
 
   // CSS helpers
   const cardBg = isDark
@@ -521,7 +558,6 @@ function Dashboard() {
   const textPrimary = isDark ? "text-white" : "text-brand-dark";
   const textSecondary = isDark ? "text-white/70" : "text-brand-dark/70";
   const textMuted = isDark ? "text-white/50" : "text-brand-dark/50";
-  const textFaint = isDark ? "text-white/30" : "text-brand-dark/30";
   const borderColor = isDark ? "border-white/10" : "border-brand-dark/10";
   const hoverBg = isDark ? "hover:bg-white/[0.04]" : "hover:bg-brand-dark/[0.04]";
 
@@ -530,6 +566,7 @@ function Dashboard() {
       className={`min-h-screen transition-colors ${
         isDark ? "bg-brand-dark" : "bg-brand-light"
       }`}
+      data-testid="dashboard"
     >
       <Toast message={toastState.message} visible={toastState.visible} />
 
@@ -550,6 +587,7 @@ function Dashboard() {
                   ? "text-white/60 hover:text-white"
                   : "text-brand-dark/60 hover:text-brand-dark"
               }`}
+              data-testid="back-to-team"
             >
               <ArrowLeft size={18} />
               <span className="hidden sm:inline">Back</span>
@@ -564,41 +602,61 @@ function Dashboard() {
                 : "text-brand-dark/40 hover:text-brand-dark/80"
             }`}
             aria-label="Toggle theme"
+            data-testid="theme-toggle"
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
       </nav>
 
-      {/* ---- Mobile Quick Reference ---- */}
-      <div
-        className={`lg:hidden sticky top-[57px] z-40 border-b backdrop-blur px-4 py-3 ${
-          isDark
-            ? "border-white/10 bg-brand-blue/10"
-            : "border-brand-dark/10 bg-brand-blue/5"
-        }`}
-      >
-        <h3 className={`mb-2 text-xs font-semibold ${textPrimary}`}>
-          At a Glance
-        </h3>
-        <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs">
-          <div>
-            <span className={textMuted}>Target: </span>
-            <span className={textSecondary}>{quickSummary.who}</span>
-          </div>
-          <div>
-            <span className={textMuted}>Topics: </span>
-            <span className={textSecondary}>{quickSummary.topics}</span>
-          </div>
-        </div>
-      </div>
-
       {/* ---- Main Content ---- */}
       <main className="mx-auto max-w-dashboard px-4 py-8 sm:px-6 md:py-12">
+        
         {/* ================================================================
-            1. WEEKLY ENGAGEMENT CHECKLIST (collapsible)
+            1. HERO SECTION
         ================================================================ */}
-        <section className="mb-12 md:mb-20">
+        <section className="mb-12 md:mb-16" data-testid="hero-section">
+          <div className="mb-6">
+            <h1 className={`text-3xl font-bold sm:text-4xl ${textPrimary}`}>
+              {member.name}
+            </h1>
+            <p className={`mt-1 text-lg ${textMuted}`}>
+              {member.title}
+            </p>
+          </div>
+          
+          {/* Niche Statement */}
+          <div className={`p-5 mb-6 ${cardBg}`}>
+            <h3 className={`mb-2 text-xs font-semibold uppercase tracking-wide ${textMuted}`}>
+              Your Niche in One Sentence
+            </h3>
+            <p className={`text-base leading-relaxed ${textSecondary}`}>
+              {member.nicheStatement}
+            </p>
+          </div>
+
+          {/* Target Roles Pills */}
+          <div>
+            <h3 className={`mb-3 text-xs font-semibold uppercase tracking-wide ${textMuted}`}>
+              Target Roles
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {member.icp.targetRoles.map((role) => (
+                <span
+                  key={role}
+                  className="border border-brand-blue/30 bg-brand-blue/10 px-3 py-1.5 text-sm font-medium text-brand-blue"
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            2. WEEKLY ENGAGEMENT CHECKLIST
+        ================================================================ */}
+        <section className="mb-12 md:mb-16" data-testid="engagement-checklist">
           <div
             className={`border ${
               isDark
@@ -616,6 +674,7 @@ function Dashboard() {
               className={`flex w-full items-center justify-between p-6 transition-colors sm:p-8 ${
                 isDark ? "hover:bg-white/5" : "hover:bg-gray-200"
               }`}
+              data-testid="checklist-toggle"
             >
               <h2
                 className={`text-xl font-semibold sm:text-2xl ${
@@ -644,6 +703,10 @@ function Dashboard() {
 
             {checklistExpanded && (
               <div className="animate-fadeIn px-6 pb-6 sm:px-8 sm:pb-8">
+                <p className={`mb-4 text-sm ${isDark ? "text-white/60" : "text-gray-600"}`}>
+                  Consistency beats intensity. Do a little every day.
+                </p>
+
                 {isNewWeek && !newWeekDismissed && (
                   <div
                     className={`mb-4 border p-4 ${
@@ -702,6 +765,7 @@ function Dashboard() {
                           handleEngagementToggle(item.id, e.target.checked)
                         }
                         className="mt-1 h-5 w-5 flex-shrink-0 accent-[#C7FA50]"
+                        data-testid={`checklist-item-${item.id}`}
                       />
                       <span
                         className={`text-sm leading-relaxed transition-colors sm:text-base ${
@@ -742,88 +806,73 @@ function Dashboard() {
                     </p>
                   </div>
                 )}
-
-                <p
-                  className={`mt-4 text-sm italic ${
-                    isDark ? "text-white/50" : "text-gray-500"
-                  }`}
-                >
-                  Tip: Consistency beats intensity. Do a little every day.
-                </p>
               </div>
             )}
           </div>
         </section>
 
         {/* ================================================================
-            2. WHO TO CONNECT WITH
+            3. WHO YOU'RE TALKING TO (ICP)
         ================================================================ */}
-        <section className="mb-12 md:mb-20">
+        <section className="mb-12 md:mb-16" data-testid="icp-section">
           <div className="mb-6 flex items-center gap-3">
-            <Users size={22} className="text-brand-blue" />
+            <Target size={22} className="text-brand-blue" />
             <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-              Who to Connect With
+              Who You're Talking To
             </h2>
           </div>
 
-          {/* ICP summary */}
-          <div className={`mb-6 p-4 sm:p-6 ${cardBg}`}>
-            <div className="mb-3 flex items-center gap-2">
-              <Sparkles size={16} className="text-brand-blue" />
-              <h3 className={`text-base font-semibold ${textPrimary}`}>
-                Who You're Talking To
-              </h3>
-            </div>
-            <p className={`mb-2 text-lg font-semibold ${textPrimary}`}>
-              {member.icp.title}
-            </p>
-            <p className={`mb-3 text-sm ${textSecondary}`}>
-              {member.icp.companyStage}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {member.icp.targetRoles.map((role) => (
-                <span
-                  key={role}
-                  className={`px-2 py-1 text-xs font-medium ${
-                    isDark
-                      ? "bg-brand-blue/10 text-brand-blue"
-                      : "bg-brand-blue/10 text-brand-blue"
-                  }`}
-                >
-                  {role}
-                </span>
-              ))}
+          {/* ICP Summary */}
+          <div className={`mb-6 p-5 ${cardBg}`}>
+            <h3 className={`mb-3 text-base font-semibold ${textPrimary}`}>
+              Your Ideal Audience
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p className={`text-xs font-semibold uppercase tracking-wide mb-1 ${textMuted}`}>Roles</p>
+                <p className={`text-sm ${textSecondary}`}>{member.icp.targetRoles.join(", ")}</p>
+              </div>
+              <div>
+                <p className={`text-xs font-semibold uppercase tracking-wide mb-1 ${textMuted}`}>Company Size</p>
+                <p className={`text-sm ${textSecondary}`}>{member.icp.companyStage}</p>
+              </div>
+              <div>
+                <p className={`text-xs font-semibold uppercase tracking-wide mb-1 ${textMuted}`}>Industry</p>
+                <p className={`text-sm ${textSecondary}`}>{member.icp.industry}</p>
+              </div>
+              <div>
+                <p className={`text-xs font-semibold uppercase tracking-wide mb-1 ${textMuted}`}>Their Situation</p>
+                <p className={`text-sm ${textSecondary}`}>{member.icp.situation}</p>
+              </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {/* Connect */}
-            <div className={`border-l-4 border-brand-blue p-4 sm:p-6 ${cardBg}`}>
-              <h3 className={`mb-4 text-base font-semibold sm:text-lg ${textPrimary}`}>
+            {/* Connect Criteria */}
+            <div className={`border-l-4 border-brand-blue p-5 ${cardBg}`}>
+              <h3 className={`mb-4 text-base font-semibold ${textPrimary}`}>
                 Connect if they:
               </h3>
               <ul className="space-y-2">
                 {member.connectCriteria.map((criterion, idx) => (
                   <li
                     key={idx}
-                    className={`flex items-start gap-2 text-sm ${
-                      isDark ? "text-white/80" : "text-brand-dark/80"
-                    }`}
+                    className={`flex items-start gap-2 text-sm ${textSecondary}`}
                   >
-                    <span className="mt-0.5 text-brand-blue">&#9656;</span>
+                    <span className="mt-0.5 text-brand-blue">▸</span>
                     {criterion}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Just engage */}
+            {/* Engage Criteria */}
             <div
-              className={`border-l-4 p-4 sm:p-6 ${cardBg} ${
+              className={`border-l-4 p-5 ${cardBg} ${
                 isDark ? "border-white/20" : "border-brand-dark/20"
               }`}
             >
-              <h3 className={`mb-4 text-base font-semibold sm:text-lg ${textPrimary}`}>
+              <h3 className={`mb-4 text-base font-semibold ${textPrimary}`}>
                 Just engage if they:
               </h3>
               <ul className="space-y-2">
@@ -832,7 +881,7 @@ function Dashboard() {
                     key={idx}
                     className={`flex items-start gap-2 text-sm ${textMuted}`}
                   >
-                    <span className={`mt-0.5 ${textFaint}`}>&#9656;</span>
+                    <span className={`mt-0.5 ${isDark ? "text-white/30" : "text-brand-dark/30"}`}>▸</span>
                     {criterion}
                   </li>
                 ))}
@@ -842,39 +891,73 @@ function Dashboard() {
         </section>
 
         {/* ================================================================
-            3. CONTENT IDEAS
+            4. PAIN POINTS
         ================================================================ */}
-        <section className="mb-12 md:mb-20">
+        <section className="mb-12 md:mb-16" data-testid="pain-points-section">
+          <div className="mb-6 flex items-center gap-3">
+            <Flame size={22} className="text-brand-blue" />
+            <div>
+              <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+                What Your Audience Is Struggling With
+              </h2>
+              <p className={`mt-1 text-sm ${textMuted}`}>
+                Click to expand each pain point for quotes and post ideas
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            {member.painPoints.map((painPoint) => (
+              <PainPointCard
+                key={painPoint.id}
+                painPoint={painPoint}
+                isDark={isDark}
+                onCopy={handleCopy}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* ================================================================
+            5. CONTENT TEMPLATES
+        ================================================================ */}
+        <section className="mb-12 md:mb-16" data-testid="templates-section">
           <div className="mb-4 flex items-center gap-3">
             <Lightbulb size={22} className="text-brand-blue" />
             <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-              Content Ideas
+              Content Templates by Type
             </h2>
           </div>
           <p className={`mb-6 text-sm ${textSecondary}`}>
-            Need a post idea? Pick a template and customize it:
+            Use these proven formats to create engaging posts:
           </p>
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {contentTemplates.map((template, idx) => (
               <div
                 key={idx}
-                className={`group p-4 transition-colors sm:p-5 ${cardBg} ${hoverBg}`}
+                className={`group p-5 transition-colors ${cardBg} ${hoverBg}`}
               >
                 <h3
                   className={`mb-2 text-xs font-semibold uppercase tracking-wide ${textMuted}`}
                 >
                   {template.category}
                 </h3>
-                <p className={`mb-3 text-sm leading-relaxed ${textSecondary}`}>
+                <p className={`mb-3 text-sm leading-relaxed whitespace-pre-line ${textSecondary}`}>
                   {template.template}
                 </p>
+                {template.example && (
+                  <div className={`mb-3 p-3 text-xs italic ${cardBgSubtle} ${textMuted}`}>
+                    Example: {template.example}
+                  </div>
+                )}
                 <button
                   onClick={() => handleCopy(template.template)}
-                  className="flex items-center gap-1 text-sm font-medium text-brand-blue transition-colors hover:underline"
+                  className="flex items-center gap-1.5 text-sm font-medium text-brand-blue transition-colors hover:underline"
+                  data-testid={`copy-template-${idx}`}
                 >
+                  <Copy size={14} />
                   Copy template
-                  <ArrowRight size={14} />
                 </button>
               </div>
             ))}
@@ -882,18 +965,18 @@ function Dashboard() {
         </section>
 
         {/* ================================================================
-            4. WHAT THEY'RE ACTUALLY SAYING
+            6. WHAT THEY'RE ACTUALLY SAYING
         ================================================================ */}
         {member.realQuotes && member.realQuotes.length > 0 && (
-          <section className="mb-12 md:mb-20">
+          <section className="mb-12 md:mb-16" data-testid="real-quotes-section">
             <div className="mb-6 flex items-center gap-3">
-              <Flame size={22} className="text-brand-blue" />
+              <MessageSquareQuote size={22} className="text-brand-blue" />
               <div>
                 <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-                  {realQuotesTitles[member.id] || "What They're Actually Saying"}
+                  What {member.icp.targetRoles[0]}s Are Actually Saying Right Now
                 </h2>
                 <p className={`mt-1 text-sm ${textMuted}`}>
-                  Real quotes from Reddit, LinkedIn, and industry forums
+                  Current topics from Reddit, Hacker News, LinkedIn, and industry forums
                 </p>
               </div>
             </div>
@@ -904,17 +987,16 @@ function Dashboard() {
                   key={idx}
                   className={`border-l-4 border-brand-blue p-5 ${cardBg}`}
                 >
-                  <p
-                    className={`mb-3 text-sm italic leading-relaxed ${textSecondary}`}
-                  >
-                    &ldquo;{typeof quote === "string" ? quote : quote.text}&rdquo;
+                  <p className={`mb-2 text-base font-semibold ${textPrimary}`}>
+                    "{quote.topic}"
                   </p>
-                  {typeof quote === "object" && quote.source && (
-                    <div className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 bg-brand-blue" />
-                      <span className={`text-xs ${textMuted}`}>{quote.source}</span>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="h-1.5 w-1.5 bg-brand-blue" />
+                    <span className={`text-xs font-medium ${textMuted}`}>{quote.source}</span>
+                  </div>
+                  <p className={`text-sm italic ${textSecondary}`}>
+                    {quote.context}
+                  </p>
                 </div>
               ))}
             </div>
@@ -922,123 +1004,191 @@ function Dashboard() {
         )}
 
         {/* ================================================================
-            5. OPENING MESSAGES
+            7. TOPIC CALENDAR
         ================================================================ */}
-        <section className="mb-12 md:mb-20">
-          <div className="mb-6 flex items-center gap-3">
-            <MessageCircle size={22} className="text-brand-blue" />
-            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-              Opening Messages
-            </h2>
-          </div>
+        {member.topicCalendar && member.topicCalendar.length > 0 && (
+          <section className="mb-12 md:mb-16" data-testid="topic-calendar-section">
+            <div className="mb-6 flex items-center gap-3">
+              <Calendar size={22} className="text-brand-blue" />
+              <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+                What to Post About
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {member.conversationStarters.map((starter, idx) => (
-              <div key={idx} className={`flex flex-col ${cardBg}`}>
-                {/* Card header */}
-                <div
-                  className={`flex items-center justify-between border-b px-4 py-3 ${borderColor}`}
+            <div className="space-y-4">
+              {member.topicCalendar.map((topic, idx) => (
+                <details
+                  key={idx}
+                  className={`group ${cardBg} overflow-hidden`}
+                  data-testid={`topic-${idx}`}
                 >
-                  <span
-                    className={`text-xs font-medium uppercase tracking-wide ${textMuted}`}
+                  <summary
+                    className={`flex cursor-pointer items-center justify-between p-5 text-sm font-semibold ${textPrimary}`}
                   >
-                    Template {idx + 1}
-                  </span>
-                  <button
-                    onClick={() => handleCopy(starter.template)}
-                    className="flex items-center gap-1.5 bg-brand-blue px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-brand-blue/80"
-                  >
-                    <Copy size={12} />
-                    Copy
-                  </button>
-                </div>
-
-                {/* Template text */}
-                <div className="flex-grow p-4 sm:p-5">
-                  <p
-                    className={`text-sm leading-relaxed ${
-                      isDark ? "text-white/90" : "text-brand-dark/90"
-                    }`}
-                  >
-                    {starter.template}
-                  </p>
-                </div>
-
-                {/* When to use */}
-                <div className="px-4 pb-4 sm:px-5 sm:pb-5">
-                  <div className={`p-3 ${cardBgSubtle}`}>
-                    <p className={`text-xs italic ${textMuted}`}>
-                      <span className="font-medium not-italic">
-                        When to use:
-                      </span>{" "}
-                      {starter.whenToUse}
-                    </p>
+                    <span>
+                      {topic.category}{" "}
+                      <span className={`font-normal ${textMuted}`}>
+                        · {topic.frequency}
+                      </span>
+                    </span>
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform group-open:rotate-180 ${textMuted}`}
+                    />
+                  </summary>
+                  <div className={`border-t px-5 py-4 ${borderColor}`}>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div>
+                        <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>
+                          When to post
+                        </p>
+                        <p className={`text-sm ${textSecondary}`}>{topic.whenToPost}</p>
+                      </div>
+                      <div>
+                        <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>
+                          Pain points to address
+                        </p>
+                        <p className={`text-sm ${textSecondary}`}>
+                          #{topic.painPointsAddressed.join(", #")}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>
+                          Template suggestions
+                        </p>
+                        <div className="flex flex-wrap gap-1">
+                          {topic.templateSuggestions.map((t) => (
+                            <span key={t} className="bg-brand-blue/10 text-brand-blue px-2 py-0.5 text-xs font-medium">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>
+                          Example topics
+                        </p>
+                        <ul className="space-y-1">
+                          {topic.exampleTopics.map((ex, i) => (
+                            <li key={i} className={`flex items-start gap-2 text-sm ${textSecondary}`}>
+                              <Sparkles size={12} className="mt-1 flex-shrink-0 text-brand-lime" />
+                              {ex}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ================================================================
-            5. WHAT TO POST ABOUT
+            8. PRO TIPS
         ================================================================ */}
-        <section className="mb-12 md:mb-20">
-          <div className="mb-6 flex items-center gap-3">
-            <BookOpen size={22} className="text-brand-blue" />
-            <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
-              What to Post About
-            </h2>
-          </div>
+        {member.proTips && (
+          <section className="mb-12 md:mb-16" data-testid="pro-tips-section">
+            <div className="mb-6 flex items-center gap-3">
+              <Zap size={22} className="text-brand-lime" />
+              <h2 className={`text-xl font-semibold sm:text-2xl ${textPrimary}`}>
+                Pro Tips for {member.name.split(" ")[0]}'s Content
+              </h2>
+            </div>
 
-          <div className="space-y-3">
-            {member.contentPillars.map((pillar) => (
-              <details
-                key={pillar.title}
-                className={`group ${cardBg} overflow-hidden`}
-              >
-                <summary
-                  className={`flex cursor-pointer items-center justify-between p-4 text-sm font-semibold sm:p-5 ${textPrimary}`}
-                >
-                  <span>
-                    {pillar.title}{" "}
-                    <span className={`font-normal ${textMuted}`}>
-                      &middot; {pillar.frequency}
-                    </span>
-                  </span>
-                  <ChevronDown
-                    size={16}
-                    className={`transition-transform group-open:rotate-180 ${textMuted}`}
-                  />
-                </summary>
-                <ul
-                  className={`border-t px-4 py-4 sm:px-5 ${borderColor}`}
-                >
-                  {pillar.examples.map((example) => (
-                    <li
-                      key={example}
-                      className={`flex items-start gap-2 py-1.5 text-sm ${textSecondary}`}
-                    >
-                      <Sparkles
-                        size={14}
-                        className="mt-0.5 flex-shrink-0 text-brand-blue"
-                      />
-                      {example}
+            <div className={`p-6 ${cardBg}`}>
+              {/* Superpower */}
+              <div className="mb-6">
+                <h3 className={`mb-2 text-sm font-semibold ${textPrimary}`}>
+                  Your superpower:
+                </h3>
+                <p className={`text-sm ${textSecondary}`}>{member.proTips.superpower}</p>
+              </div>
+
+              {/* Unique Voice */}
+              <div className="mb-6">
+                <h3 className={`mb-2 text-sm font-semibold ${textPrimary}`}>
+                  What makes your voice unique:
+                </h3>
+                <ul className="space-y-1">
+                  {member.proTips.uniqueVoice.map((item, idx) => (
+                    <li key={idx} className={`flex items-start gap-2 text-sm ${textSecondary}`}>
+                      <span className="text-brand-blue">•</span>
+                      {item}
                     </li>
                   ))}
                 </ul>
-              </details>
-            ))}
-          </div>
-        </section>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2">
+                {/* Avoid */}
+                <div>
+                  <h3 className={`mb-2 text-sm font-semibold text-red-400`}>
+                    Avoid:
+                  </h3>
+                  <ul className="space-y-1">
+                    {member.proTips.avoid.map((item, idx) => (
+                      <li key={idx} className={`flex items-start gap-2 text-sm ${textSecondary}`}>
+                        <span className="text-red-400">✕</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Lean Into */}
+                <div>
+                  <h3 className={`mb-2 text-sm font-semibold text-brand-lime`}>
+                    Lean into:
+                  </h3>
+                  <ul className="space-y-1">
+                    {member.proTips.leanInto.map((item, idx) => (
+                      <li key={idx} className={`flex items-start gap-2 text-sm ${textSecondary}`}>
+                        <span className="text-brand-lime">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Best Times & Engagement Hack */}
+              <div className={`mt-6 pt-6 border-t ${borderColor}`}>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <h3 className={`mb-1 text-sm font-semibold ${textPrimary}`}>
+                      Best days/times to post:
+                    </h3>
+                    <p className={`text-sm ${textSecondary}`}>{member.proTips.bestTimes}</p>
+                  </div>
+                  <div>
+                    <h3 className={`mb-1 text-sm font-semibold ${textPrimary}`}>
+                      Engagement hack:
+                    </h3>
+                    <p className={`text-sm ${textSecondary}`}>{member.proTips.engagementHack}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Closing Motivation */}
+              {member.closingMotivation && (
+                <div className={`mt-6 p-4 border-l-4 border-brand-lime ${cardBgSubtle}`}>
+                  <p className={`text-sm italic ${textSecondary}`}>
+                    {member.closingMotivation}
+                  </p>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* ---- Footer ---- */}
         <footer
           className={`border-t pt-8 pb-12 text-center text-xs ${borderColor} ${textMuted}`}
         >
           <p>
-            Midwestern Interactive &middot; LinkedIn Playbook &middot;{" "}
-            {member.name}
+            Midwestern Interactive · LinkedIn Playbook · {member.name}
           </p>
         </footer>
       </main>
