@@ -14,7 +14,9 @@ import {
   Sparkles,
   Sun,
   Target,
+  Upload,
   Users,
+  X,
   Zap,
 } from "lucide-react";
 import teamData from "./data/teamData.json";
