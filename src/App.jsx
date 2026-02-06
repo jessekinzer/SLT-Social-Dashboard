@@ -102,8 +102,8 @@ const isValidEmail = (email) => {
 };
 
 const getTheme = () => {
-  if (typeof window === "undefined") return "dark";
-  return window.localStorage.getItem("slt-theme") || "dark";
+  if (typeof window === "undefined") return "light";
+  return window.localStorage.getItem("slt-theme") || "light";
 };
 
 const saveTheme = (theme) => {
@@ -500,9 +500,11 @@ function Landing() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-testid="team-grid">
           {teamData.teamMembers.map((member) => (
-            <div
+            <button
               key={member.id}
-              className={`group relative flex flex-col p-6 text-left transition-all ${
+              onClick={() => handleSelect(member.id)}
+              type="button"
+              className={`group relative flex flex-col p-6 text-left transition-all cursor-pointer ${
                 isDark
                   ? "border border-white/10 bg-white/[0.02] hover:border-brand-blue/50 hover:bg-white/[0.04]"
                   : "border border-brand-dark/10 bg-white hover:border-brand-blue/50 hover:shadow-lg"
@@ -512,12 +514,8 @@ function Landing() {
               <div className="mb-4">
                 <ProfileAvatar member={member} size="large" />
               </div>
-              <button
-                onClick={() => handleSelect(member.id)}
-                className="flex-1 text-left"
-                type="button"
-              >
-                <h3 className="mb-1 text-lg font-semibold hover:text-brand-blue transition-colors">
+              <div className="flex-1 text-left">
+                <h3 className="mb-1 text-lg font-semibold group-hover:text-brand-blue transition-colors">
                   {member.name}
                 </h3>
                 <p className={`mb-3 text-sm ${isDark ? "text-white/50" : "text-brand-dark/50"}`}>
@@ -535,7 +533,7 @@ function Landing() {
                     ))}
                   </div>
                 </div>
-              </button>
+              </div>
               <span
                 className={`absolute right-4 top-4 text-xs font-medium transition-colors ${
                   isDark
@@ -545,7 +543,7 @@ function Landing() {
               >
                 <ArrowRight size={16} />
               </span>
-            </div>
+            </button>
           ))}
         </div>
       </main>
