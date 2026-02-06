@@ -102,8 +102,8 @@ const isValidEmail = (email) => {
 };
 
 const getTheme = () => {
-  if (typeof window === "undefined") return "dark";
-  return window.localStorage.getItem("slt-theme") || "dark";
+  if (typeof window === "undefined") return "light";
+  return window.localStorage.getItem("slt-theme") || "light";
 };
 
 const saveTheme = (theme) => {
