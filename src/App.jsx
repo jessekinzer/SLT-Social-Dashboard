@@ -665,6 +665,11 @@ function Dashboard() {
     [id]
   );
 
+  // Scroll to top when dashboard loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   useEffect(() => {
     if (member) {
       saveSelectedMember(member.id);
