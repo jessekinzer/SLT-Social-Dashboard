@@ -2236,6 +2236,259 @@
         "engagementHack": "When commenting on recruiting posts, share a specific metric or process change. Example: 'We had the same ghosting problem \u2014 implemented a 48-hour SLA on all candidate communication and our Glassdoor reviews improved within 2 months.'"
       },
       "closingMotivation": "Your audience is overwhelmed with requisitions and frustrated by broken processes. Help them work smarter, treat candidates better, and actually fill roles without burning out."
+    },
+    {
+      "id": "kahlie-huff",
+      "name": "Kahlie Huff",
+      "title": "Chief Operating Officer",
+      "avatar": "KH",
+      "profileImage": "",
+      "offering": "Embedded Teams",
+      "nicheStatement": "You speak to operations leaders and COOs scaling companies from chaos to systems — specifically those navigating the transition from scrappy execution to sustainable operational infrastructure while maintaining speed and culture.",
+      "icp": {
+        "title": "COOs, VP Operations, Heads of Operations, Chief of Staff, Founders wearing the ops hat",
+        "targetRoles": [
+          "COOs",
+          "VP Operations",
+          "Heads of Operations",
+          "Chief of Staff",
+          "Founders (Series A-C)"
+        ],
+        "companyStage": "50–500 employees, $5M–$100M ARR",
+        "industry": "SaaS, B2B tech, high-growth startups",
+        "situation": "Scaling beyond founder-led chaos; building operational infrastructure; balancing growth speed with process; managing cross-functional alignment; hiring operations leaders",
+        "theyrePostingAbout": [
+          "Scaling operations without killing speed",
+          "Cross-functional alignment challenges",
+          "Operational debt and process breakdowns",
+          "Hiring first ops leaders"
+        ],
+        "servicesFocus": [
+          "Embedded"
+        ]
+      },
+      "connectCriteria": [
+        "Are scaling beyond founder-led operations",
+        "Post about balancing speed with process or structure",
+        "Mention cross-functional alignment or departmental silos",
+        "Are evaluating when to hire their first operations leader",
+        "Recently raised Series A-C and are building operational infrastructure"
+      ],
+      "engageCriteria": [
+        "Generally interested in operations strategy and leadership",
+        "Share content about scaling challenges or process improvements",
+        "Post about metrics, reporting, or data-driven decisions",
+        "Discuss team culture or organizational dynamics"
+      ],
+      "painPoints": [
+        {
+          "id": 1,
+          "title": "Balancing speed with systems — the scale vs. agility paradox",
+          "whyItMatters": "High-growth companies struggle to build operational processes without killing the speed and scrappiness that got them there. Too much process too soon creates bureaucracy; too little creates chaos.",
+          "quotes": [
+            {
+              "text": "The challenge is building structure that enables speed rather than constraining it. Most companies swing too far in one direction — either they're drowning in chaos or they've bureaucratized themselves into stagnation.",
+              "attribution": "Claire Hughes Johnson, former COO of Stripe, author of 'Scaling People'"
+            },
+            {
+              "text": "As you scale, there's this myth that you need to slow down and 'get your house in order.' But the companies that win are the ones that figure out how to run faster with better systems, not slower with more process.",
+              "attribution": "Molly Graham, former VP Operations at Facebook/Quip"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for adding process without adding bureaucracy",
+            "Tell a story about a company that over-processed itself into stagnation",
+            "Create a 'process necessity test' — when to systematize vs. stay scrappy",
+            "Outline the warning signs that you're building bureaucracy, not infrastructure"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Cross-functional alignment breaks down as companies scale",
+          "whyItMatters": "As headcount grows, departments optimize for their own goals rather than company goals. Sales, product, engineering, and marketing drift into silos with conflicting priorities.",
+          "quotes": [
+            {
+              "text": "The biggest operational challenge isn't within functions — it's between them. Sales commits to timelines Product can't hit. Marketing launches campaigns Engineering hasn't built infrastructure for. Everyone's moving fast, just not in the same direction.",
+              "attribution": "Lenny Rachitsky, former Airbnb PM and operations leader"
+            },
+            {
+              "text": "We had nine different teams all trying to 'move fast' on their own roadmaps. What we actually had was expensive chaos. The breakthrough came when we forced shared objectives across functions.",
+              "attribution": "Gokul Rajaram, product and operations leader at Coinbase, Square, Facebook"
+            }
+          ],
+          "postAngles": [
+            "Share your cross-functional alignment meeting that actually works",
+            "Tell a story about the cost of departmental silos you've witnessed",
+            "Create a 'shared objectives' framework teams can adopt",
+            "Address how to diagnose misalignment before it becomes visible"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Operational debt compounds faster than technical debt",
+          "whyItMatters": "Companies accumulate broken processes, manual workarounds, and fragmented tools that create exponentially more work as they scale. Unlike technical debt, operational debt is often invisible until it's crushing.",
+          "quotes": [
+            {
+              "text": "Technical debt slows down your engineers. Operational debt slows down your entire company. The difference is engineering debt gets measured and prioritized, while ops debt just gets lived with until something breaks catastrophically.",
+              "attribution": "Katie Womersley, former VP Operations at Buffer"
+            },
+            {
+              "text": "Every 'temporary workaround' becomes permanent infrastructure. Every manual process that 'takes just 10 minutes' multiplies into hours when you 10x headcount. This compounds silently until your team is drowning.",
+              "attribution": "David Sacks, COO of PayPal, founder of Yammer"
+            }
+          ],
+          "postAngles": [
+            "Share your operational debt audit process",
+            "Tell a story about a 'temporary' workaround that became permanent chaos",
+            "Create an 'operational debt calculator' for quantifying hidden costs",
+            "Address how to get leadership buy-in for fixing invisible problems"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Hiring and scaling operations teams is a black box",
+          "whyItMatters": "Most companies don't know when to hire their first ops leader, what skills to look for, or how to structure the function. Operations is often an afterthought until the company is already on fire.",
+          "quotes": [
+            {
+              "text": "Companies hire sales, engineering, and product leaders early. Operations gets hired when things are already broken — usually after a failed quarter or when the CEO is drowning in admin work. By then, you're playing catch-up.",
+              "attribution": "Sam Corcos, CEO of Levels (discussing COO hiring)"
+            },
+            {
+              "text": "The first ops hire is one of the most important and most misunderstood. People hire either too junior (someone to 'handle stuff') or too senior (expensive exec with no hands-on appetite). You need someone who can build AND execute.",
+              "attribution": "Elad Gil, investor and author of 'High Growth Handbook'"
+            }
+          ],
+          "postAngles": [
+            "Share your framework for timing the first ops hire",
+            "Tell a story about an ops hire that was too junior or too senior",
+            "Create an ops leader interview scorecard",
+            "Address what skills to look for at different company stages"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Metrics and reporting infrastructure lag behind growth",
+          "whyItMatters": "Companies scale revenue and headcount but their ability to measure, report, and make data-driven decisions doesn't keep pace. Leaders are flying blind or drowning in fragmented data.",
+          "quotes": [
+            {
+              "text": "We grew from 50 to 250 people in 18 months. Our board deck still looked like a seed-stage company. We had no idea what our unit economics actually were because data lived in eight different systems that didn't talk to each other.",
+              "attribution": "Patrick Campbell, CEO of ProfitWell (now acquired by Paddle)"
+            },
+            {
+              "text": "The gap between 'data we have' and 'data we need to run the business' grows faster than revenue. Eventually you hit a wall where you can't make good decisions because you're operating on gut feel and anecdotes.",
+              "attribution": "Tomasz Tunguz, Managing Director at Theory Ventures"
+            }
+          ],
+          "postAngles": [
+            "Share your metrics infrastructure evolution as you scaled",
+            "Tell a story about a decision you made blind (and what it cost)",
+            "Create a 'data maturity' checklist for scaling companies",
+            "Address when to invest in reporting vs. keep moving fast"
+          ]
+        }
+      ],
+      "realQuotes": [
+        {
+          "topic": "Speed vs. systems paradox",
+          "source": "Claire Hughes Johnson, Molly Graham",
+          "context": "Building structure that enables speed, not bureaucracy"
+        },
+        {
+          "topic": "Cross-functional chaos",
+          "source": "Lenny Rachitsky, Gokul Rajaram",
+          "context": "Departments moving fast in different directions"
+        },
+        {
+          "topic": "Operational debt",
+          "source": "Katie Womersley, David Sacks",
+          "context": "Invisible problems compounding silently"
+        },
+        {
+          "topic": "Ops hiring black box",
+          "source": "Sam Corcos, Elad Gil",
+          "context": "Operations hired too late, with wrong profile"
+        }
+      ],
+      "topicCalendar": [
+        {
+          "category": "Scaling Operations",
+          "frequency": "1x per week",
+          "whenToPost": "When you see scaling challenges, process vs. speed debates, or growth announcements",
+          "painPointsAddressed": [
+            1,
+            3
+          ],
+          "templateSuggestions": [
+            "Hot Take",
+            "Story Post",
+            "Myth Buster"
+          ],
+          "exampleTopics": [
+            "Unpopular opinion: Most 'process' is just bureaucracy with a better name",
+            "The operational debt that almost killed our Series B",
+            "How we 3x'd headcount without 3x'ing chaos"
+          ]
+        },
+        {
+          "category": "Cross-Functional Alignment",
+          "frequency": "1x per week",
+          "whenToPost": "When you see silo complaints, alignment discussions, or team conflict posts",
+          "painPointsAddressed": [
+            2
+          ],
+          "templateSuggestions": [
+            "Value Bomb",
+            "Question Post",
+            "Observation"
+          ],
+          "exampleTopics": [
+            "The one meeting that finally aligned our 5 departments",
+            "Quick question: How do you handle Sales promising what Product can't deliver?",
+            "I noticed every misaligned company has the same root cause..."
+          ]
+        },
+        {
+          "category": "Ops Leadership & Hiring",
+          "frequency": "1x per week",
+          "whenToPost": "When you see COO announcements, ops hiring discussions, or leadership transition posts",
+          "painPointsAddressed": [
+            4,
+            5
+          ],
+          "templateSuggestions": [
+            "Listicle",
+            "Signal Post",
+            "Story Post"
+          ],
+          "exampleTopics": [
+            "5 signs it's time to hire your first ops leader",
+            "We hired a VP Ops too early. Here's what I'd do differently.",
+            "The data gap that made our board meetings theater"
+          ]
+        }
+      ],
+      "proTips": {
+        "superpower": "You've built operational infrastructure from chaos. You understand both the systems thinking required to scale AND the scrappy execution needed in high-growth environments.",
+        "uniqueVoice": [
+          "You've lived the founder-led chaos and know the exact moment it breaks",
+          "You can translate between CEO vision and operational reality",
+          "You've made the hiring and process mistakes and can help others avoid them"
+        ],
+        "avoid": [
+          "Generic operations advice without growth-stage context",
+          "Overly process-heavy frameworks that feel bureaucratic",
+          "Pretending scaling operations is easy or formulaic"
+        ],
+        "leanInto": [
+          "Specific numbers from your experience (headcount ratios, process timelines)",
+          "Honest stories about what went wrong, not just wins",
+          "Frameworks and templates your audience can immediately use",
+          "The emotional reality of being the one who 'makes things work'"
+        ],
+        "bestTimes": "Tuesday–Thursday, 7-9am or 12-2pm CT",
+        "engagementHack": "When commenting on operations posts, add a specific number or timeframe from your experience. Example: 'We hit this exact wall at 80 employees — took us 4 months to untangle, but the fix was simpler than we thought.'"
+      },
+      "closingMotivation": "Your audience is drowning in the messy middle of scaling — too big to operate on instinct, too early for enterprise playbooks. Be specific. Be honest about failures. Give them frameworks they can implement this week."
     }
   ]
 }
